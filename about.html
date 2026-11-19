@@ -2,8 +2,12 @@
 <html lang="zh-Hant"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#fbfaf7">
 <title>關於我</title>
-<style>*{box-sizing:border-box}
+<style>:root{color-scheme:light}
+html,body{background:#fbfaf7;color:#1a1a1a}
+*{box-sizing:border-box}
 body{margin:0;background:#fbfaf7;color:#1a1a1a;font-family:-apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;font-size:20px;line-height:1.9;-webkit-font-smoothing:antialiased}
 .wrap{max-width:900px;margin:0 auto;padding:60px 28px 110px}
 h1{font-size:clamp(21px,6.2vw,34px);line-height:1.35;margin:0 0 12px;letter-spacing:.01em;white-space:nowrap}
@@ -109,7 +113,7 @@ border:2px solid #6b6256;background:#fff;color:#1a1a1a;cursor:pointer}
 .panel{display:none}
 .panel.on{display:block}
 .card{background:#f4f1ea;border:1px solid #e6e2da;border-radius:14px;padding:22px 20px;margin-bottom:22px}
-.card h2{margin:0 0 8px;font-size:28px}
+.card h2{margin:0 0 8px;font-size:28px;color:#1a1a1a;font-weight:800}
 .card h3{margin:24px 0 10px;font-size:24px;font-weight:800;color:#5a2a00;
 border-left:6px solid #b45309;padding-left:10px}
 .target{font-size:21px;color:#1f1f1f;margin-bottom:6px}
@@ -123,6 +127,17 @@ border-left:6px solid #b45309;padding-left:10px}
 .sub{font-size:19px;color:#3d3830;font-weight:700;margin:16px 0 2px}
 .sites{font-size:18px;color:#4a443c;margin-top:14px;line-height:1.7}
 .card ul{font-size:20px;line-height:1.8;margin:6px 0 0 4px;padding-left:22px}
+/* 手機深色模式下強制保持淺底深字：卡片是固定淺色背景，字若被瀏覽器轉成淺色就看不見 */
+@media (prefers-color-scheme: dark){
+  .abouttabs button{background:#fff;color:#1a1a1a;border-color:#6b6256}
+  .abouttabs button.on{background:#b45309;color:#fff;border-color:#b45309}
+  .card{background:#f4f1ea;border-color:#d6cfc1}
+  .card h2,.card h3,.card .target,.card .item,.card .item .t,
+  .card .none-t,.card .sub,.card ul,.card li{color:#1a1a1a}
+  .card .item .note,.card .sites{color:#4a443c}
+  .card .item a{color:#8c3f00}
+  .none-t{color:#1a1a1a}
+}
 </style>
 <div class="abouttabs"><button class="on" onclick="showTab(0)">比價</button><button onclick="showTab(1)">行事曆</button><button onclick="showTab(2)">待辦</button></div><div class="panel on"><div style="background:#fff3e0;border:1px solid #ffcc80;border-radius:12px;padding:14px 16px;font-size:19px;line-height:1.8;margin-bottom:18px"><b>今日結論</b><br>Even G2：一般通路與社群都沒有符合的報價<br>JNA-202 PRO：沒有符合 1,200～1,500 的報價<br><span style="font-size:19px;color:#4a3a24;font-weight:700">沒有符合的會在下面標「沒有」，並列出查過的網站。</span></div><div class="card">
 <h2>Even G2 智慧眼鏡</h2>
