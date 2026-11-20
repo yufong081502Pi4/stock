@@ -230,109 +230,135 @@ font-size:20px;line-height:1.8;margin-bottom:18px;color:#1f1f1f}
 </div></div><div class="panel"><div class="card"><h2>程式庫</h2><div class="target">自己寫的小工具，點開就能用，不需要另外裝 App。</div>
 <div class="prog">
   <h3 class="prog-t">① 倒數計時器（大螢幕）</h3>
-  <p class="prog-d">輸入 <b>7:00</b> 就是倒數 7 分 00 秒；輸入 <b>1:30:00</b> 是 1 小時 30 分。
-     也可以切到「倒數到幾點」，例如現在 16:48 輸入 <b>19:00</b>，就會倒數到晚上 7 點。</p>
+  <p class="prog-d">輸入目標時間，它會用<b>你手機現在的系統時間</b>去算還有多久。<br>
+     例：現在 <b>5:22</b>，輸入 <b>7:00</b> → 倒數 <b>1 小時 38 分</b>（分:秒制顯示 <b>98:00</b>）。<br>
+     輸入 <b>7:00</b> 會自動抓「最近的一次 7 點」；要指定晚上就用 <b>19:00</b>。</p>
+
+  <div class="tm-now" id="tmNow">現在 00:00</div>
 
   <div class="tm-controls">
     <input id="tmIn" class="tm-in" value="7:00" inputmode="numeric" autocomplete="off">
-    <select id="tmMode" class="tm-sel">
-      <option value="dur">倒數多久（分:秒）</option>
-      <option value="clock">倒數到幾點（24 小時制）</option>
-    </select>
-    <button class="tm-btn go" onclick="tmStart()">開始</button>
+    <button class="tm-btn go" onclick="tmStart()">開始倒數</button>
     <button class="tm-btn" onclick="tmPause()">暫停／續跑</button>
-    <button class="tm-btn" onclick="tmReset()">歸零</button>
     <button class="tm-btn" onclick="tmPlus(60)">+1 分</button>
     <button class="tm-btn" onclick="tmPlus(300)">+5 分</button>
     <button class="tm-btn fs" onclick="tmFull()">全螢幕</button>
   </div>
 
+  <div class="tm-controls tm-fmt">
+    <span class="tm-lb">顯示方式</span>
+    <button class="tm-chip on" id="fmtMS" onclick="tmFmt('ms')">分:秒（98:00）</button>
+    <button class="tm-chip" id="fmtHMS" onclick="tmFmt('hms')">時:分:秒（1:38:00）</button>
+  </div>
+
   <div id="tmStage" class="tm-stage">
-    <div id="tmBig" class="tm-big">07:00</div>
-    <div id="tmSub" class="tm-sub">按「開始」倒數 7 分 00 秒</div>
+    <div id="tmBig" class="tm-big">--:--</div>
+    <div id="tmSub" class="tm-sub">輸入目標時間後按「開始倒數」</div>
   </div>
 </div></div>
 <style>
 .prog{background:#fff;border:2px solid #d6cfc1;border-radius:16px;padding:22px 20px;margin-bottom:22px}
 .prog-t{margin:0 0 10px;font-size:26px;font-weight:800;color:#5a2a00}
-.prog-d{font-size:19px;line-height:1.8;color:#1f1f1f;margin:0 0 16px}
-.tm-controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
-.tm-in{font:inherit;font-size:34px;font-weight:800;width:190px;padding:10px 14px;border-radius:12px;
+.prog-d{font-size:19px;line-height:1.85;color:#1f1f1f;margin:0 0 14px}
+.tm-now{font-size:22px;font-weight:800;color:#1b5e20;background:#eef6ec;border:2px solid #b7d8b0;
+border-radius:12px;padding:10px 14px;display:inline-block;margin-bottom:14px}
+.tm-controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.tm-in{font:inherit;font-size:38px;font-weight:800;width:200px;padding:10px 14px;border-radius:12px;
 border:3px solid #6b6256;color:#1a1a1a;background:#fff;text-align:center;letter-spacing:2px}
-.tm-sel{font:inherit;font-size:17px;padding:10px;border-radius:10px;border:2px solid #6b6256;background:#fff;color:#1a1a1a}
-.tm-btn{font:inherit;font-size:19px;font-weight:800;padding:12px 18px;border-radius:12px;
+.tm-btn{font:inherit;font-size:19px;font-weight:800;padding:13px 18px;border-radius:12px;
 border:2px solid #6b6256;background:#fff;color:#1a1a1a;cursor:pointer}
 .tm-btn.go{background:#1b5e20;color:#fff;border-color:#1b5e20}
 .tm-btn.fs{background:#b45309;color:#fff;border-color:#b45309}
-.tm-stage{background:#101010;border-radius:16px;padding:38px 20px;text-align:center}
+.tm-lb{font-size:19px;font-weight:800;color:#3d3830}
+.tm-chip{font:inherit;font-size:18px;font-weight:800;padding:11px 16px;border-radius:999px;
+border:2px solid #6b6256;background:#fff;color:#1a1a1a;cursor:pointer}
+.tm-chip.on{background:#1a1a1a;color:#fff;border-color:#1a1a1a}
+.tm-stage{background:#101010;border-radius:16px;padding:36px 18px;text-align:center}
 .tm-big{font-family:"DejaVu Sans Mono",ui-monospace,Menlo,monospace;font-weight:800;
-font-size:clamp(70px,20vw,240px);line-height:1.05;color:#e8ff8a;letter-spacing:4px;
+font-size:clamp(64px,19vw,220px);line-height:1.05;color:#e8ff8a;letter-spacing:3px;
 text-shadow:0 0 26px rgba(232,255,138,.35)}
 .tm-sub{font-size:20px;color:#b9b3a4;margin-top:10px}
 .tm-stage:fullscreen{display:flex;flex-direction:column;justify-content:center;align-items:center;background:#000}
-.tm-stage:fullscreen .tm-big{font-size:26vw;color:#9dff6a}
+.tm-stage:fullscreen .tm-big{font-size:24vw;color:#9dff6a}
 @media (prefers-color-scheme: dark){
   .prog{background:#fff;color:#1a1a1a;border-color:#a89f8c}
-  .prog-t{color:#5a2a00}
-  .prog-d{color:#1f1f1f}
+  .prog-t{color:#5a2a00}.prog-d{color:#1f1f1f}
+  .tm-now{background:#eef6ec;color:#144214;border-color:#8fbf88}
+  .tm-btn,.tm-chip{background:#fff;color:#1a1a1a}
+  .tm-chip.on{background:#1a1a1a;color:#fff}
+  .tm-lb{color:#1a1a1a}
 }
 </style>
 <script>
 (function(){
-  var endAt=0, leftMs=0, running=false, tick=null;
+  var endAt=0, leftMs=0, running=false, tick=null, fmtMode='ms';
   function $(id){return document.getElementById(id);}
-  function fmt(ms){
+  function pad(n){return String(n).padStart(2,'0');}
+  function show(ms){
     if(ms<0) ms=0;
-    var t=Math.ceil(ms/1000), m=Math.floor(t/60), s=t%60;
-    return String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+    var t=Math.ceil(ms/1000);
+    var h=Math.floor(t/3600), m=Math.floor((t%3600)/60), s=t%60;
+    if(fmtMode==='hms'){
+      return (h>0? h+':'+pad(m) : pad(m))+':'+pad(s);
+    }
+    var totalMin=Math.floor(t/60);
+    return pad(totalMin)+':'+pad(s);
   }
-  function parseDur(v){
+  function hhmm(ts){ var d=new Date(ts); return pad(d.getHours())+':'+pad(d.getMinutes()); }
+  function clockNow(){
+    var d=new Date();
+    $('tmNow').textContent='現在系統時間 '+pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds());
+  }
+  setInterval(clockNow, 1000); clockNow();
+
+  // 解析輸入：回傳目標時間的 timestamp（取最近一次還沒到的時間）
+  function targetTs(v){
     v=(v||'').trim().replace(/：/g,':');
     var p=v.split(':').map(function(x){return parseInt(x,10)||0;});
-    if(p.length===3) return (p[0]*3600+p[1]*60+p[2])*1000;
-    if(p.length===2) return (p[0]*60+p[1])*1000;
-    return (p[0]||0)*60*1000;
+    var h=p[0]||0, mi=p[1]||0, se=p.length>2?p[2]:0;
+    var now=new Date();
+    var cands=[];
+    var hs = (h>12) ? [h] : [h, h+12];        // 7:00 → 試 07:00 與 19:00，取最近
+    hs.forEach(function(H){
+      var t=new Date(now.getFullYear(),now.getMonth(),now.getDate(),H,mi,se,0).getTime();
+      if(t>now.getTime()+2000) cands.push(t);
+      cands.push(t+86400000);
+    });
+    cands=cands.filter(function(t){return t>now.getTime()+2000;});
+    cands.sort(function(a,b){return a-b;});
+    return cands.length? cands[0] : now.getTime()+60000;
   }
-  function parseClock(v){
-    v=(v||'').trim().replace(/：/g,':');
-    var p=v.split(':').map(function(x){return parseInt(x,10)||0;});
-    var h=p[0]||0, mi=p[1]||0, now=new Date();
-    var t=new Date(now.getFullYear(),now.getMonth(),now.getDate(),h,mi,0,0);
-    if(t.getTime()<=now.getTime()) t.setDate(t.getDate()+1);
-    return t.getTime()-now.getTime();
-  }
+
   window.tmStart=function(){
     clearInterval(tick);
-    leftMs = ($('tmMode').value==='clock') ? parseClock($('tmIn').value) : parseDur($('tmIn').value);
-    if(leftMs<=0){ alert('請輸入大於 0 的時間，例如 7:00'); return; }
-    endAt=Date.now()+leftMs; running=true;
-    var end=new Date(endAt);
-    $('tmSub').textContent='倒數中　結束時間 '+String(end.getHours()).padStart(2,'0')+':'+String(end.getMinutes()).padStart(2,'0');
-    document.body.classList.add('tm-live');
+    endAt=targetTs($('tmIn').value);
+    leftMs=endAt-Date.now(); running=true;
+    $('tmSub').textContent='倒數到 '+hhmm(endAt);
+    $('tmBig').textContent=show(leftMs);
     tick=setInterval(function(){
       var ms=endAt-Date.now();
-      $('tmBig').textContent=fmt(ms);
-      if(ms<=0){ clearInterval(tick); running=false; tmDone(); }
-    },200);
-    $('tmBig').textContent=fmt(leftMs);
+      $('tmBig').textContent=show(ms);
+      if(ms<=0){clearInterval(tick);running=false;tmDone();}
+    },250);
   };
   window.tmPause=function(){
-    if(!running) { if(leftMs>0){ endAt=Date.now()+leftMs; running=true;
-      tick=setInterval(function(){ var ms=endAt-Date.now(); $('tmBig').textContent=fmt(ms);
-        if(ms<=0){clearInterval(tick);running=false;tmDone();} },200);} return; }
-    clearInterval(tick); running=false; leftMs=Math.max(0,endAt-Date.now());
-    $('tmSub').textContent='已暫停，剩 '+fmt(leftMs);
-  };
-  window.tmReset=function(){
-    clearInterval(tick); running=false; leftMs=0;
-    $('tmBig').textContent=fmt(parseDur($('tmIn').value)||0);
-    $('tmSub').textContent='已歸零';
-    document.body.classList.remove('tm-live');
+    if(running){ clearInterval(tick); running=false; leftMs=Math.max(0,endAt-Date.now());
+      $('tmSub').textContent='已暫停，剩 '+show(leftMs); return; }
+    if(leftMs>0){ endAt=Date.now()+leftMs; running=true;
+      tick=setInterval(function(){ var ms=endAt-Date.now(); $('tmBig').textContent=show(ms);
+        if(ms<=0){clearInterval(tick);running=false;tmDone();} },250);
+      $('tmSub').textContent='倒數到 '+hhmm(endAt); }
   };
   window.tmPlus=function(sec){
-    if(running){ endAt += sec*1000; }
-    else { leftMs += sec*1000; $('tmBig').textContent=fmt(leftMs); }
-    $('tmSub').textContent='加 '+Math.round(sec/60)+' 分鐘';
+    if(running){ endAt+=sec*1000; $('tmSub').textContent='倒數到 '+hhmm(endAt); }
+    else { leftMs+=sec*1000; $('tmBig').textContent=show(leftMs); }
+  };
+  window.tmFmt=function(m){
+    fmtMode=m;
+    $('fmtMS').classList.toggle('on', m==='ms');
+    $('fmtHMS').classList.toggle('on', m==='hms');
+    if(running){ $('tmBig').textContent=show(endAt-Date.now()); }
+    else if(leftMs>0){ $('tmBig').textContent=show(leftMs); }
   };
   window.tmFull=function(){
     var el=$('tmStage');
@@ -342,7 +368,6 @@ text-shadow:0 0 26px rgba(232,255,138,.35)}
   function tmDone(){
     $('tmBig').textContent='00:00';
     $('tmSub').textContent='時間到';
-    document.body.classList.remove('tm-live');
     try{
       var AC=window.AudioContext||window.webkitAudioContext;
       if(AC){ var c=new AC(); [0,0.5,1,1.5].forEach(function(d){
@@ -354,7 +379,8 @@ text-shadow:0 0 26px rgba(232,255,138,.35)}
         o.start(c.currentTime+d); o.stop(c.currentTime+d+0.4);
       }); }
     }catch(e){}
-    var n=0, iv=setInterval(function(){ document.title=(n++%2? '⏰ 時間到' : '　'); if(n>10){clearInterval(iv);document.title='🐴 關於我';} },400);
+    var n=0, iv=setInterval(function(){ document.title=(n++%2? '⏰ 時間到' : '　');
+      if(n>12){clearInterval(iv);document.title='🐴 關於我';} },400);
   }
   var inp=$('tmIn');
   if(inp){ inp.addEventListener('keydown',function(e){ if(e.key==='Enter') tmStart(); }); }
