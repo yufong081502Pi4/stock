@@ -299,7 +299,7 @@ text-shadow:0 0 26px rgba(232,255,138,.35)}
     var t=Math.ceil(ms/1000);
     var h=Math.floor(t/3600), m=Math.floor((t%3600)/60), s=t%60;
     if(fmtMode==='hms'){
-      return (h>0? h+':'+pad(m) : pad(m))+':'+pad(s);
+      return h+':'+pad(m)+':'+pad(s);
     }
     var totalMin=Math.floor(t/60);
     return pad(totalMin)+':'+pad(s);
