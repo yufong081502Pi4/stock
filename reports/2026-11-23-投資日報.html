@@ -218,6 +218,7 @@ html[data-theme] .secbody h2{
 }
 html[data-theme] .secbody h3{ color:var(--accent) !important; background-color:transparent !important; }
 html[data-theme] .item{ color:var(--fg) !important; border-color:var(--td-line) !important; }
+html[data-theme] .tabbar{ background-color:var(--card) !important; border-color:var(--line) !important; }
 
 html[data-theme] table{ background-color:var(--card) !important; }
 html[data-theme] th{
@@ -342,7 +343,7 @@ html[data-theme] .theme-bar button.on, .theme-bar button.on{
 body{padding-bottom:86px !important}
 </style>
 </head><body><div class="wrap">
-<div class="head"><h1>2026-11-23 投資日報<span class="stamp">2026-11-24 06:57</span></h1><div class="freelight" title="檢查時間 2026-11-23 07:00">免費模型｜<i class="led on"></i>運作</div></div>
+<div class="head"><h1>2026-11-23 投資日報<span class="stamp">2026-11-24 07:05</span></h1><div class="freelight" title="檢查時間 2026-11-24 07:01">免費模型｜<i class="led on"></i>運作</div></div>
 <div class="tabbar"><button data-i="0" class="active">晨報</button><button data-i="1" class="">走勢圖</button><button data-i="2" class="">燈號</button><button data-i="3" class="">行事曆</button><button data-i="4" class="">消息面</button><a class="tablink" href="index.html">舊文</a></div>
 <section class="pane active" id="pane0"><blockquote>
 <p>今天是<strong>交易日</strong>（週一）。台股與美股最後交易日都是 <strong>11/20（五）</strong>；今天開盤要補的是「美股 11/20 的重挫 + 台指期夜盤 -5.25%」，<strong>不是新消息</strong>。
@@ -2530,27 +2531,24 @@ document.addEventListener('click',function(e){
 function __lum(c){const f=v=>{v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4)};return 0.2126*f(c.r)+0.7152*f(c.g)+0.0722*f(c.b);}
 function __rgb(str){const m=str.match(/rgba?\(([^)]+)\)/);if(!m)return null;const p=m[1].split(',').map(Number);return {r:p[0],g:p[1],b:p[2],a:p.length>3?p[3]:1};}
 function fixInlineContrast(){
-  document.querySelectorAll('div,span,p,td,th,li').forEach(function(el){
+  /* 只處理「作者自己寫了行內背景色」的區塊（佈景控制不到的），
+     先清掉我們上一次加的顏色，避免殘留造成黑字黑底。 */
+  document.querySelectorAll('[data-fixcolor]').forEach(function(el){
+    el.style.removeProperty('color'); delete el.dataset.fixcolor;
+    el.querySelectorAll('[data-fixcolor]').forEach(function(k){
+      k.style.removeProperty('color'); delete k.dataset.fixcolor;
+    });
+  });
+  document.querySelectorAll('[style*="background"]').forEach(function(el){
     var bg=__rgb(getComputedStyle(el).backgroundColor);
     if(!bg||bg.a<0.5) return;
     var L=__lum(bg);
-    if(L>0.55){                                   // 淺底 → 文字必須深
-      var fg=__rgb(getComputedStyle(el).color);
-      if(!fg||__lum(fg)>0.45||el.querySelector('a')){
-        el.style.setProperty('color','#111111','important');
-        el.querySelectorAll('a,span,b,strong').forEach(function(k){
-          k.style.setProperty('color','#111111','important');
-        });
-      }
-    } else if(L<0.18){                            // 深底 → 文字必須亮
-      var fg2=__rgb(getComputedStyle(el).color);
-      if(!fg2||__lum(fg2)<0.35){
-        el.style.setProperty('color','#FFFFFF','important');
-        el.querySelectorAll('a,span,b,strong').forEach(function(k){
-          k.style.setProperty('color','#FFFFFF','important');
-        });
-      }
-    }
+    var want = L>0.55 ? '#111111' : (L<0.18 ? '#FFFFFF' : null);
+    if(!want) return;
+    el.style.setProperty('color',want,'important'); el.dataset.fixcolor='1';
+    el.querySelectorAll('a,span,b,strong,td').forEach(function(k){
+      k.style.setProperty('color',want,'important'); k.dataset.fixcolor='1';
+    });
   });
 }
 
