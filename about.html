@@ -138,44 +138,45 @@ a{color:#C2410C !important}
 </head><body><div class="wrap">
 <h1>關於我</h1>
 <style>
+:root{--sun:#FFC531;--orange:#FF8A00;--coral:#FF6B6B;--sky:#38BDF8;--mint:#34D399;
+--grape:#A78BFA;--ink:#2B2A26;--sub:#5C564C;--paper:#FFF9EC}
 .abouttabs{display:flex;gap:10px;margin:18px 0 22px;flex-wrap:wrap}
-.abouttabs button{font:inherit;font-size:22px;font-weight:800;padding:13px 22px;border-radius:12px;
-border:2px solid #6b6256;background:#fff;color:#1a1a1a;cursor:pointer}
-.abouttabs button.on{background:#b45309;color:#fff;border-color:#b45309}
+.abouttabs button{font:inherit;font-size:22px;font-weight:900;padding:14px 22px;border-radius:16px;
+border:3px solid var(--sun);background:#fff;color:var(--ink);cursor:pointer}
+.abouttabs button.on{background:var(--orange);color:#fff;border-color:var(--orange)}
 .panel{display:none}
 .panel.on{display:block}
-.card{background:#f4f1ea;border:1px solid #e6e2da;border-radius:14px;padding:22px 20px;margin-bottom:22px}
-.card h2{margin:0 0 8px;font-size:28px;color:#1a1a1a;font-weight:800}
-.card h3{margin:24px 0 10px;font-size:24px;font-weight:800;color:#5a2a00;
-border-left:6px solid #b45309;padding-left:10px}
-.target{font-size:21px;color:#1f1f1f;margin-bottom:6px}
-.item{padding:12px 0;border-bottom:1px dashed #d9d2c5;font-size:20px}
+.card{background:#fff;border:3px solid #FFE0B2;border-radius:20px;padding:22px 20px;margin-bottom:22px}
+.card h2{margin:0 0 8px;font-size:29px;color:var(--ink);font-weight:900}
+.card h3{margin:24px 0 10px;font-size:24px;font-weight:900;color:#C2410C;
+border-left:7px solid var(--sun);padding-left:12px}
+.target{font-size:21px;color:var(--ink);margin-bottom:6px}
+.item{padding:12px 0;border-bottom:2px dotted #FFE0B2;font-size:20px}
 .item:last-child{border-bottom:none}
-.item a{color:#b45309;font-weight:700}
-.item .t{font-size:20px;color:#1f1f1f;margin-top:4px}
-.item .note{font-size:18px;color:#4a443c;margin-top:4px}
+.item a{color:#C2410C;font-weight:800}
+.item .t{font-size:20px;color:var(--ink);margin-top:4px}
+.item .note{font-size:18px;color:var(--sub);margin-top:4px}
 .none{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:8px 0 4px}
-.none-t{font-size:20px;color:#1f1f1f}
-.sub{font-size:19px;color:#3d3830;font-weight:700;margin:16px 0 2px}
-.sites{font-size:18px;color:#4a443c;margin-top:14px;line-height:1.7}
-.card ul{font-size:20px;line-height:1.8;margin:6px 0 0 4px;padding-left:22px}
-/* 手機深色模式下強制保持淺底深字：卡片是固定淺色背景，字若被瀏覽器轉成淺色就看不見 */
+.none-t{font-size:20px;color:var(--ink)}
+.sub{font-size:19px;color:#3D3830;font-weight:800;margin:16px 0 2px}
+.sites{font-size:18px;color:var(--sub);margin-top:14px;line-height:1.7}
+.card ul{font-size:20px;line-height:1.85;margin:6px 0 0 4px;padding-left:22px}
+.summary{background:#FFF3C4;border:3px solid var(--sun);border-radius:18px;padding:16px 18px;
+font-size:20px;line-height:1.8;margin-bottom:18px;color:var(--ink)}
+.summary-h{color:var(--ink);font-size:23px}
+.summary-note{display:inline-block;margin-top:6px;font-size:19px;color:#7A4A00;font-weight:800}
+/* 深色模式也維持陽光亮色 */
 @media (prefers-color-scheme: dark){
-  .abouttabs button{background:#fff;color:#1a1a1a;border-color:#6b6256}
-  .abouttabs button.on{background:#b45309;color:#fff;border-color:#b45309}
-  .card{background:#f4f1ea;border-color:#d6cfc1}
-  .card h2,.card h3,.card .target,.card .item,.card .item .t,
-  .card .none-t,.card .sub,.card ul,.card li{color:#1a1a1a}
-  .card .item .note,.card .sites{color:#4a443c}
-  .card .item a{color:#8c3f00}
-  .none-t{color:#1a1a1a}
-  .summary{background:#fff3e0;border-color:#e8a33d;color:#1f1f1f}
-  .summary b,.summary .summary-note{color:#1f1f1f}
+  .abouttabs button{background:#fff;color:var(--ink);border-color:var(--sun)}
+  .abouttabs button.on{background:var(--orange);color:#fff;border-color:var(--orange)}
+  .card{background:#fff;border-color:#FFE0B2}
+  .card h2,.card .target,.card .item,.card .item .t,.card .none-t,.card .sub,.card ul,.card li{color:var(--ink)}
+  .card h3{color:#C2410C}
+  .card .item .note,.card .sites{color:var(--sub)}
+  .card .item a{color:#C2410C}
+  .summary{background:#FFF3C4;border-color:var(--sun);color:var(--ink)}
+  .summary b,.summary .summary-note{color:var(--ink)}
 }
-.summary{background:#fff3e0;border:2px solid #e8a33d;border-radius:12px;padding:14px 16px;
-font-size:20px;line-height:1.8;margin-bottom:18px;color:#1f1f1f}
-.summary-h{color:#1f1f1f;font-size:22px}
-.summary-note{display:inline-block;margin-top:6px;font-size:19px;color:#4a3a24;font-weight:700}
 </style>
 <div class="abouttabs"><button class="on" onclick="showTab(0)">比價</button><button onclick="showTab(1)">行事曆</button><button onclick="showTab(2)">程式庫</button><button onclick="showTab(3)">待辦</button></div><div class="panel on"><div class="summary"><b class="summary-h">今日結論</b><br>Even G2：一般通路與社群都沒有符合的報價<br>JNA-202 PRO：沒有符合 1,200～1,500 的報價<br><span class="summary-note">沒有符合的會在下面標「沒有」，並列出查過的網站。</span></div><div class="card">
 <h2>Even G2 智慧眼鏡</h2>
