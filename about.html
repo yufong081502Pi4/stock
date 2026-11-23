@@ -130,6 +130,12 @@ a{color:#C2410C !important}
 .navbtns a{background:#fff !important;color:#2B2A26 !important;border:3px solid #FFC531 !important}
 .navbtns a.alt{background:#FF8A00 !important;color:#fff !important;border-color:#FF8A00 !important}
 hr{border-color:#FFE0B2 !important}
+table{background:#fff !important}
+thead tr{background:#FFE9A8 !important}
+tbody tr{background:#fff !important}
+tbody tr:nth-child(even){background:#FFFBF0 !important}
+th{background:#FFE9A8 !important;color:#2B2A26 !important;border-color:#E0C98A !important}
+td{background:transparent !important;color:#2B2A26 !important;border-color:#E6D6AE !important}
 @media (prefers-color-scheme: dark){
   html,body{background-color:#FFF9EC !important;color:#2B2A26 !important}
   h1,h2,h3,p,li,td,th,div,span{color:#2B2A26 !important}
@@ -139,6 +145,11 @@ hr{border-color:#FFE0B2 !important}
   .tabbar,.tabbar button,.tabbar a.tablink{background:#fff !important;color:#2B2A26 !important}
   .tabbar button.active{background:#FF8A00 !important;color:#fff !important}
   a{color:#C2410C !important}
+  table{background:#fff !important}
+  thead tr,tbody tr{background:#fff !important}
+  tbody tr:nth-child(even){background:#FFFBF0 !important}
+  th{background:#FFE9A8 !important;color:#2B2A26 !important;border-color:#E0C98A !important}
+  td{background:transparent !important;color:#2B2A26 !important;border-color:#E6D6AE !important}
 }
 
 /* ===== 扁平活潑・陽光主題 ===== */
@@ -160,9 +171,12 @@ h1:before{content:"☀️ "}
 section.about{margin-top:24px;padding-top:14px;border-top:4px dashed var(--sun) !important}
 section.about h1{font-size:27px;margin:0 0 6px}
 .aboutbtns{display:flex;flex-direction:column;gap:9px}
-.aboutbtn{display:block;padding:11px 16px;border-radius:14px;text-decoration:none !important;
-  color:#fff !important;font-size:25px;font-weight:900;line-height:1.2}
-.aboutbtn small{display:block;font-size:15px;font-weight:700;opacity:.95;margin-top:2px;line-height:1.25}
+.aboutbtn{display:flex;align-items:baseline;gap:10px;flex-wrap:nowrap;overflow:hidden;
+  padding:12px 16px;border-radius:14px;text-decoration:none !important;
+  color:#fff !important;font-size:26px;font-weight:900;line-height:1.15}
+.aboutbtn b{flex:0 0 auto;font-size:26px;font-weight:900}
+.aboutbtn .d{flex:1 1 auto;font-size:16px;font-weight:700;opacity:.96;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .aboutbtn.b1{background:var(--grape)}
 .aboutbtn.b2{background:var(--orange)}
 .aboutbtn.b3{background:var(--sky)}
