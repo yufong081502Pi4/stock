@@ -96,6 +96,20 @@ footer{color:#6b665b}
 .tabbar{background:rgba(22,21,15,.96);border-color:#2e2b24}
 .tabbar button{background:#1f1d16;border-color:#2e2b24;color:#c9c2b4}
 }
+/* 手機深色模式也維持淺色版面：白底深字，避免灰字配黑底看不清 */
+@media (prefers-color-scheme: dark){
+  html,body{background:#fbfaf7 !important;color:#1a1a1a !important}
+  h1{color:#1a1a1a !important}
+    .date{color:#4a443c !important;border-color:#e6e2da !important}
+  .big{background:#b45309 !important;color:#fff !important}
+  .big small{color:#fff !important}
+  .big.alt{background:#fff !important;color:#1a1a1a !important;border-color:#8a8378 !important}
+  .big.alt small{color:#4a443c !important}
+  section.about{border-color:#b45309 !important}
+  .about-card{background:#f4f1ea !important;color:#1a1a1a !important;border-color:#d6cfc1 !important}
+  .about-card small{color:#4a443c !important}
+  a{color:#8c3f00 !important}
+}
 .big{display:block;max-width:680px;margin:0 auto 18px;padding:26px 20px;border-radius:16px;background:#b45309;color:#fff;text-decoration:none;font-size:26px;font-weight:800;text-align:center}
 .big.alt{background:#fff;color:#3d3830;border:2px solid #b9b2a5}
 .big small{display:block;font-size:15px;font-weight:600;opacity:.9;margin-top:6px}
