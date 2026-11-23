@@ -380,7 +380,11 @@ html[data-theme] .tm-chip.on{
 }
 html[data-theme] .tm-lb{ color:var(--fg) !important; }
 html[data-theme] .tm-sub, html[data-theme] .tm-stage a{ color:var(--stage-muted) !important; }
-html[data-theme] a[href*="calendar.google.com"]{ color:#FFFFFF !important; }
+html[data-theme] a[href*="calendar.google.com"]{
+  background-color:var(--btn-bg) !important; color:var(--btn-fg) !important;
+  border:2px solid var(--btn-line) !important; padding:10px 14px; border-radius:10px;
+  display:inline-block; text-decoration:none !important; font-weight:800;
+}
 
 /* ============================================================
    ⑥ 線框專屬：無填色感（純黑底＋亮線）
@@ -469,23 +473,38 @@ body{padding-bottom:86px !important}
 <script>
 function __lum(c){const f=v=>{v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4)};return 0.2126*f(c.r)+0.7152*f(c.g)+0.0722*f(c.b);}
 function __rgb(str){const m=str.match(/rgba?\(([^)]+)\)/);if(!m)return null;const p=m[1].split(',').map(Number);return {r:p[0],g:p[1],b:p[2],a:p.length>3?p[3]:1};}
+function __bgOf(el){
+  let e=el;
+  while(e&&e!==document.documentElement){
+    const b=__rgb(getComputedStyle(e).backgroundColor);
+    if(b&&b.a>0.5) return b;
+    e=e.parentElement;
+  }
+  return __rgb(getComputedStyle(document.body).backgroundColor)||{r:255,g:255,b:255,a:1};
+}
+function __ratio(fg,bg){
+  const L1=__lum(fg),L2=__lum(bg),hi=Math.max(L1,L2),lo=Math.min(L1,L2);
+  return (hi+0.05)/(lo+0.05);
+}
+/* 保險機制：不管底色是行內寫的還是 CSS 給的，
+   只要「文字 / 底色」對比不足就自動改正，避免字消失。 */
 function fixInlineContrast(){
-  /* 只處理「作者自己寫了行內背景色」的區塊（佈景控制不到的），
-     先清掉我們上一次加的顏色，避免殘留造成黑字黑底。 */
   document.querySelectorAll('[data-fixcolor]').forEach(function(el){
     el.style.removeProperty('color'); delete el.dataset.fixcolor;
-    el.querySelectorAll('[data-fixcolor]').forEach(function(k){
-      k.style.removeProperty('color'); delete k.dataset.fixcolor;
-    });
   });
-  document.querySelectorAll('[style*="background"]').forEach(function(el){
-    var bg=__rgb(getComputedStyle(el).backgroundColor);
-    if(!bg||bg.a<0.5) return;
-    var L=__lum(bg);
-    var want = L>0.55 ? '#111111' : (L<0.18 ? '#FFFFFF' : null);
-    if(!want) return;
-    el.style.setProperty('color',want,'important'); el.dataset.fixcolor='1';
-    el.querySelectorAll('a,span,b,strong,td').forEach(function(k){
+  const sel='div,span,p,td,th,li,section,blockquote,a,h1,h2,h3,h4,small,strong,b';
+  document.querySelectorAll(sel).forEach(function(el){
+    if(el.closest('.theme-bar')) return;
+    const st=getComputedStyle(el);
+    if(st.display==='none'||st.visibility==='hidden') return;
+    const fg=__rgb(st.color);
+    if(!fg) return;
+    const bg=__bgOf(el);
+    if(__ratio(fg,bg)>=4.2) return;
+    const want = __lum(bg)>0.5 ? '#111111' : '#FFFFFF';
+    el.style.setProperty('color',want,'important');
+    el.dataset.fixcolor='1';
+    el.querySelectorAll('a,span,b,strong,td,h1,h2,h3,h4,p,li,small').forEach(function(k){
       k.style.setProperty('color',want,'important'); k.dataset.fixcolor='1';
     });
   });
