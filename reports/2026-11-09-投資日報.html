@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="zh-Hant"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026-11-09（一）投資日報</title>
+<style>*{box-sizing:border-box}
+body{margin:0;background:#fbfaf7;color:#1a1a1a;font-family:-apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;font-size:20px;line-height:1.9;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:60px 28px 110px}
+h1{font-size:clamp(21px,6.2vw,34px);line-height:1.35;margin:0 0 12px;letter-spacing:.01em;white-space:nowrap}
+.date{color:#8a857c;font-size:17px;margin-bottom:38px;padding-bottom:22px;border-bottom:1px solid #e6e2da;font-variant-numeric:tabular-nums}
+h2{font-size:27px;margin:46px 0 18px;padding-left:14px;border-left:4px solid #b45309;scroll-margin-top:24px}
+h3{font-size:22px;margin:32px 0 12px;color:#3d3830}
+p{margin:0 0 20px}
+ul,ol{padding-left:28px;margin:0 0 20px}
+li{margin-bottom:10px}
+blockquote{margin:0 0 22px;padding:16px 22px;background:#f4f1ea;border-left:4px solid #d6cdbb;color:#57524a;font-size:19px;border-radius:0 8px 8px 0}
+code{background:#f1ede5;padding:3px 7px;border-radius:5px;font-size:17px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{background:#f1ede5;padding:16px 18px;border-radius:10px;overflow-x:auto;margin:0 0 20px}
+pre code{background:none;padding:0;font-size:17px}
+table{width:100%;border-collapse:collapse;margin:0 0 24px;font-size:18px;line-height:1.6;table-layout:fixed;word-break:break-word}
+th,td{border:1px solid #ded9d0;padding:12px 10px;text-align:left;vertical-align:top}
+.caltabwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 24px}
+.caltab{min-width:620px}
+.caltab td:first-child,.caltab th:first-child{white-space:nowrap}
+.caltab td:nth-child(4){line-height:1.8}
+.caltab th{font-size:17px}
+th{background:#f4f1ea;font-weight:700;font-size:17px;white-space:normal}
+tbody tr:nth-child(even){background:#faf8f4}
+img{max-width:100%;height:auto;display:block;margin:8px 0 24px;border:1px solid #e6e2da;border-radius:10px}
+@media(prefers-color-scheme:dark){img{border-color:#2e2b24}}
+a{color:#b45309;text-decoration:none}
+.pane p a{white-space:nowrap}
+@media(max-width:600px){.pane p:first-of-type{font-size:19px;line-height:1.9}}
+a:hover{text-decoration:underline}
+strong{font-weight:700}
+hr{border:0;border-top:1px solid #e6e2da;margin:36px 0}
+.nav{margin-top:60px;padding-top:24px;border-top:1px solid #e6e2da;font-size:19px}
+footer{margin-top:40px;color:#a8a29a;font-size:14px}
+.toc{margin:0 0 46px;padding:24px 28px;background:#f4f1ea;border-radius:12px;border:1px solid #e6e2da}
+.toc h2{margin:0 0 16px;padding:0;border:0;font-size:19px;letter-spacing:.1em;color:#8a857c;font-weight:700}
+.toc ol{margin:0;padding-left:2px;list-style:none;columns:2;column-gap:32px}
+.toc li{margin:0 0 10px;font-size:20px;line-height:1.5;break-inside:avoid}
+.toc a{color:#241f18;text-decoration:none;font-weight:600}
+.toc a:hover{color:#b45309;text-decoration:underline}
+#fab{position:fixed;left:18px;bottom:22px;z-index:99;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+#fabTop,#fabMenu{width:52px;height:52px;opacity:.88;border-radius:50%;border:0;cursor:pointer;font-size:24px;background:#b45309;color:#fff;box-shadow:0 4px 14px rgba(0,0,0,.24);display:flex;align-items:center;justify-content:center;line-height:1}
+#fabMenu{background:#3d3830}
+#fabPanel{display:none;position:fixed;right:20px;top:96px;z-index:98;width:min(380px,88vw);max-height:62vh;overflow-y:auto;background:#fff;border:1px solid #e6e2da;border-radius:14px;box-shadow:0 10px 38px rgba(0,0,0,.2);padding:16px 10px}
+#fabPanel.open{display:block}
+#fabPanel a{display:block;padding:12px 14px;color:#1a1a1a;text-decoration:none;font-size:21px;border-radius:8px;line-height:1.45}
+#fabPanel a:hover{background:#f4f1ea;color:#b45309}
+.navbtns{display:flex;gap:14px;margin:0 0 26px;flex-wrap:wrap}
+.navbtns a{flex:1;min-width:150px;text-align:center;padding:18px 20px;font-size:22px;font-weight:700;border-radius:14px;text-decoration:none;background:#b45309;color:#fff;border:1px solid #b45309}
+.navbtns a.alt{background:#fff;color:#3d3830;border-color:#b9b2a5}
+.navbtns a:active{opacity:.85}
+@media(prefers-color-scheme:dark){.navbtns a.alt{background:#1f1d16;color:#c9c2b4;border-color:#2e2b24}}
+.tabbar{position:sticky;top:0;z-index:60;display:flex;gap:10px;background:rgba(251,250,247,.96);backdrop-filter:blur(8px);padding:12px 0 14px;margin:0 0 30px;border-bottom:1px solid #e6e2da}
+.tabbar button.tabmenu{flex:0 0 auto;width:76px;padding:15px 0;font-size:19px;font-weight:700}
+.tabbar button,.tabbar a.tablink{flex:1;padding:15px 8px;font-size:21px;text-align:center;text-decoration:none;display:block;font-weight:700;border-radius:12px;border:1px solid #ded9d0;background:#fff;color:#5c574f;cursor:pointer;transition:.15s}
+.tabbar button.active{background:#b45309;border-color:#b45309;color:#fff}
+.tabbar a.tablink{background:#fff;color:#5c574f;border:1px solid #ded9d0;border-radius:12px;font-weight:700}
+h1 .stamp{font-size:clamp(13px,3.6vw,19px);font-weight:600;color:#8a857c;margin-left:10px;white-space:nowrap}
+.head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.head h1{flex:0 1 auto;margin-bottom:8px}
+.freelight{white-space:nowrap;font-size:15px;font-weight:700;color:#6b655c;display:flex;align-items:center;gap:8px;flex:0 0 auto;margin-left:auto}
+@media(max-width:600px){.freelight{flex:0 0 100%;justify-content:flex-end;margin:0 0 10px}}
+.freelight .led{width:15px;height:15px;border-radius:50%;display:inline-block}
+.freelight .led.on{background:#d32f2f;box-shadow:0 0 7px rgba(211,47,47,.7)}
+.freelight .led.off{background:#2e9e4f;box-shadow:0 0 7px rgba(46,158,79,.6)}
+.pricehead{background:#c62828;color:#ffeb3b;font-size:30px;font-weight:800;padding:14px 18px;border-radius:10px;margin:38px 0 16px;line-height:1.35}
+.pane{display:none}
+.pane.active{display:block}
+@media(max-width:700px){.toc ol{columns:1}.toc li{font-size:19px}.tabbar button,.tabbar a.tablink{font-size:16px;padding:12px 4px}.tabbar button.tabmenu{width:52px}}
+@media(prefers-color-scheme:dark){
+body{background:#16150f;color:#e8e4dc}
+.date{border-color:#2e2b24;color:#8b8578}
+h2{border-color:#f0a25a}h3{color:#c9c2b4}
+blockquote{background:#1f1d16;border-color:#3a3529;color:#b8b1a2}
+code,pre{background:#26231c;color:#e8e4dc}
+th{background:#26231c;border-color:#2e2b24}
+td{border-color:#2e2b24}
+tbody tr:nth-child(even){background:#1b1a14}
+a{color:#f0a25a}
+hr,.nav{border-color:#2e2b24}
+footer{color:#6b665b}
+.toc{background:#1f1d16;border-color:#2e2b24}
+.toc h2{color:#8b8578}
+.toc a{color:#efeae0}
+#fabPanel{background:#1f1d16;border-color:#2e2b24}
+#fabPanel a{color:#e8e4dc}
+#fabPanel a:hover{background:#26231c;color:#f0a25a}
+.tabbar{background:rgba(22,21,15,.96);border-color:#2e2b24}
+.tabbar button{background:#1f1d16;border-color:#2e2b24;color:#c9c2b4}
+}
+/* ===== 扁平活潑・陽光主題（覆寫原暖棕配色） ===== */
+html,body{background-color:#FFF9EC !important;color:#2B2A26 !important;
+  background-image:
+    radial-gradient(circle at 86% -8%, rgba(255,197,49,.28) 0, rgba(255,197,49,0) 42%),
+    radial-gradient(circle at 4% 2%, rgba(56,189,248,.12) 0, rgba(56,189,248,0) 34%),
+    radial-gradient(rgba(255,138,0,.075) 1.1px, transparent 1.2px);
+  background-size:auto, auto, 20px 20px;
+  background-attachment:fixed, fixed, fixed;
+  background-repeat:no-repeat, no-repeat, repeat}
+h1{color:#2B2A26 !important;font-weight:900}
+h2{border-left:8px solid #FFC531 !important;padding-left:14px;color:#2B2A26 !important}
+h3{color:#C2410C !important}
+th{background:#FFE9A8 !important;color:#2B2A26 !important}
+td{border-color:#FFE0B2 !important}
+blockquote{background:#FFF3C4 !important;border-color:#FFC531 !important;color:#2B2A26 !important}
+a{color:#C2410C !important}
+.date{color:#5C564C !important}
+.tabbar{background:rgba(255,249,236,.97) !important;border-color:#FFE0B2 !important}
+.tabbar button,.tabbar a.tablink{background:#fff !important;color:#2B2A26 !important;
+  border:3px solid #FFC531 !important;font-weight:900}
+.tabbar button.active{background:#FF8A00 !important;border-color:#FF8A00 !important;color:#fff !important}
+.navbtns a{background:#fff !important;color:#2B2A26 !important;border:3px solid #FFC531 !important}
+.navbtns a.alt{background:#FF8A00 !important;color:#fff !important;border-color:#FF8A00 !important}
+hr{border-color:#FFE0B2 !important}
+table{background:#fff !important}
+thead tr{background:#FFE9A8 !important}
+tbody tr{background:#fff !important}
+tbody tr:nth-child(even){background:#FFFBF0 !important}
+th{background:#FFE9A8 !important;color:#2B2A26 !important;border-color:#E0C98A !important}
+td{background:transparent !important;color:#2B2A26 !important;border-color:#E6D6AE !important}
+@media (prefers-color-scheme: dark){
+  html,body{background-color:#FFF9EC !important;color:#2B2A26 !important}
+  h1,h2,h3,p,li,td,th,div,span{color:#2B2A26 !important}
+  h3{color:#C2410C !important}
+  th{background:#FFE9A8 !important}
+  blockquote{background:#FFF3C4 !important;color:#2B2A26 !important}
+  .tabbar,.tabbar button,.tabbar a.tablink{background:#fff !important;color:#2B2A26 !important}
+  .tabbar button.active{background:#FF8A00 !important;color:#fff !important}
+  a{color:#C2410C !important}
+  table{background:#fff !important}
+  thead tr,tbody tr{background:#fff !important}
+  tbody tr:nth-child(even){background:#FFFBF0 !important}
+  th{background:#FFE9A8 !important;color:#2B2A26 !important;border-color:#E0C98A !important}
+  td{background:transparent !important;color:#2B2A26 !important;border-color:#E6D6AE !important}
+}
+</style>
+</head><body><div class="wrap">
+<h1>2026-11-09（一）投資日報</h1>
+<div class="date">2026-11-09 07:00</div>
+<div class="navbtns"><a href="../index.html">最新晨報</a><a class="alt" href="index.html">過去日報</a></div>
+<nav class="toc"><h2>目錄</h2><ol><li><a href="#sec1">⚡ 本週紅綠清單（來源：財經頻道/週報/2026-W45.md，11/08 產出）</a></li><li><a href="#sec2">① 一句話結論</a></li><li><a href="#sec3">② 國際與美股（11/06 週五美股收盤）</a></li><li><a href="#sec4">③ 台股覆盤（11/06 週五）</a></li><li><a href="#sec5">④ 頻道影片重點（近 24 小時筆記）</a></li><li><a href="#sec6">⑤ 我的持股動態</a></li><li><a href="#sec7">⑥ 觀察名單</a></li><li><a href="#sec8">⑦ SWOT（對「小賀目前的部位處境」）</a></li><li><a href="#sec9">⑧ 財經行事曆</a></li><li><a href="#sec10">⑨ 紀律提醒（讀 交易紀律.md）</a></li><li><a href="#sec11">⑩ 資料來源與限制</a></li></ol></nav>
+<blockquote>
+<p>產出：Pi 4 上的 Hermes｜知識庫 <code>~/vault</code>｜全程臺灣用字
+⚠️ <strong>本日為台股交易日（09:00 開盤），報價為 11/06（五）最後收盤</strong>。美股「昨夜」實為 <strong>11/06（五）美股盤</strong>（台灣時間 11/07 清晨收盤）。</p>
+</blockquote>
+<hr />
+<h2 id="sec1">⚡ 本週紅綠清單（來源：<code>財經頻道/週報/2026-W45.md</code>，11/08 產出）</h2>
+<p>🔴 <strong>本週看多 10 檔</strong> ／ 🟢 <strong>本週危機 7 項</strong></p>
+<ul>
+<li>🔴：台股大盤（救市）、Anthropic（ANT）、台光電 2383、富喬 1815、南亞科 2408、<strong>聯發科 2454</strong>、欣興 3037、臻鼎-KY 4958、旺宏 2337、台燿 6274</li>
+<li>🟢：台股大盤（股災）、大盤跌破季線＋外資賣超、四大巨頭財報爆冷、Anthropic 財務、AI 資本支出／系統性風險、川普／荷姆茲海峽、記憶體題材</li>
+<li>情緒趨勢：10/25 中性 → 10/28 偏多 → <strong>11/07 EP.178 偏空（危機詞 27／看多詞 8）</strong></li>
+</ul>
+<hr />
+<h2 id="sec2">① 一句話結論</h2>
+<p><strong>🔴 10 條 / 🟢 7 條。</strong> 上週五台股寫下史上第 4 大收盤跌點（-1,873 點），但同一晚美股回神、費半反彈 4.21%——<strong>今天是「救市 vs. 逃命波」的對決日</strong>；期貨夜盤、外資買賣超、國安基金是否開臨時會，是三個開盤關鍵。影片觀點（EP.178）明確把 <strong>11 月底定調為「最後逃生窗口」</strong>。</p>
+<hr />
+<h2 id="sec3">② 國際與美股（11/06 週五美股收盤）</h2>
+<table>
+<thead>
+<tr>
+<th>指數</th>
+<th>收盤</th>
+<th>漲跌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>道瓊</td>
+<td>51,285.73</td>
+<td><strong>-0.46%</strong>（-237.33）</td>
+</tr>
+<tr>
+<td>S&amp;P 500</td>
+<td>7,376.86</td>
+<td>+0.31%（+23.13）</td>
+</tr>
+<tr>
+<td>納斯達克</td>
+<td>24,579.42</td>
+<td><strong>+1.09%</strong>（+264.42）</td>
+</tr>
+<tr>
+<td>費城半導體</td>
+<td>—</td>
+<td><strong>+4.21%</strong>（前一日 -12.25%，2020/3 以來最大跌幅）</td>
+</tr>
+<tr>
+<td>VIX 恐慌指數</td>
+<td>25.58</td>
+<td>-9.23%</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>本週週線 <strong>三大指數全黑</strong>：道指 -0.9%、S&amp;P -2.7%、納指 -3.4%（後兩者四連跌）。</li>
+<li>個股：台積電 ADR <strong>+6%</strong>、AMD +11%、Intel +7%、NVIDIA +2.78%、Tesla +4.23%、Meta +0.84%、Google +0.78%；蘋果 -0.52%、微軟 -0.99%。</li>
+<li>觸發：市場憂民主黨期中選舉大勝→加強 AI／資料中心監管；10 月非農 +16.5 萬遠優預期、失業率回落 4.1%，12 月升息機率升至約 78%（LSEG）。</li>
+<li><strong>總經／商品</strong>：美 10 年期公債殖利率 4.859%（+0.02）；布蘭特原油 $97.9（-0.39%）；WTI $90.52；黃金 $4,065。</li>
+<li><strong>台幣</strong>：11/04 銀行間收盤 32.821（偏貶；10/30 為 32.478）。</li>
+</ul>
+<hr />
+<h2 id="sec4">③ 台股覆盤（11/06 週五）</h2>
+<ul>
+<li>加權指數 <strong>39,701.64，-1,873.08（-4.51%）</strong>，失守 4 萬點，<strong>史上收盤第 4 大跌點</strong>。</li>
+<li>盤中一度狂瀉 <strong>3,737.67 點</strong>（歷史最大盤中跌點），最低 37,837.05，終場收斂；留長下影線。</li>
+<li>成交值 <strong>1 兆 2,461 億元</strong>（爆量）。</li>
+<li>三大法人合計賣超 <strong>1,140.07 億元</strong>：外資及陸資賣超 <strong>911.88 億（連 7 賣，累計 7,056.59 億）</strong>、投信買超 266.58 億（連 19 買）、自營商賣超 494.76 億。</li>
+<li>集中＋櫃買合計 1,784 家下跌，<strong>跌停 54 家</strong>；外資台指期淨空單 99,930 口（逼近 10 萬口）。</li>
+<li><strong>週線</strong>：單週 -5,510.19 點、<strong>-12.19%</strong>，週線連 4 黑；三大法人週賣超 6,004.55 億（外資 5,243.76 億）。</li>
+<li><strong>政府動作</strong>：國安基金第 10 度進場護盤、金管會研議限空令；總統賴清德喊話「國人不要恐慌」。</li>
+</ul>
+<hr />
+<h2 id="sec5">④ 頻道影片重點（近 24 小時筆記）</h2>
+<h3>🔴 看多／加碼（影片觀點）</h3>
+<table>
+<thead>
+<tr>
+<th>標的</th>
+<th>理由</th>
+<th>⏱</th>
+<th>來源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>台股大盤</td>
+<td>限空令＋國安基金 standby，「下週還是滿有可能止跌」</td>
+<td>[00:51]</td>
+<td>Emmy EP.178</td>
+</tr>
+<tr>
+<td>Anthropic IPO（11 月底）</td>
+<td>華爾街為作帳會拉抬指數，是「短線機會」</td>
+<td>[01:29]</td>
+<td>Emmy EP.178</td>
+</tr>
+<tr>
+<td>AI 需求為真</td>
+<td>Anthropic Q3 單季營收 170 億美元</td>
+<td>[16:08]</td>
+<td>Emmy EP.178</td>
+</tr>
+<tr>
+<td>台光電 2383</td>
+<td>PCB 龍頭，2027–2030 大擴產，長線★★★★</td>
+<td>—</td>
+<td>一綺 10-28</td>
+</tr>
+<tr>
+<td>富喬 1815</td>
+<td>逢低布局 ★★★</td>
+<td>—</td>
+<td>一綺 10-28</td>
+</tr>
+<tr>
+<td>南亞科 2408</td>
+<td>記憶體領頭羊，「鬼故事出現時是較好切入點」</td>
+<td>—</td>
+<td>一綺 10-28</td>
+</tr>
+<tr>
+<td><strong>聯發科 2454</strong></td>
+<td>Anthropic IPO／Google TPU 題材，逢回布局 ★★★</td>
+<td>—</td>
+<td>一綺 10-28</td>
+</tr>
+<tr>
+<td>欣興 3037</td>
+<td>ABF 擴產需求明確，法人大摩目標價 1,775</td>
+<td>—</td>
+<td>一綺 10-28</td>
+</tr>
+</tbody>
+</table>
+<h3>🟢 危機／減碼（影片觀點）</h3>
+<table>
+<thead>
+<tr>
+<th>主題</th>
+<th>理由</th>
+<th>⏱</th>
+<th>來源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>台股單日崩近 4,000 點、台指期跌停</td>
+<td>「比 7 月股災更恐怖」</td>
+<td>[04:54]</td>
+<td>Emmy EP.178</td>
+</tr>
+<tr>
+<td>四大巨頭財報除 Google 全爆冷</td>
+<td>亞馬遜、微軟回到低成長節奏</td>
+<td>[02:30]</td>
+<td>Emmy EP.178</td>
+</tr>
+<tr>
+<td>Anthropic 財務</td>
+<td>季增 QoQ 放緩、仍在虧損；明年 1 月不爆雷、4 月也爆</td>
+<td>[16:08]</td>
+<td>Emmy EP.178</td>
+</tr>
+<tr>
+<td>川普／荷姆茲海峽</td>
+<td>不撤軍→通膨＋美債升息，恐 2008 式系統性危機</td>
+<td>[20:26]</td>
+<td>Emmy EP.178</td>
+</tr>
+<tr>
+<td><strong>Emmy 自述</strong></td>
+<td><strong>11 月底是最後逃生窗口，計畫賣到剩 10%、改短線</strong></td>
+<td>[21:24]</td>
+<td>Emmy EP.178</td>
+</tr>
+<tr>
+<td>大盤跌破季線＋外資賣超</td>
+<td>外資近 5 日大賣台積電、聯發科</td>
+<td>—</td>
+<td>一綺 10-25</td>
+</tr>
+<tr>
+<td>記憶體題材</td>
+<td>EPS 好已成共識，易被鬼故事清洗</td>
+<td>—</td>
+<td>一綺 10-28</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="sec6">⑤ 我的持股動態</h2>
+<blockquote>
+<p>⚠️ <strong>重要前提</strong>：2026-11-08（日）使用者回報「股票全賣了」，並執行 <code>alert.py --ack</code>。若確為全數出清，11/06 收盤價即為參考出場基準；<strong>實際成交價／成交日待補</strong>（見 <code>交易日誌/2026-11-08.md</code>）。</p>
+</blockquote>
+<ul>
+<li><strong>2330 台積電</strong>：11/06 收 <strong>2,135（-4.69%）</strong>（跌停價 2,020 開出、盤中高 2,195）。市場面——美股 ADR 反彈 +6%；Q3 EPS 29.43、Q4 指引 523–543 億美元、毛利率 65–67%；11/17 供應鏈管理論壇；傳「進軍 3D DRAM」傳聞（公司不評論）。影片面——EP.178 未提；一綺 10-25 指外資近 5 日賣超第一，10-28 僅「不用整天盯著看」。關鍵價位：跌停 2,015／年線為上檔壓力；本週累跌約 9.92%。</li>
+<li><strong>2454 聯發科</strong>：11/06 收 <strong>3,390（-2.02%）</strong>（開跌停 3,115 後強拉翻紅過）。市場面——Q3 營收高於財測高標 5%、Q4 財測季增 25–32%、2026 AI ASIC 營收可望翻倍破 20 億美元。影片面——一綺 10-28「逢回布局 ★★★」（Anthropic IPO／Google TPU 題材）；EP.178 未提。關鍵價位：3,115 跌停／3,000 整數關。</li>
+<li><strong>8299 群聯</strong>：11/06 收 <strong>1,500（-3.85%）</strong>（低 1,405 跌停價）。市場面——11 月自結 EPS <strong>7.9 元</strong>、年增 674%、單月營收 70.22 億（NAND 報價續漲）。影片面——三集主文皆未點名。關鍵價位：跌停 1,405／1,500 整數關。</li>
+</ul>
+<hr />
+<h2 id="sec7">⑥ 觀察名單</h2>
+<p><code>觀察名單/00_觀察名單.md</code> 目前僅列三檔持股（2330／2454／8299），無新增候選。影片紅標出現的一綺 10-28 名單（台光電 2383、富喬 1815、南亞科 2408、欣興 3037）可列入追蹤，但<strong>空頭環境下不建議此時加碼</strong>（見 ⑨）。</p>
+<hr />
+<h2 id="sec8">⑦ SWOT（對「小賀目前的部位處境」）</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>內部</th>
+<th>外部</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S 優勢</strong></td>
+<td>已出清、現金滿手，無被迫停損壓力；資訊鏈完整（盤中警報＋頻道歸檔）</td>
+<td>國安基金護盤、限空令可提供短線止穩</td>
+</tr>
+<tr>
+<td><strong>W 劣勢</strong></td>
+<td>11/06 崩跌中仍抱股（EP.177 已提示退場卻留倉）；成本／股數未登錄，無法算停損</td>
+<td>外資連 7 賣、期貨淨空單近 10 萬口，籌碼尚未沉澱</td>
+</tr>
+<tr>
+<td><strong>O 機會</strong></td>
+<td>美股費半反彈 +4.2%、台積電 ADR +6%，11/09 有機會開高；11 月底 Anthropic IPO 作帳行情</td>
+<td>記憶體（8299／南亞科）基本面強、可等落底再分批</td>
+</tr>
+<tr>
+<td><strong>T 威脅</strong></td>
+<td>追高「逃命波」反被套；把「救市」誤當買點</td>
+<td>AI 監管政策、明年 1／4 月財報爆雷點、荷姆茲海峽地緣風險</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="sec9">⑧ 財經行事曆</h2>
+<ul>
+<li><strong>11/09（一）</strong>：台股 09:00 開盤（關鍵：台指期夜盤、費半、外資買賣超、國安基金臨時會）；中國 10 月 CPI／PPI；美國 9 月批發庫存。</li>
+<li><strong>11/09 台股法說</strong>：永豐金、來頡、富邦媒等（法說會行事曆）。</li>
+<li><strong>11/10（二）</strong>：反彈是否帶量、權值股（2330／2454／8299）是否領漲。</li>
+<li><strong>11/11（三）</strong>：外資現貨是否轉買、期貨淨空單是否回補。</li>
+<li><strong>11/17（一）</strong>：台積電供應鏈管理論壇。</li>
+<li><strong>11 月底</strong>：Anthropic IPO（影片觀點：可能是最後逃生窗口）。</li>
+</ul>
+<hr />
+<h2 id="sec10">⑨ 紀律提醒（讀 <code>交易紀律.md</code>）</h2>
+<p><strong>與 EP.178／週報綠標直接衝突之處：</strong></p>
+<ol>
+<li><strong>「大盤跌破季線且外資連 3 日大賣 → 總持股降到 3 成以下」</strong>：條件已完全成立（外資連 7 賣、跌破季線）。→ 出清持股<strong>與紀律一致</strong>，不是恐慌。</li>
+<li><strong>「不攤平虧損」vs. 影片的「逢低布局／鬼故事是切入點」</strong>：一綺對南亞科、富喬給逢低★★★；空頭下除非「趨勢／量能／催化劑」三條件同時成立，否則<strong>不買</strong>。</li>
+<li><strong>「不用融資、不追漲停、跌破 -7% 無條件賣」</strong>：Emmy 自述只賣 40%、剩 60% 腳麻待逃——是<strong>部位控管反例</strong>，不要模仿。</li>
+<li><strong>小時（空手）也是部位</strong>：EP.178 說 11 月底是最後逃生窗口；今天若開高反彈，<strong>優先確認是「有量的止穩」還是「沒量的逃命波」</strong>，不要因為跌深就 All-in。</li>
+</ol>
+<hr />
+<h2 id="sec11">⑩ 資料來源與限制</h2>
+<ul>
+<li>即時報價：<code>http://127.0.0.1:8787/api/quotes</code>（TWSE，source=twse；<strong>11/06 最後收盤</strong>）。</li>
+<li>頻道：<code>財經頻道/Emmy追劇時間/EP.178…</code>、<code>財經頻道/一綺聊股/2026-10-28…</code>、<code>財經頻道/週報/2026-W45.md</code>（皆引用既有筆記，未重抓）。</li>
+<li>市場：經濟日報、風傳媒、大紀元、中央社、RTHK、Business Standard、渣打日報、鉅亨網、兆豐／央行匯率頁。</li>
+<li><strong>限制</strong>：①美股數字為 11/06 收盤，部分媒體 S&amp;P 收在 7,376.86、部分 7,378.43，已取較多來源一致值。②持股成本／股數空白，無法計算個人停損點。③11/8「全數出清」僅為口述，成交價未回報。④影片所述皆為<strong>影片觀點</strong>，非事實保證。</li>
+<li><strong>警報狀態</strong>：<code>危機警報 盤中每5分</code>、<code>危機警報 影片檢查22:20</code> 排程皆<strong>已啟用且在跑</strong>（今日 07:01 有寫入 history）。</li>
+</ul>
+
+<div class="nav"><a href="index.html">← 回日報列表</a></div>
+<footer>由 Hermes Agent 自動產生</footer>
+</div><div id="fab">
+<button id="fabMenu" aria-label="目錄">☰</button>
+<button id="fabTop" aria-label="回頂端">↑</button>
+</div>
+<div id="fabPanel"><a href="#sec1">⚡ 本週紅綠清單（來源：財經頻道/週報/2026-W45.md，11/08 產出）</a><a href="#sec2">① 一句話結論</a><a href="#sec3">② 國際與美股（11/06 週五美股收盤）</a><a href="#sec4">③ 台股覆盤（11/06 週五）</a><a href="#sec5">④ 頻道影片重點（近 24 小時筆記）</a><a href="#sec6">⑤ 我的持股動態</a><a href="#sec7">⑥ 觀察名單</a><a href="#sec8">⑦ SWOT（對「小賀目前的部位處境」）</a><a href="#sec9">⑧ 財經行事曆</a><a href="#sec10">⑨ 紀律提醒（讀 交易紀律.md）</a><a href="#sec11">⑩ 資料來源與限制</a></div>
+<script>
+(function(){
+  var btn=document.getElementById('fabMenu'),p=document.getElementById('fabPanel');
+  btn.addEventListener('click',function(){p.classList.toggle('open');});
+  document.getElementById('fabTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  p.addEventListener('click',function(e){if(e.target.tagName==='A')p.classList.remove('open');});
+  document.addEventListener('click',function(e){if(!p.contains(e.target)&&e.target!==btn)p.classList.remove('open');});
+})();
+</script></body></html>
