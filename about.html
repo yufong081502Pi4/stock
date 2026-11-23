@@ -155,6 +155,31 @@ td{background:transparent !important;color:#2B2A26 !important;border-color:#E6D6
   td{background:transparent !important;color:#2B2A26 !important;border-color:#E6D6AE !important}
 }
 
+
+/* ===== 首頁資訊區塊 ===== */
+.quicknav{{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 14px}}
+.quicknav a{{display:inline-block;padding:9px 14px;border-radius:11px;background:#fff;
+  border:2px solid var(--sun);color:var(--ink) !important;text-decoration:none !important;
+  font-size:18px;font-weight:900}}
+details.sec{{margin:14px 0 0;background:#fff;border:3px solid #FFE0B2;border-radius:16px;
+  padding:0 14px 4px}}
+details.sec>summary{{cursor:pointer;list-style:none;padding:14px 2px 12px;font-size:26px;
+  font-weight:900;color:var(--ink);line-height:1.25}}
+details.sec>summary::-webkit-details-marker{{display:none}}
+details.sec>summary:before{{content:"▸ ";color:var(--orange);font-weight:900}}
+details.sec[open]>summary:before{{content:"▾ "}}
+details.sec>summary small{{display:block;font-size:15px;font-weight:700;color:var(--sub);
+  margin-top:3px}}
+.secbody{{padding:2px 2px 12px;font-size:19px;line-height:1.6}}
+.secbody h2{{font-size:24px;margin:18px 0 8px;padding:8px 10px;border-radius:10px;
+  background:#FFF3D6;border-left:7px solid var(--orange);color:var(--ink)}}
+.secbody h3{{font-size:21px;margin:14px 0 6px;color:#8A3B00}}
+.secbody table{{width:100%;border-collapse:collapse;margin:8px 0;font-size:18px}}
+.secbody th{{background:#FFF3D6;border:1px solid #E8D9B8;padding:7px 8px;text-align:left}}
+.secbody td{{border:1px solid #EFE4CC;padding:7px 8px}}
+.secbody ul{{padding-left:22px}}
+.secbody li{{margin:5px 0}}
+
 /* ===== 扁平活潑・陽光主題 ===== */
 body{background:var(--paper) !important;color:var(--ink) !important;
   font-family:-apple-system,"PingFang TC","Noto Sans TC",system-ui,sans-serif}
@@ -254,6 +279,16 @@ html[data-theme="wire"] .item{border-bottom:1px dashed #4E8F68 !important}
 html[data-theme="wire"] .card h3{border-left:3px solid #8CFFC0 !important;padding-left:10px !important}
 html[data-theme="wire"] .abouttabs button:not(.on){color:#8CFFC0 !important;border-color:#4E8F68 !important}
 html[data-theme="wire"] .prog-t,html[data-theme="wire"] .summary-note{color:#EFFFF4 !important}
+html[data-theme="wire"] .tabbar{background:#000 !important;border-color:#4E8F68 !important}
+html[data-theme="wire"] .tabbar button,html[data-theme="wire"] .tabbar a.tablink{
+  background:transparent !important;color:#8CFFC0 !important;border:2px solid #4E8F68 !important}
+html[data-theme="wire"] .tabbar button.active{
+  background:transparent !important;color:#FFFFFF !important;border:2px solid #FFFFFF !important;
+  outline:1px solid #FFFFFF !important;outline-offset:-5px}
+html[data-theme="wire"] .navbtns a,html[data-theme="wire"] .navbtns a.alt{
+  background:transparent !important;color:#8CFFC0 !important;border:2px solid #8CFFC0 !important}
+html[data-theme="wire"] .fab,html[data-theme="wire"] .gotop{background:transparent !important;
+  color:#8CFFC0 !important;border:2px solid #8CFFC0 !important}
 html[data-theme="wire"] hr,html[data-theme="wire"] section.about{border-color:#8CFFC0 !important}
 html[data-theme="wire"] .theme-bar{background:#000 !important;border-color:#8CFFC0 !important}
 html[data-theme="wire"] .theme-bar .theme-lb{color:#8CFFC0 !important}
