@@ -216,6 +216,9 @@ a{color:#C2410C !important}
 .theme-bar .theme-lb{font-size:13px;font-weight:800;color:#5C564C}
 .theme-bar button{font:inherit;font-size:14px;font-weight:800;padding:6px 10px;border-radius:8px;
   border:2px solid #C9C2B4;background:#fff;color:#2B2A26;cursor:pointer}
+.theme-bar .theme-toggle{display:inline-block}
+.theme-bar .theme-lb,.theme-bar button[data-th]{display:none}
+.theme-bar.open .theme-lb,.theme-bar.open button[data-th]{display:inline-block}
 .theme-bar button.on{background:#2B2A26;color:#fff;border-color:#2B2A26}
 body{padding-bottom:86px !important}
 
@@ -366,6 +369,9 @@ font-size:20px;line-height:1.55;margin-bottom:12px;color:var(--ink)}
 .theme-bar .theme-lb{font-size:13px;font-weight:800;color:#5C564C}
 .theme-bar button{font:inherit;font-size:14px;font-weight:800;padding:6px 10px;border-radius:8px;
   border:2px solid #C9C2B4;background:#fff;color:#2B2A26;cursor:pointer}
+.theme-bar .theme-toggle{display:inline-block}
+.theme-bar .theme-lb,.theme-bar button[data-th]{display:none}
+.theme-bar.open .theme-lb,.theme-bar.open button[data-th]{display:inline-block}
 .theme-bar button.on{background:#2B2A26;color:#fff;border-color:#2B2A26}
 body{padding-bottom:86px !important}
 
@@ -723,26 +729,30 @@ window.addEventListener('load',function(){
 </script>
 
 <div class="theme-bar" id="themeBar">
-  <span class="theme-lb">佈景</span>
+  <button class="theme-toggle" onclick="toggleThemeBar()" title="切換佈景">🎨 佈景</button>
   <button data-th="sunny" onclick="setTheme('sunny')">陽光</button>
   <button data-th="wire" onclick="setTheme('wire')">線框</button>
   <button data-th="dark" onclick="setTheme('dark')">深色</button>
   <button data-th="mono" onclick="setTheme('mono')">黑白</button>
 </div>
 <script>
+function toggleThemeBar(){
+  document.getElementById('themeBar').classList.toggle('open');
+}
 function setTheme(t){
   document.documentElement.setAttribute('data-theme',t);
   try{localStorage.setItem('xiaohe_theme',t);}catch(e){}
-  document.querySelectorAll('.theme-bar button').forEach(function(b){
+  document.querySelectorAll('.theme-bar button[data-th]').forEach(function(b){
     b.classList.toggle('on', b.dataset.th===t);
   });
+  document.getElementById('themeBar').classList.remove('open');
 }
 (function(){
   var t='sunny';
   try{ t=localStorage.getItem('xiaohe_theme')||'sunny'; }catch(e){}
   document.documentElement.setAttribute('data-theme',t);
   document.addEventListener('DOMContentLoaded',function(){
-    document.querySelectorAll('.theme-bar button').forEach(function(b){
+    document.querySelectorAll('.theme-bar button[data-th]').forEach(function(b){
       b.classList.toggle('on', b.dataset.th===t);
     });
   });
@@ -751,26 +761,30 @@ function setTheme(t){
 <p style="margin-top:28px"><a href="index.html">← 回首頁</a></p>
 
 <div class="theme-bar" id="themeBar">
-  <span class="theme-lb">佈景</span>
+  <button class="theme-toggle" onclick="toggleThemeBar()" title="切換佈景">🎨 佈景</button>
   <button data-th="sunny" onclick="setTheme('sunny')">陽光</button>
   <button data-th="wire" onclick="setTheme('wire')">線框</button>
   <button data-th="dark" onclick="setTheme('dark')">深色</button>
   <button data-th="mono" onclick="setTheme('mono')">黑白</button>
 </div>
 <script>
+function toggleThemeBar(){
+  document.getElementById('themeBar').classList.toggle('open');
+}
 function setTheme(t){
   document.documentElement.setAttribute('data-theme',t);
   try{localStorage.setItem('xiaohe_theme',t);}catch(e){}
-  document.querySelectorAll('.theme-bar button').forEach(function(b){
+  document.querySelectorAll('.theme-bar button[data-th]').forEach(function(b){
     b.classList.toggle('on', b.dataset.th===t);
   });
+  document.getElementById('themeBar').classList.remove('open');
 }
 (function(){
   var t='sunny';
   try{ t=localStorage.getItem('xiaohe_theme')||'sunny'; }catch(e){}
   document.documentElement.setAttribute('data-theme',t);
   document.addEventListener('DOMContentLoaded',function(){
-    document.querySelectorAll('.theme-bar button').forEach(function(b){
+    document.querySelectorAll('.theme-bar button[data-th]').forEach(function(b){
       b.classList.toggle('on', b.dataset.th===t);
     });
   });
