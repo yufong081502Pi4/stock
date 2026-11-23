@@ -3,10 +3,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
-<meta name="theme-color" content="#fbfaf7">
+<meta name="theme-color" content="#FFF9EC">
 <title>小賀的投資筆記</title>
-<style>:root{color-scheme:light}
-html,body{background:#fbfaf7;color:#1a1a1a}
+<style>
+:root{color-scheme:light;
+  --sun:#FFC531; --orange:#FF8A00; --coral:#FF6B6B; --sky:#38BDF8;
+  --mint:#34D399; --grape:#A78BFA; --ink:#2B2A26; --paper:#FFF9EC; --sub:#6B6659;}
+html,body{background:var(--paper) !important;color:var(--ink) !important}
 *{box-sizing:border-box}
 body{margin:0;background:#fbfaf7;color:#1a1a1a;font-family:-apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;font-size:20px;line-height:1.9;-webkit-font-smoothing:antialiased}
 .wrap{max-width:900px;margin:0 auto;padding:60px 28px 110px}
@@ -96,26 +99,41 @@ footer{color:#6b665b}
 .tabbar{background:rgba(22,21,15,.96);border-color:#2e2b24}
 .tabbar button{background:#1f1d16;border-color:#2e2b24;color:#c9c2b4}
 }
-/* 手機深色模式也維持淺色版面：白底深字，避免灰字配黑底看不清 */
+/* ===== 扁平活潑・陽光主題 ===== */
+body{background:var(--paper) !important;color:var(--ink) !important;
+  font-family:-apple-system,"PingFang TC","Noto Sans TC",system-ui,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:26px 18px 60px}
+h1{color:var(--ink) !important;font-size:34px;font-weight:900;letter-spacing:.5px;
+  margin:0 0 6px;border:0 !important;padding:0 !important}
+h1:before{content:"☀️ "}
+.date{color:var(--sub) !important;font-size:17px;font-weight:700;margin-bottom:26px}
+.big{display:block;max-width:680px;margin:0 auto 16px;padding:28px 20px;border-radius:20px;
+  background:var(--orange);color:#fff !important;text-decoration:none;font-size:27px;
+  font-weight:900;text-align:center;border:0;letter-spacing:.5px}
+.big small{display:block;font-size:16px;font-weight:700;opacity:.95;margin-top:8px}
+.big.blue{background:var(--sky)}
+.big.mint{background:var(--mint)}
+.big.sun{background:var(--sun);color:#3A2B00 !important}
+.big.grape{background:var(--grape);color:#fff !important}
+section.about{margin-top:52px;padding-top:24px;border-top:4px dashed var(--sun) !important}
+section.about h1{font-size:30px}
+.about-card{display:block;padding:24px;border-radius:20px;background:#fff !important;
+  border:3px solid var(--grape) !important;text-decoration:none;color:var(--ink) !important;
+  font-size:21px;font-weight:800}
+.about-card small{display:block;font-weight:600;font-size:16px;color:var(--sub) !important;margin-top:8px}
+a{color:#C2410C !important}
+/* 深色模式也維持陽光亮色 */
 @media (prefers-color-scheme: dark){
-  html,body{background:#fbfaf7 !important;color:#1a1a1a !important}
-  h1{color:#1a1a1a !important}
-    .date{color:#4a443c !important;border-color:#e6e2da !important}
-  .big{background:#b45309 !important;color:#fff !important}
-  .big small{color:#fff !important}
-  .big.alt{background:#fff !important;color:#1a1a1a !important;border-color:#8a8378 !important}
-  .big.alt small{color:#4a443c !important}
-  section.about{border-color:#b45309 !important}
-  .about-card{background:#f4f1ea !important;color:#1a1a1a !important;border-color:#d6cfc1 !important}
-  .about-card small{color:#4a443c !important}
-  a{color:#8c3f00 !important}
+  html,body{background:var(--paper) !important;color:var(--ink) !important}
+  h1{color:var(--ink) !important}
+  .date{color:var(--sub) !important}
+  .big{background:var(--orange) !important;color:#fff !important}
+  .big.blue{background:var(--sky) !important}
+  .big.mint{background:var(--mint) !important}
+  .big.sun{background:var(--sun) !important;color:#3A2B00 !important}
+  .big.grape{background:var(--grape) !important;color:#fff !important}
+  .about-card{background:#fff !important;color:var(--ink) !important;border-color:var(--grape) !important}
 }
-.big{display:block;max-width:680px;margin:0 auto 18px;padding:26px 20px;border-radius:16px;background:#b45309;color:#fff;text-decoration:none;font-size:26px;font-weight:800;text-align:center}
-.big.alt{background:#fff;color:#3d3830;border:2px solid #b9b2a5}
-.big small{display:block;font-size:15px;font-weight:600;opacity:.9;margin-top:6px}
-section.about{margin-top:56px;padding-top:26px;border-top:3px solid #b45309}
-.about-card{display:block;padding:22px;border-radius:14px;background:#f4f1ea;border:1px solid #e6e2da;text-decoration:none;color:#1a1a1a;font-size:21px;font-weight:700}
-.about-card small{display:block;font-weight:500;font-size:15px;color:#7a7469;margin-top:8px}
 </style>
 </head><body><div class="wrap">
 
@@ -123,12 +141,12 @@ section.about{margin-top:56px;padding-top:26px;border-top:3px solid #b45309}
 <div class="date">固定網址，不會自動跳轉</div>
 
 <a class="big" href="reports/2026-11-23-投資日報.html">最新晨報<small>2026-11-23</small></a>
-<a class="big alt" href="reports/index.html">舊文<small>過去所有晨報</small></a>
-<a class="big alt" href="reports/2026-11-22-投資日報.html">前一份晨報<small>2026-11-22-投資日報</small></a>
+<a class="big blue" href="reports/index.html">舊文<small>過去所有晨報</small></a>
+<a class="big mint" href="reports/2026-11-22-投資日報.html">前一份晨報<small>2026-11-22-投資日報</small></a>
 
 <section class="about" id="about">
-<h1 style="font-size:30px">關於我</h1>
-<a class="about-card" href="about.html">比價商品與生活筆記 → 點我看關於我頁面
+<h1>關於我</h1>
+<a class="about-card" href="about.html">比價、行事曆、程式庫 → 點我看關於我頁面
 <small>比價：Even G2（≤15,000）、JNA-202 PRO（1,200～1,500）；每日更新</small></a>
 </section>
 
