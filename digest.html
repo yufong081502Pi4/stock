@@ -183,7 +183,7 @@ body{background:var(--paper) !important;color:var(--ink) !important;
 .wrap{max-width:760px;margin:0 auto;padding:16px 14px 36px}
 h1{color:var(--ink) !important;font-size:31px;font-weight:900;letter-spacing:.5px;
   margin:0 0 2px;border:0 !important;padding:0 !important;line-height:1.25}
-h1:before{content:"☀️ "}
+h1:before{content:""}
 .date{color:var(--sub) !important;font-size:16px;font-weight:700;margin:0 0 12px;line-height:1.3}
 .big{display:block;max-width:680px;margin:0 auto 10px;padding:13px 16px;border-radius:14px;
   background:var(--orange);color:#fff !important;text-decoration:none;font-size:30px;
@@ -238,6 +238,7 @@ html[data-theme="sunny"], html:not([data-theme]){
   --bg:#FAFAF8; --bg2:#F1F1EE; --fg:#1C1C1A; --muted:#5A5A54;
   --card:#FFFFFF; --line:#D8D8D2; --accent:#B23A00;
   --btn-bg:#E86A00; --btn-fg:#FFFFFF; --btn-line:#E86A00;
+  --btn2:#0E7490; --btn3:#0F766E; --btn4:#6D28D9;
   --chip-bg:#F4F4F1; --chip-fg:#1C1C1A; --chip-line:#C9C9C2;
   --stage-bg:#101010; --stage-fg:#9DFF6A; --stage-muted:#D6CEBC;
   --th-bg:#EFEFEC; --th-fg:#1C1C1A; --td-line:#E2E2DC;
@@ -246,6 +247,7 @@ html[data-theme="wire"]{
   --bg:#000000; --bg2:#000000; --fg:#8CFFC0; --muted:#63B98A;
   --card:#000000; --line:#8CFFC0; --accent:#FFFFFF;
   --btn-bg:#000000; --btn-fg:#EFFFF4; --btn-line:#8CFFC0;
+  --btn2:#000000; --btn3:#000000; --btn4:#000000;
   --chip-bg:#000000; --chip-fg:#8CFFC0; --chip-line:#4E8F68;
   --stage-bg:#000000; --stage-fg:#EFFFF4; --stage-muted:#A8E6C4;
   --th-bg:#000000; --th-fg:#EFFFF4; --td-line:#4E8F68;
@@ -254,6 +256,7 @@ html[data-theme="dark"]{
   --bg:#0E1113; --bg2:#1B2226; --fg:#EDF1F3; --muted:#A9B4B9;
   --card:#171B1E; --line:#465258; --accent:#FFC061;
   --btn-bg:#2A363C; --btn-fg:#FFD79A; --btn-line:#FFB020;
+  --btn2:#22303A; --btn3:#22322C; --btn4:#2C2438;
   --chip-bg:#1D2529; --chip-fg:#EDF1F3; --chip-line:#5C6B72;
   --stage-bg:#050708; --stage-fg:#7CF29B; --stage-muted:#A7B8AD;
   --th-bg:#20282C; --th-fg:#FFD79A; --td-line:#3A454B;
@@ -262,6 +265,7 @@ html[data-theme="mono"]{
   --bg:#FFFFFF; --bg2:#F1F1F1; --fg:#000000; --muted:#333333;
   --card:#FFFFFF; --line:#000000; --accent:#000000;
   --btn-bg:#FFFFFF; --btn-fg:#000000; --btn-line:#000000;
+  --btn2:#FFFFFF; --btn3:#FFFFFF; --btn4:#FFFFFF;
   --chip-bg:#FFFFFF; --chip-fg:#000000; --chip-line:#000000;
   --stage-bg:#FFFFFF; --stage-fg:#000000; --stage-muted:#333333;
   --th-bg:#ECECEC; --th-fg:#000000; --td-line:#000000;
@@ -344,6 +348,13 @@ html[data-theme] .tabbar a.active, html[data-theme] .fab, html[data-theme] .goto
   background-color:var(--btn-bg) !important; color:var(--btn-fg) !important;
   border:2px solid var(--btn-line) !important;
 }
+
+html[data-theme] .big.blue{ background-color:var(--btn2) !important; }
+html[data-theme] .big.mint{ background-color:var(--btn3) !important; }
+html[data-theme] .big.grape{ background-color:var(--btn4) !important; }
+html[data-theme] .aboutbtn.b2{ background-color:var(--btn2) !important; }
+html[data-theme] .aboutbtn.b3{ background-color:var(--btn3) !important; }
+html[data-theme] .aboutbtn.b4{ background-color:var(--btn4) !important; }
 
 /* ============================================================
    ⑤ 倒數計時器（程式庫）：狀態列／輸入框／按鈕／大數字
@@ -437,7 +448,7 @@ html[data-theme] .theme-bar button.on, .theme-bar button.on{
 body{padding-bottom:86px !important}
 </style>
 </head><body><div class="wrap">
-<h1>📇 頻道摘要</h1><div class="date">六台最新一期（名稱／內容／評論／最近貼文）</div><div class="secbody"><blockquote>
+<h1>頻道摘要</h1><div class="date">六台最新一期（名稱／內容／評論／最近貼文）</div><div class="secbody"><blockquote>
 <p>每個頻道固定四欄：<strong>名稱／內容／評論／最近貼文</strong>
 最後更新：2026-11-24 04:47（台北）
 各頻道自己的版本：<code>財經頻道/&lt;頻道&gt;/頻道摘要.md</code></p>
