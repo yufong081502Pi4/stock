@@ -171,6 +171,8 @@ html[data-theme] .tm-chip.on{
   border-color:var(--btn-line) !important;
 }
 html[data-theme] .tm-lb{ color:var(--fg) !important; }
+html[data-theme] .tm-sub, html[data-theme] .tm-stage a{ color:var(--stage-muted) !important; }
+html[data-theme] a[href*="calendar.google.com"]{ color:#FFFFFF !important; }
 
 /* ============================================================
    ⑥ 線框專屬：無填色感（純黑底＋亮線）
@@ -255,6 +257,33 @@ body{padding-bottom:86px !important}
   <button data-th="mono" onclick="setTheme('mono')">黑白</button>
 </div>
 <script>
+function __lum(c){const f=v=>{v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4)};return 0.2126*f(c.r)+0.7152*f(c.g)+0.0722*f(c.b);}
+function __rgb(str){const m=str.match(/rgba?\(([^)]+)\)/);if(!m)return null;const p=m[1].split(',').map(Number);return {r:p[0],g:p[1],b:p[2],a:p.length>3?p[3]:1};}
+function fixInlineContrast(){
+  document.querySelectorAll('div,span,p,td,th,li').forEach(function(el){
+    var bg=__rgb(getComputedStyle(el).backgroundColor);
+    if(!bg||bg.a<0.5) return;
+    var L=__lum(bg);
+    if(L>0.55){                                   // 淺底 → 文字必須深
+      var fg=__rgb(getComputedStyle(el).color);
+      if(!fg||__lum(fg)>0.45||el.querySelector('a')){
+        el.style.setProperty('color','#111111','important');
+        el.querySelectorAll('a,span,b,strong').forEach(function(k){
+          k.style.setProperty('color','#111111','important');
+        });
+      }
+    } else if(L<0.18){                            // 深底 → 文字必須亮
+      var fg2=__rgb(getComputedStyle(el).color);
+      if(!fg2||__lum(fg2)<0.35){
+        el.style.setProperty('color','#FFFFFF','important');
+        el.querySelectorAll('a,span,b,strong').forEach(function(k){
+          k.style.setProperty('color','#FFFFFF','important');
+        });
+      }
+    }
+  });
+}
+
 function toggleThemeBar(){document.getElementById('themeBar').classList.toggle('open');}
 function setTheme(t){
   document.documentElement.setAttribute('data-theme',t);
@@ -263,6 +292,7 @@ function setTheme(t){
     b.classList.toggle('on', b.dataset.th===t);
   });
   document.getElementById('themeBar').classList.remove('open');
+  if(window.fixInlineContrast) fixInlineContrast();
 }
 (function(){
   var t='sunny';
@@ -272,6 +302,7 @@ function setTheme(t){
     document.querySelectorAll('.theme-bar button[data-th]').forEach(function(b){
       b.classList.toggle('on', b.dataset.th===t);
     });
+    if(window.fixInlineContrast) fixInlineContrast();
   });
 })();
 </script>
