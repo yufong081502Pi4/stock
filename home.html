@@ -155,6 +155,31 @@ td{background:transparent !important;color:#2B2A26 !important;border-color:#E6D6
   td{background:transparent !important;color:#2B2A26 !important;border-color:#E6D6AE !important}
 }
 
+
+/* ===== 首頁資訊區塊 ===== */
+.quicknav{{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 14px}}
+.quicknav a{{display:inline-block;padding:9px 14px;border-radius:11px;background:#fff;
+  border:2px solid var(--sun);color:var(--ink) !important;text-decoration:none !important;
+  font-size:18px;font-weight:900}}
+details.sec{{margin:14px 0 0;background:#fff;border:3px solid #FFE0B2;border-radius:16px;
+  padding:0 14px 4px}}
+details.sec>summary{{cursor:pointer;list-style:none;padding:14px 2px 12px;font-size:26px;
+  font-weight:900;color:var(--ink);line-height:1.25}}
+details.sec>summary::-webkit-details-marker{{display:none}}
+details.sec>summary:before{{content:"▸ ";color:var(--orange);font-weight:900}}
+details.sec[open]>summary:before{{content:"▾ "}}
+details.sec>summary small{{display:block;font-size:15px;font-weight:700;color:var(--sub);
+  margin-top:3px}}
+.secbody{{padding:2px 2px 12px;font-size:19px;line-height:1.6}}
+.secbody h2{{font-size:24px;margin:18px 0 8px;padding:8px 10px;border-radius:10px;
+  background:#FFF3D6;border-left:7px solid var(--orange);color:var(--ink)}}
+.secbody h3{{font-size:21px;margin:14px 0 6px;color:#8A3B00}}
+.secbody table{{width:100%;border-collapse:collapse;margin:8px 0;font-size:18px}}
+.secbody th{{background:#FFF3D6;border:1px solid #E8D9B8;padding:7px 8px;text-align:left}}
+.secbody td{{border:1px solid #EFE4CC;padding:7px 8px}}
+.secbody ul{{padding-left:22px}}
+.secbody li{{margin:5px 0}}
+
 /* ===== 扁平活潑・陽光主題 ===== */
 body{background:var(--paper) !important;color:var(--ink) !important;
   font-family:-apple-system,"PingFang TC","Noto Sans TC",system-ui,sans-serif}
@@ -254,6 +279,16 @@ html[data-theme="wire"] .item{border-bottom:1px dashed #4E8F68 !important}
 html[data-theme="wire"] .card h3{border-left:3px solid #8CFFC0 !important;padding-left:10px !important}
 html[data-theme="wire"] .abouttabs button:not(.on){color:#8CFFC0 !important;border-color:#4E8F68 !important}
 html[data-theme="wire"] .prog-t,html[data-theme="wire"] .summary-note{color:#EFFFF4 !important}
+html[data-theme="wire"] .tabbar{background:#000 !important;border-color:#4E8F68 !important}
+html[data-theme="wire"] .tabbar button,html[data-theme="wire"] .tabbar a.tablink{
+  background:transparent !important;color:#8CFFC0 !important;border:2px solid #4E8F68 !important}
+html[data-theme="wire"] .tabbar button.active{
+  background:transparent !important;color:#FFFFFF !important;border:2px solid #FFFFFF !important;
+  outline:1px solid #FFFFFF !important;outline-offset:-5px}
+html[data-theme="wire"] .navbtns a,html[data-theme="wire"] .navbtns a.alt{
+  background:transparent !important;color:#8CFFC0 !important;border:2px solid #8CFFC0 !important}
+html[data-theme="wire"] .fab,html[data-theme="wire"] .gotop{background:transparent !important;
+  color:#8CFFC0 !important;border:2px solid #8CFFC0 !important}
 html[data-theme="wire"] hr,html[data-theme="wire"] section.about{border-color:#8CFFC0 !important}
 html[data-theme="wire"] .theme-bar{background:#000 !important;border-color:#8CFFC0 !important}
 html[data-theme="wire"] .theme-bar .theme-lb{color:#8CFFC0 !important}
@@ -309,6 +344,651 @@ html[data-theme="mono"] .theme-bar button.on{background:#000 !important;color:#f
 <a class="big" href="reports/2026-11-23-投資日報.html">最新晨報<small>2026-11-23</small></a>
 <a class="big blue" href="reports/index.html">舊文<small>過去所有晨報</small></a>
 <a class="big mint" href="reports/2026-11-22-投資日報.html">前一份晨報<small>2026-11-22-投資日報</small></a>
+
+<div class="quicknav">
+  <a href="#digest">📇 頻道摘要</a><a href="#cal">📅 行事曆</a><a href="#news">📰 消息面</a>
+  <a href="#lights">🚦 燈號</a><a href="#disc">📏 紀律</a>
+</div>
+<details class="sec" id="digest" open><summary>📇 頻道摘要｜六台最新一期<small>Emmy追劇・一綺聊股・宏爺講股・DayStar・財女珍妮・鈔錢部署</small></summary><div class="secbody"><blockquote>
+<p>每個頻道固定四欄：<strong>名稱／內容／評論／最近貼文</strong>
+最後更新：2026-11-24 04:0x（台北）
+各頻道自己的版本：<code>財經頻道/&lt;頻道&gt;/頻道摘要.md</code></p>
+</blockquote>
+<hr />
+<h2>Emmy追劇時間　2026/11/17（EP.179）</h2>
+<p><strong>名稱</strong>：黃仁勳下台　輝達震撼彈</p>
+<p><strong>內容</strong></p>
+<ul>
+<li>黃仁勳被逼宮下台。輝達的治理<strong>重度依賴黃仁勳個人決策</strong>，這是她認為最嚴重的地方。</li>
+<li>但這波大跌不單純因為他的人事，真正原因是 <strong>BIS（美國商務部出口安全局）11/17 公布 132 頁新禁令</strong>：新加坡、馬來西亞、泰國、印尼、巴西也被列入管制。</li>
+<li>過去中國 AI 公司走兩條路：走私伺服器（量少，買不到 10%）、或在親中國家蓋資料中心遠端算（量大）。<strong>新禁令把第二條路堵死。</strong></li>
+<li>對台股／台積電的傳導：先進晶片出貨地點被限縮 → 客戶拉貨節奏改變。</li>
+</ul>
+<p><strong>評論</strong></p>
+<ul>
+<li>她把「人事」和「政策」分開講，這點是對的：<strong>黃仁勳回不回來是消息面，BIS 132 頁是已發生</strong>。</li>
+<li>真正該盯的是「資料中心蓋在哪」這條線，比「誰當 CEO」影響更長。</li>
+<li>她自己的說法偏保守：沒說崩完了，只說這是結構性變化。</li>
+</ul>
+<p><strong>最近貼文</strong>（11/22，已編輯，11/23 無新貼文）</p>
+<ul>
+<li>「台股跌破四萬點一路向下…<strong>說好的逃生通道在哪裡？</strong> AI 泡沫真的來了嗎？」</li>
+<li>另提 <strong>AMD 也爆 AI 晶片走私疑雲</strong>（眾院公開 BIS 許可：輝達＋超微 87.99 萬顆輸中；做空機構 Hunterbrook 指控，超微否認）</li>
+<li>貼文態度：<strong>她把這波定義為「已發生」，問的是出場窗口，不是抄底點</strong></li>
+</ul>
+<hr />
+<h2>一綺聊股　2026/11/22</h2>
+<p><strong>名稱</strong>：夜盤又崩 1,881 點..持股腰斬怎麼辦？金管會第三波「禁空令」救的了嗎？</p>
+<p><strong>內容</strong></p>
+<ul>
+<li>🔴 <strong>國巨 2327</strong>：外資連十日偏買，300 元以下有人承接（但她自己說「我也不敢在這邊買」）</li>
+<li>🔴 <strong>南亞 1303</strong>：玻纖布五檔裡最穩，有實質營收獲利、今年已賺一個股本</li>
+<li>🔴 <strong>台積電 2330</strong>：長期買盤不會消失，問題只是「何時才是終點」</li>
+<li>🟢 <strong>11/25 前先觀望，不要搶反彈</strong></li>
+<li>🟢 <strong>融資戶 T+3 斷頭，最危險在週三</strong>（週五被斷的，T+3 落到週三）</li>
+<li>🟢 <strong>最悲觀回測 3/31 的 31,000 點</strong></li>
+<li>這一集是「唱歌取暖場」，股市段落集中在 02:50–45:00（全長 99 分，只轉錄前 45 分）</li>
+</ul>
+<p><strong>評論</strong></p>
+<ul>
+<li>她的「T+3 斷頭在週三」和 DayStar 講的「11/24、11/25 兩批處分」是同一個機制，<strong>兩台獨立講到同一件事，可信度高</strong>。</li>
+<li>但「31,000 點」是最悲觀情境，不是預測；對照 11/23 低點 35,442，等於還要再跌 12%。</li>
+<li>她點的三檔裡，只有南亞是「有獲利」的邏輯，國巨和台積電都是「有人在接」的觀察，<strong>不要當買進訊號</strong>。</li>
+</ul>
+<p><strong>最近貼文</strong>：無（該台以直播為主）</p>
+<hr />
+<h2>宏爺講股　2026/11/23</h2>
+<p><strong>名稱</strong>：股市反彈騙散戶？別忽視這關鍵！美股逼近熊市、台股急拉千點！國安基金與禁空令聯手，外資態度藏驚人轉折？</p>
+<p><strong>內容</strong></p>
+<ul>
+<li>🔴 <strong>融資兩個月減 2,024 億</strong>（6,000 多億 → 4,352 億），「海綿的水排掉了」</li>
+<li>🔴 <strong>美光長約 RPO 1,500 億美元，客戶先付現金</strong>——他認為這是基本面沒壞的硬證據</li>
+<li>🔴 <strong>外銷訂單 +78.3%</strong>，基本面沒壞</li>
+<li>🔴 <strong>國安基金＋限空令政策托底</strong></li>
+<li>🟢 <strong>費半跌破所有均線、月 KD 死叉</strong></li>
+<li>🟢 <strong>美光預估 PE 只有 3.76 倍 → 景氣高點警訊</strong>（便宜是因為大家預期衰退）</li>
+<li>🟢 <strong>輝達 12/1 國會聽證</strong>，政策風險還沒定</li>
+<li>🟢 <strong>10/6 以來 -28.4%，1,805 檔破年線</strong></li>
+</ul>
+<p><strong>評論</strong></p>
+<ul>
+<li>他的框架是「<strong>政策托底＋籌碼沉澱 vs 技術面全破</strong>」，所以他也不敢說底部到了。</li>
+<li>「美光 PE 3.76 倍」這段最值得記：<strong>記憶體便宜通常出現在景氣高點</strong>，不是低點。</li>
+<li>12/1 輝達聽證是他給的<strong>明確時間點</strong>，比「等消息」有用。</li>
+</ul>
+<p><strong>最近貼文</strong>：無（以影片為主）</p>
+<hr />
+<h2>晨星 DayStar Brilliant　2026/11/23（兩集）</h2>
+<p><strong>名稱①</strong>：台積電開盤破 2000 又站回來！外資卻狂賣 224 億，這個反彈能信嗎？
+<strong>名稱②</strong>：融資維持率降到 120%，斷頭危機解除了嗎？官方 151% vs 民間 119%，到底該看哪個？</p>
+<p><strong>內容（①）</strong></p>
+<ul>
+<li>加權收 <strong>36,811（+778，+2.16%）</strong>，盤中最低 <strong>35,442</strong>、最高 37,081，<strong>單日高低差 1,665 點</strong></li>
+<li>台積電開 1,990 → 低 1,970 → 收 <strong>2,030（+1.5%）</strong>，量縮 26%</li>
+<li>外資 <strong>-289 億</strong>（週五的 3 倍），三大法人合計 -512 億</li>
+<li>早盤先殺的原因是「補週五美股那一刀」（那斯達克 -5.3%、輝達 -14%、台積電 ADR -9.36%）</li>
+<li>漲最兇的是<strong>玻璃陶瓷 +9%、塑膠 +7%</strong>（台玻、南亞漲停）——其實是 <strong>AI PCB 上游材料</strong>（玻纖布、銅箔基板）</li>
+<li>金融股逆勢跌（中信金 -6.18%）：資金從防守股抽出來搶電子股</li>
+</ul>
+<p><strong>內容（②）</strong></p>
+<ul>
+<li>追繳戶數 11/18 <strong>719 戶</strong> → 11/20 <strong>6,462 戶</strong>（3 天 9 倍）</li>
+<li>11/24 起維持率 130%→120%，11/24 前追繳全部取消（上次 1998 年）</li>
+<li>融資買 6 成、跌 22% 就是 130%，<strong>這時本金已經虧 55%</strong></li>
+<li>官方 151% vs 民間扣 ETF 119.5%——<strong>兩個都對，回答的問題不同</strong></li>
+<li>若指數再跌 8-10%（33,000 多），會把卡在 120% 的人再推一次</li>
+</ul>
+<p><strong>評論</strong></p>
+<ul>
+<li>這兩集合起來是她這波講最完整的一套：<strong>先講「反彈不能信」，再講「斷頭沒解除」</strong>。</li>
+<li>最有價值的是「玻璃陶瓷其實是 AI PCB 材料」這個拆解，<strong>看族群名稱會誤判</strong>。</li>
+<li>她給的驗證條件很清楚：<strong>35,442 守住＝有機會成底，跌破＝反彈失敗</strong>。</li>
+</ul>
+<p><strong>最近貼文</strong>：無</p>
+<hr />
+<h2>財女珍妮　2026/11/23</h2>
+<p><strong>名稱</strong>：聯準會戳破 AI 泡沫？財長貝森特轉彎，美股崩盤有救了？</p>
+<p><strong>內容</strong>：（逐字稿轉錄中，完成後補）</p>
+<p><strong>評論</strong>：（待補）</p>
+<p><strong>最近貼文</strong>：無</p>
+<hr />
+<h2>鈔錢部署–華視優選　2026/11/22</h2>
+<p><strong>名稱</strong>：【精華】國安基金發威前先買誰？台積電、台光電、南亞科　杜金龍這樣選（盧燕俐 ft. 杜金龍）</p>
+<p><strong>內容</strong>：（逐字稿轉錄中，完成後補）</p>
+<p><strong>評論</strong>：（待補）</p>
+<p><strong>最近貼文</strong>：無</p>
+</div></details>
+<details class="sec" id="cal"><summary>📅 行事曆<small>財報／結算／休市　2026-11</small></summary><div class="secbody"><div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:10px 0 6px"><img src="img/cal-2026-11.png" alt="2026 年 11 月 財報與事件行事曆" style="width:1236px;max-width:none;border:1px solid #e6e2da;border-radius:10px"></div><div style="font-size:18px;color:#8a857c;margin:0 0 20px">↑ 圖可左右滑動看完整月份（手機用手指滑）</div>
+<h2>台股（4 項）</h2>
+<div class="caltabwrap"><table class="caltab" style="width:100%;table-layout:fixed;border-collapse:collapse"><colgroup><col style="width:86px"><col style="width:100px"><col style="width:178px"><col></colgroup><thead><tr><th>日期</th><th>類型</th><th>事件</th><th>為什麼重要</th></tr></thead><tbody><tr><td>11/14</td><td>財報</td><td><strong>Q3 財報截止</strong></td><td>上市櫃第三季財報法定公告截止日；沒公布或數字差的個股，下週一容易補跌。</td></tr><tr><td>11/18</td><td>結算</td><td><strong>台指期結算</strong></td><td>11 月台指期契約結算日（每月第三個週三）。結算前後容易出現「拉高結算／壓低結算」，當沖與波段都不要在結算日追價。</td></tr><tr><td>11/24</td><td>觀察</td><td><strong>MSCI 調整前</strong></td><td>MSCI 11 月季度調整於 11/30 收盤後生效，生效前一週（11/24 起）外資會提前換股，權值股尾盤容易異常大量。</td></tr><tr><td>11/30</td><td>調整</td><td><strong>MSCI 台股生效</strong></td><td>MSCI 11 月調整收盤後生效，台股尾盤（13:00-13:30）會出現大量換股單，持股不要在尾盤被掃到才反應。</td></tr></tbody></table></div>
+<h2>美股（11 項）</h2>
+<div class="caltabwrap"><table class="caltab" style="width:100%;table-layout:fixed;border-collapse:collapse"><colgroup><col style="width:86px"><col style="width:100px"><col style="width:178px"><col></colgroup><thead><tr><th>日期</th><th>類型</th><th>事件</th><th>為什麼重要</th></tr></thead><tbody><tr><td>11/16</td><td>觀察</td><td><strong>零售財報週起</strong></td><td>本週進入美國零售財報週（Home Depot、Target、Walmart、Lowe's），是消費力最直接的檢驗。</td></tr><tr><td>11/17</td><td>財報</td><td><strong>HD 財報</strong></td><td>Home Depot Q3，美東 09:00 公布。看美國房市與裝修需求，是內需溫度計。</td></tr><tr><td>11/17</td><td>財報</td><td><strong>輝達 Q3</strong></td><td>NVDA Q3 FY27，美股收盤後（台灣 11/18 清晨 05:00 法說）。本月唯一真正的定價錨：資料中心營收、毛利率、Q4 指引。台股 AI 鏈（2330、散熱、電源、PCB）隔天連動。</td></tr><tr><td>11/18</td><td>財報</td><td><strong>Target 財報</strong></td><td>Target Q3，美東 08:00。平價零售代表，看美國中低收入消費是否轉弱。</td></tr><tr><td>11/18</td><td>IPO</td><td><strong>Anthropic 定價</strong></td><td>Anthropic IPO 定價日（區間 70～78 美元，最多募 643.5 億）。定價落在上緣才算利多兌現，落在下緣或折價是 AI 評價的利空。</td></tr><tr><td>11/18</td><td>觀察</td><td><strong>輝達員工大會</strong></td><td>輝達對內員工大會（美國當地）。若臨時取消或改由代理執行長主持，代表人事還沒落定；若有新任 CEO 現身，是市場最想看的訊號。屬公司行程，時間以官方公告為準。</td></tr><tr><td>11/19</td><td>財報</td><td><strong>Walmart 財報</strong></td><td>Walmart Q3，美東 06:00（開盤前）。它是美國消費的「體溫計」，比任何總經數據更早反映民眾口袋。</td></tr><tr><td>11/19</td><td>IPO</td><td><strong>Anthropic 掛牌</strong></td><td>Anthropic 那斯達克掛牌（代號 ANT）。今年最大 IPO，首日表現會直接影響 AI 族群的市場情緒。</td></tr><tr><td>11/26</td><td>休市</td><td><strong>感恩節休市</strong></td><td>美股全天休市，台股正常交易。美股休市期間台股由內資主導，成交量通常縮小。</td></tr><tr><td>11/27</td><td>休市</td><td><strong>半日交易</strong></td><td>黑色星期五，美股提前於美東 13:00 收盤（台灣 11/28 凌晨 02:00）。流動性差，不要在這天做重大決定。</td></tr><tr><td>11/30</td><td>調整</td><td><strong>MSCI 美股生效</strong></td><td>美股同樣在收盤時生效，被動基金最後一盤集中成交，個股尾盤波動放大。</td></tr></tbody></table></div>
+<h2>下月預告（2026 年 12 月 財報與事件行事曆）</h2>
+<div class="caltabwrap"><table class="caltab" style="width:100%;table-layout:fixed;border-collapse:collapse"><colgroup><col style="width:86px"><col style="width:100px"><col style="width:178px"><col></colgroup><thead><tr><th>日期</th><th>類型</th><th>事件</th><th>為什麼重要</th></tr></thead><tbody><tr><td>12/01</td><td>美股觀察</td><td><strong>眾院約談黃仁勳</strong></td><td>美國眾議院要求黃仁勳閉門受訪（美國當地日期）。這是國會「要求出席」的日期，不是確定行程，依最終安排為準；真的出席代表輝達治理問題進入政治程序，對 AI 監管預期是負面。</td></tr><tr><td>12/02</td><td>美股觀察</td><td><strong>眾院約談法務長</strong></td><td>眾議院要求輝達法務長閉門受訪。法務長被問的通常是出口管制與揭露義務，若傳出文件往來，後續可能有正式聽證。</td></tr><tr><td>12/03</td><td>美股觀察</td><td><strong>參院黃仁勳作證</strong></td><td>參議院要求黃仁勳公開作證（公開場合，殺傷力大於閉門）。公開作證的發言會直接影響 AI 晶片出口政策預期，台股 AI 鏈隔天通常連動。同樣以最終安排為準。</td></tr><tr><td>12/10</td><td>台股總經</td><td><strong>11月營收公布</strong></td><td>上市櫃 11 月營收公告截止。先看 2330、2454、8299 的月增率；營收是檢查基本面有沒有鬆動的第一個數字。</td></tr><tr><td>12/16</td><td>台股結算</td><td><strong>台指期結算</strong></td><td>12 月台指期契約結算日（每月第三個週三）。結算前後容易拉高或壓低，不要追價。</td></tr><tr><td>12/24</td><td>美股休市</td><td><strong>平安夜半日</strong></td><td>美股提前於美東 13:00 收盤（台灣 12/25 凌晨 02:00）。流動性差，不要在這天做重大決定。</td></tr><tr><td>12/25</td><td>美股休市</td><td><strong>聖誕節休市</strong></td><td>美股全天休市，台股正常交易。外資放假，台股由內資主導，量通常縮小。</td></tr></tbody></table></div>
+<h2>每月固定要記的日子</h2>
+<ul>
+<li>每月 10 日前：上市櫃公布上月營收。2330、2454、8299 的月營收是我們檢查基本面有沒有壞掉的第一個數字。</li>
+<li>每月第三個週三：台指期結算日。結算前後三天不要追價。</li>
+<li>每月第一個週五（台灣時間晚上）：美國非農就業報告，公布上個月的就業數字。</li>
+<li>每年 1、4、7、10 月：台股與美股財報季（台股 Q1～Q4 財報法定截止：5/15、8/14、11/14、3/31）。</li>
+<li>每季一次：MSCI 季度調整（2、5、8、11 月），生效日多在月底收盤。</li>
+</ul>
+<blockquote>
+<p>本頁每月月初更新一次，更新後沿用一整個月；資料核對於 2026-11-15。</p>
+</blockquote>
+</div></details>
+<details class="sec" id="news"><summary>📰 消息面（粉專觀點，非事實）<small>2026-11-23</small></summary><div class="secbody"><p><strong>這一頁是消息面，不是事實；粉專觀點正確性不保證，只當「別人在想什麼」的溫度計。</strong></p>
+<blockquote>
+<p>⚠️ <strong>今日粉專抓取失敗</strong>：<code>粉專貼文抓取 06:20</code>（ec20b80ab8bd）狀態為 error，沒有 <code>fb_2026-11-23.json</code>，連續第 3 天。所以今天<strong>沒有粉專原文可引用</strong>，以下兩段改以「券商／媒體具名觀點」代替，並逐一標明身分，不假裝是粉專。未登入 Facebook 時本來就只取各粉專最新一則。</p>
+</blockquote>
+<h2>🟢 樂觀的一方怎麼說</h2>
+<table>
+<thead>
+<tr>
+<th>論點</th>
+<th>出處（粉專名）</th>
+<th>我的查核</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>限空令把放空路徑鎖住、融資減幅（-31.7%）已超過大盤跌幅，「已醞釀反彈」，看長紅 K 或長下影線</td>
+<td>台新投顧策略長黃文清（<strong>新聞受訪，非粉專</strong>）</td>
+<td>已發生：融資確實減 31.7%；預估：反彈時點</td>
+</tr>
+<tr>
+<td>10 月外銷訂單超預期、推估 2027 年上市獲利 9.5 兆、前瞻 PE 約 14 倍，「下週隨時會反彈」，幅度看回 4.4 萬點</td>
+<td>第一金投顧董事長黃詣庭（<strong>新聞受訪</strong>）</td>
+<td>已發生：外銷訂單連 21 紅；預估：9.5 兆與 4.4 萬點都是推估</td>
+</tr>
+<tr>
+<td>對新措施「樂觀其成」</td>
+<td>統一投顧董事長黎方國（<strong>新聞受訪</strong>）</td>
+<td>觀點</td>
+</tr>
+<tr>
+<td>台股將在 33,000–40,000 大區間震盪，不恐慌殺低也不急重押</td>
+<td>統一投顧報告（<strong>新聞引述</strong>）</td>
+<td>預估</td>
+</tr>
+</tbody>
+</table>
+<h2>🔴 危險的一方怎麼說</h2>
+<table>
+<thead>
+<tr>
+<th>警訊</th>
+<th>出處</th>
+<th>為什麼危險（連到我的持股／大盤）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>輝達新 CEO 是財務長、與台灣沒有淵源，將重審台廠價格，「回到代工行情」</td>
+<td>部分投顧（經濟日報 11/21，<strong>未具名</strong>）</td>
+<td>直接打到 2330／2454 的長期毛利率假設，也打到 0050（間接持有台積電）</td>
+</tr>
+<tr>
+<td>國安基金只有 5,000 億，面對單日數千億成交「杯水車薪」；限空令只是延緩、拉長下跌天數</td>
+<td>台大財金教授張森林（公視 11/22）</td>
+<td>大盤：政策減速不改變方向，前兩波上路當天都跌</td>
+</tr>
+<tr>
+<td>11/25 T+3 斷頭是本週最大壓力點</td>
+<td>一綺聊股 11/22 影片（<strong>影片觀點</strong>）</td>
+<td>融資餘額 4,352 億、維持率 138.4%，再一根中長黑就接近追繳</td>
+</tr>
+<tr>
+<td>維持率若降到 120% 等於券商替全民揹 10% 風險</td>
+<td>鼎燁投顧吳官隆（公視 11/22）</td>
+<td>政策若真的這樣做，代表官方認定斷頭潮還沒結束</td>
+</tr>
+</tbody>
+</table>
+<h2>❓ 我們可能還沒算到的（第二層）</h2>
+<ol>
+<li><strong>ETF 被動賣壓的機械性</strong>：外資若繼續砍 0050 與主動式 ETF，投信必須被動賣成分股 → 這不是「看壞台積電」，是「贖回」。我的 0050 與 00713 會同時被掃到，且<strong>不會因為基本面好而停止</strong>。</li>
+<li><strong>選舉（11/28）前的政策沉默</strong>：選前一週政府通常不願意再出新招，也不願意讓指數破底。若本週沒有新政策，市場會解讀成「子彈用完了」。</li>
+<li><strong>12/9 Fed 與 AI 估值的連動</strong>：升息 1 碼會讓「靠未來現金流折現」的 AI 股再壓一輪；我持股中 2454 的本益比敏感度最高。</li>
+<li><strong>記憶體報價的時差</strong>：南亞科法說若講「Q4 漲幅收斂、2027H1 轉跌」，8299（觀察名單）與 2408 會先反應，但<strong>財報要 1–2 季才看到</strong>，股價會提前跑。</li>
+<li><strong>輝達 12/1 國會閉門簡報</strong>：若簡報後出現新一輪出口管制，台廠「訂單接滿 ≠ 營收入帳」的時差會被重新定價（宏爺 11/18 的論點）。</li>
+</ol>
+<h2>📌 本週三個必盯</h2>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>事件</th>
+<th>為什麼必盯</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>11/23（一）09:00</strong></td>
+<td>限空令 3.0 首日 + 補跌開盤</td>
+<td>開盤 30 分鐘的成交量決定是「換手」還是「續殺」</td>
+</tr>
+<tr>
+<td><strong>11/25（三）</strong></td>
+<td>T+3 斷頭（推算）</td>
+<td>11/20 跌停賣不掉的部位補繳期限</td>
+</tr>
+<tr>
+<td><strong>11/28（六）</strong></td>
+<td>台灣九合一選舉</td>
+<td>選前觀望、選後政策方向</td>
+</tr>
+</tbody>
+</table>
+<h2>來源</h2>
+<ul>
+<li>經濟日報〈金管會出手禁平盤下放空！法人看反彈或回代工價〉2026-11-21</li>
+<li>公視新聞〈金管會祭限空令3.0 明起禁平盤以下放空〉2026-11-22</li>
+<li>三立新聞〈台股史上最慘一週還沒完 限空令3.0救得回？法人揭3萬3保衛戰〉2026-11-23</li>
+<li>工商時報〈台股短期盯融資 中期看半導體〉2026-11-23</li>
+<li>金管會新聞稿 2026-11-21（五項措施全文）</li>
+<li>一綺聊股 2026-11-22 影片、宏爺講股 2026-11-20 影片（<strong>影片觀點</strong>）</li>
+<li><strong>粉專：今日抓取失敗，無引用</strong>（<code>fb_2026-11-23.json</code> 不存在）</li>
+</ul>
+</div></details>
+<details class="sec" id="lights" open><summary>🚦 股市燈號（五燈）<small>最後更新　2026-11-15</small></summary><div class="secbody"><h2>⓿ AI 鏈健康分數（季等級，看財報不看新聞）</h2>
+<p><img src="img/aihealth-2026-11-15.png" alt="AI 鏈健康分數" /></p>
+<p><strong>AI 鏈健康分數：40／100（轉弱）</strong>　季等級，從「付錢的人」開始看。</p>
+<blockquote>
+<p><strong>積木邏輯</strong>：加權 54 分，但底座最弱環節只有 0 分，總分上限壓到 40 分。</p>
+</blockquote>
+<blockquote>
+<p><strong>錢的源頭</strong>：四大 CSP 近 4 季營運現金流 1.12 倍於資本支出，自由現金流 +707 億美元；<strong>最近一季 -264 億（已開始透支）</strong>；淨現金（現金−負債）-4,423 億美元。</p>
+</blockquote>
+<ul>
+<li><strong>記憶體雙雄</strong>　+372%（YoY）　→ <strong>很健康</strong>（100 分，權重 5%）
+<ul>
+<li>南亞科／華邦電月營收，記憶體循環的溫度計</li>
+</ul>
+</li>
+<li><strong>AI 晶片三雄</strong>　+79%（YoY）　→ <strong>很健康</strong>（100 分，權重 10%）
+<ul>
+<li>輝達／博通／AMD 營收，代表 AI 伺服器與加速器的實際出貨</li>
+</ul>
+</li>
+<li><strong>台積電月營收</strong>　+59.7%（YoY）　→ <strong>很健康</strong>（100 分，權重 10%）
+<ul>
+<li>AI 需求最直接的成績單，每月 10 日公布；由正轉負是第一個警訊</li>
+</ul>
+</li>
+<li><strong>CSP 資本支出</strong>　+114%（YoY）　→ <strong>很健康</strong>（90 分，權重 10%）
+<ul>
+<li>訂單的源頭。年增率高＝硬體需求旺；但要看上面三項，錢是自己出還是借的</li>
+</ul>
+</li>
+<li><strong>AI 服務商現金流</strong>　-129 億美元　→ <strong>警訊</strong>（0 分，權重 10%）
+<ul>
+<li>CoreWeave／Oracle 的自由現金流；負越大代表靠借錢擴張</li>
+</ul>
+</li>
+<li><strong>AI 服務商槓桿</strong>　淨負債 / TTM EBITDA 7.6 倍　→ <strong>警訊</strong>（15 分，權重 15%）
+<ul>
+<li>CoreWeave／Oracle／Nebius 的槓桿是 CSP 的十倍以上（CRWV 12.4x、ORCL 4.3x、NBIS 20.7x）。底座垮了，上面的訂單會一起消失</li>
+</ul>
+</li>
+<li><strong>CSP 債務增速</strong>　+110%（一年）　→ <strong>警訊</strong>（0 分，權重 15%）
+<ul>
+<li>總負債一年內從 279B 增加到 586B。借錢買機器最直接的證據，增速越快風險越高</li>
+</ul>
+</li>
+<li><strong>CSP 現金流支撐</strong>　4 季 OCF / capex 1.12 倍｜最近一季 -264 億　→ <strong>健康</strong>（65 分，權重 15%）
+<ul>
+<li>四大雲端業者自己賺的錢夠不夠付資本支出。近 4 季 OCF 6,670 億、資本支出 5,962 億 → 自由現金流 +707 億美元；低於 1 倍就要靠現金或舉債</li>
+</ul>
+</li>
+<li><strong>CSP 槓桿水位</strong>　淨負債 442B / EBITDA 691B = 0.64 倍　→ <strong>很健康</strong>（85 分，權重 10%）
+<ul>
+<li>資產負債表扛不扛得住。低於 1 倍＝獲利一年就能還清；3 倍以上＝景氣一反轉就吃緊</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2>台股警示燈號（日等級）</h2>
+<p><img src="img/lights-2026-11-15.png" alt="台股警示燈號" />
+<img src="img/lights-explain-2026-11-15.png" alt="名詞解說" /></p>
+<blockquote>
+<p>每兩週更新一次，下次更新：2026-12-15。期間每日晨報都沿用本頁。</p>
+</blockquote>
+<h2>一眼看完</h2>
+<ul>
+<li><strong>市場溫度 37／100（偏冷）</strong></li>
+<li><strong>注意以上 6 項、危險 0 項 → 橙燈　減碼</strong></li>
+<li><strong>動作：減碼到 3 成，只留核心持股</strong></li>
+</ul>
+<h2>① 市場溫度（每個成分各自五燈）</h2>
+<ul>
+<li><strong>量能</strong>　1.03 倍均量　→ 53 分　<strong>正常</strong>　｜　成交量是最近 20 天平均的幾倍，錢多就熱</li>
+<li><strong>乖離</strong>　-2.9%（距 60 日線）　→ 35 分　<strong>安全</strong>　｜　指數離 60 天平均線多遠，漲太遠就是過熱</li>
+<li><strong>融資</strong>　5,366 億（20 日 -17.6%）　→ 0 分　<strong>很安全</strong>　｜　散戶借錢買股的餘額，增加＝追高、減少＝籌碼變乾淨</li>
+<li><strong>廣度</strong>　上漲 526 / 下跌 491　→ 53 分　<strong>正常</strong>　｜　今天上漲家數對下跌家數，多數股票漲才是健康</li>
+<li><strong>VIX</strong>　19.30　→ 53 分　<strong>正常</strong>　｜　美國恐慌指數，越高越危險（反向計分）</li>
+<li><strong>外資</strong>　-968 億（5 日）　→ 18 分　<strong>很安全</strong>　｜　外資近 5 天買賣超，一直買＝偏熱、一直賣＝偏冷</li>
+</ul>
+<h2>② 退場訊號（每項獨立五燈）</h2>
+<p>藍＝很安全、綠＝安全、黃＝正常、橙＝注意、紅＝危險。</p>
+<table>
+<thead>
+<tr>
+<th>指標</th>
+<th>什麼情況叫危險</th>
+<th>現在</th>
+<th>燈號</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>溫度計</td>
+<td>80 分以上＝過熱</td>
+<td>37 分</td>
+<td><strong>安全</strong></td>
+</tr>
+<tr>
+<td>融資水位</td>
+<td>5,000 億以上＝危險</td>
+<td>5,366 億</td>
+<td><strong>注意</strong></td>
+</tr>
+<tr>
+<td>融資變化</td>
+<td>20 日 +15% 以上＝危險</td>
+<td>-17.6%</td>
+<td><strong>很安全</strong></td>
+</tr>
+<tr>
+<td>外資現貨</td>
+<td>5 日賣超 1,000 億以上＝危險</td>
+<td>5 日 -968 億</td>
+<td><strong>注意</strong></td>
+</tr>
+<tr>
+<td>外資期貨</td>
+<td>淨空單 10 萬口以上＝危險</td>
+<td>99,573 口</td>
+<td><strong>注意</strong></td>
+</tr>
+<tr>
+<td>台幣匯率</td>
+<td>一週貶逾 1 元＝危險</td>
+<td>32.94（5 日 -0.17）</td>
+<td><strong>安全</strong></td>
+</tr>
+<tr>
+<td>美 10 年殖利率</td>
+<td>5% 以上＝危險</td>
+<td>5.15%（5 日 +29bp）</td>
+<td><strong>注意</strong></td>
+</tr>
+<tr>
+<td>量價結構</td>
+<td>上漲量縮／下跌量增＝危險</td>
+<td>上漲＋量縮（沒人接棒）</td>
+<td><strong>注意</strong></td>
+</tr>
+<tr>
+<td>乖離</td>
+<td>距 60 日線 +10% 以上＝危險</td>
+<td>-2.9%（距 60 日線）</td>
+<td><strong>安全</strong></td>
+</tr>
+<tr>
+<td>景氣燈號</td>
+<td>由紅燈轉黃紅燈以下＝危險</td>
+<td>紅燈（41 分）</td>
+<td><strong>注意</strong></td>
+</tr>
+<tr>
+<td>出口</td>
+<td>年增率轉負＝危險</td>
+<td>+61%（2026-09）</td>
+<td><strong>很安全</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>③ 基本面燈</h2>
+<ul>
+<li><strong>出口</strong>：2026-10 出口 967.6 億美元（連 36 紅）。出口是<strong>領先指標</strong>，訂單旺→電子股營收後面會好。</li>
+<li><strong>景氣燈號</strong>：2026-09 41 分、紅燈（連 10 紅）。這是<strong>同時指標</strong>，確認現在很熱。</li>
+</ul>
+<blockquote>
+<p><strong>基本面是地板，不是天花板。</strong> 基本面最熱的時候，通常是股價最危險的時候。</p>
+</blockquote>
+<h2>④ 名詞解說（文字版）</h2>
+<h3>市場溫度的六個成分</h3>
+<ul>
+<li><strong>市場溫度</strong>：六項指標各打 0～100 分再加權平均　→　越高＝市場越熱，追高危險；越低＝越冷，但可能是機會</li>
+<li><strong>量能</strong>：今天成交金額 / 最近 20 天平均　→　高（1.5 倍以上）＝資金瘋狂、易過熱；低（0.7 倍以下）＝人氣退潮</li>
+<li><strong>乖離</strong>：指數離 60 天平均線還有多遠（%）　→　高（+10% 以上）＝漲太遠易回檔；低（-10% 以下）＝跌太深易反彈</li>
+<li><strong>融資</strong>：散戶借錢買股票的餘額（億元）　→　高＝槓桿多、一跌就斷頭；低＝籌碼乾淨、但也代表散戶跑光</li>
+<li><strong>廣度</strong>：上漲家數 /（上漲＋下跌）家數　→　高（80% 以上）＝全面上漲、偏過熱；低（20% 以下）＝全面恐慌</li>
+<li><strong>VIX</strong>：美股恐慌指數（波動率）　→　低（15 以下）＝平靜；高（30 以上）＝恐慌，通常在崩盤中</li>
+<li><strong>外資</strong>：外資近 5 個交易日買賣超金額　→　高（買超 1,500 億以上）＝熱錢湧入；低（賣超）＝資金外逃</li>
+</ul>
+<h3>退場訊號的 11 項</h3>
+<ul>
+<li><strong>溫度計</strong>：市場溫度分數　→　80 分以上＝過熱，追高風險大</li>
+<li><strong>融資水位</strong>：全體融資餘額　→　5,000 億以上＝槓桿太高，一跌就斷頭</li>
+<li><strong>融資變化</strong>：融資餘額 20 日變化　→　20 日 +15% 以上＝散戶集體追高</li>
+<li><strong>外資現貨</strong>：外資在集中市場的買賣超　→　5 日賣超 1,000 億以上＝大錢在跑</li>
+<li><strong>外資期貨</strong>：外資台指期未平倉淨空單　→　10 萬口以上＝外資放空避險，看跌</li>
+<li><strong>台幣匯率</strong>：新台幣兌美元　→　一週貶逾 1 元＝資金外流（股匯雙殺）</li>
+<li><strong>美 10 年殖利率</strong>：美國 10 年期公債殖利率　→　5% 以上＝資金變貴，成長股受傷</li>
+<li><strong>量價結構</strong>：指數漲跌 與 成交量增減 的搭配　→　上漲量縮／下跌量增＝沒人接棒或有人在出貨</li>
+<li><strong>乖離</strong>：指數距離 60 日均線　→　距 60 日線 +10% 以上＝短線漲太急</li>
+<li><strong>景氣燈號</strong>：國發會景氣對策信號（9 項指標）　→　紅燈＝景氣最熱，通常是股價高點區（落後訊號）</li>
+<li><strong>出口</strong>：海關出口金額年增率　→　由正轉負＝訂單真的轉弱（領先訊號）</li>
+</ul>
+<h2>更新規則</h2>
+<ul>
+<li>每兩週一次：<strong>每月 15 日與月底</strong>自動重算</li>
+<li>出口（每月 8～9 日公布）與景氣燈號（每月底公布）手動更新到 <code>~/.hermes/state/macro.json</code></li>
+<li>期間本頁固定不變，即時變化請看「走勢圖」頁籤</li>
+</ul>
+</div></details>
+<details class="sec" id="disc" open><summary>📏 交易紀律<small>每次下單前看一次</small></summary><div class="secbody"><blockquote>
+<p>先講清楚：<strong>沒有任何紀律能保證賺錢。</strong> 紀律唯一能保證的是「虧損不會失控」。
+賺錢要靠行情＋勝率，紀律只負責讓你活到行情來的那一天。
+誰跟你說「照這套一定賺」，那個人就是在騙你（包含 AI）。</p>
+</blockquote>
+<hr />
+<h2>一、資金規則（先決定「最多能虧多少」）</h2>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>規則</th>
+<th>為什麼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>單筆最大風險</td>
+<td>總資金 <strong>2%</strong></td>
+<td>連錯 10 次也還有 8 成資金，不會被抬出場</td>
+</tr>
+<tr>
+<td>單一個股上限</td>
+<td>總資金 <strong>20%</strong></td>
+<td>一檔出事不會拖垮全部</td>
+</tr>
+<tr>
+<td>同時持股數</td>
+<td><strong>3~5 檔</strong></td>
+<td>超過就顧不到，等於亂買</td>
+</tr>
+<tr>
+<td>現金水位</td>
+<td>永遠留 <strong>20%</strong> 以上</td>
+<td>崩盤時才有子彈，也睡得著</td>
+</tr>
+<tr>
+<td>槓桿</td>
+<td><strong>不用融資、不開當沖</strong></td>
+<td>新手用槓桿＝把 2% 風險放大成 20%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>算給你看</strong>：資金 100 萬 → 單筆最多虧 2 萬 → 買 100 元的股票、停損 7% → 最多買 2.8 張（2800 股）。
+先算張數，再下單。<strong>永遠不要先決定買幾張，再想停損在哪。</strong></p>
+<hr />
+<h2>二、進場規則（三個都成立才買）</h2>
+<ol>
+<li><strong>趨勢</strong>：股價站上 20 日均線，且 20 日均線向上。</li>
+<li><strong>量能</strong>：突破時成交量 ≥ 5 日均量的 1.5 倍（沒量的突破是假的）。</li>
+<li><strong>催化劑</strong>：有一個「非價格」的理由 — 財報、法說、產業報價上漲、政策、大客戶訂單。
+<ul>
+<li>只有「別人說會漲」不算催化劑。</li>
+</ul>
+</li>
+</ol>
+<p>三條缺一條 → <strong>不買</strong>。沒買到不會虧錢，買錯了才會。</p>
+<hr />
+<h2>三、出場規則（進場前就先寫好）</h2>
+<table>
+<thead>
+<tr>
+<th>情境</th>
+<th>動作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>跌破進場價 <strong>-7%</strong></td>
+<td><strong>無條件賣出</strong>，不問理由、不看新聞、不等反彈</td>
+</tr>
+<tr>
+<td>跌破 20 日均線且 3 日內站不回</td>
+<td>減半或全出</td>
+</tr>
+<tr>
+<td>達到 <strong>+15%</strong></td>
+<td>先賣一半，讓剩下的部位「零成本」跑</td>
+</tr>
+<tr>
+<td>原本的催化劑消失（法說延期、訂單被取消）</td>
+<td>不論賺賠先出</td>
+</tr>
+<tr>
+<td>大盤跌破季線且外資連 3 日大賣</td>
+<td>總持股降到 3 成以下</td>
+</tr>
+</tbody>
+</table>
+<p>⚠️ 最貴的一句話：<strong>「再等一下就會回來。」</strong> 停損是買保險，不是認輸。</p>
+<hr />
+<h2>四、絕對不做的 7 件事</h2>
+<ol>
+<li><strong>不追漲停</strong>（漲停買到的通常是別人的出貨）</li>
+<li><strong>不攤平虧損</strong>（賠錢加碼＝把錯誤放大，這是最多人破產的方式）</li>
+<li><strong>不當沖</strong>（成本高、勝率低、時間壓力大）</li>
+<li><strong>不用融資／借錢</strong>（利息＋斷頭＝雙殺）</li>
+<li><strong>不聽明牌第一天就重壓</strong>（先小量驗證，對了再加）</li>
+<li><strong>不在情緒不好時下單</strong>（報復性交易幾乎都賠）</li>
+<li><strong>不買自己講不出「為什麼會漲」的股票</strong></li>
+</ol>
+<hr />
+<h2>五、每筆交易都要寫日誌</h2>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>日期</td>
+<td></td>
+</tr>
+<tr>
+<td>代碼／名稱</td>
+<td></td>
+</tr>
+<tr>
+<td>買進價／張數</td>
+<td></td>
+</tr>
+<tr>
+<td>買進理由（哪三條件成立）</td>
+<td></td>
+</tr>
+<tr>
+<td>停損價</td>
+<td></td>
+</tr>
+<tr>
+<td>目標價／出場條件</td>
+<td></td>
+</tr>
+<tr>
+<td>結果（賺賠 %）</td>
+<td></td>
+</tr>
+<tr>
+<td>覆盤：這次做對什麼、做錯什麼</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>日誌存放：<code>生活瑣事/投資/交易日誌/YYYY-MM.md</code>（F 槽沒插時先寫 <code>D:\00_AI\stockboard\reports\交易日誌\</code>）。
+<strong>每月最後一個週末統計</strong>：勝率、平均賺賠比、最大單筆虧損。平均賺賠比 &lt; 1.5 就代表選股或出場要改。</p>
+<hr />
+<h2>六、大盤環境判斷（決定「要不要出手」）</h2>
+<table>
+<thead>
+<tr>
+<th>環境</th>
+<th>判斷方式</th>
+<th>做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多頭</td>
+<td>加權指數站上季線，且季線上揚</td>
+<td>正常照規則做</td>
+</tr>
+<tr>
+<td>盤整</td>
+<td>指數在季線附近來回</td>
+<td>減半部位，只做最強的那 1~2 檔</td>
+</tr>
+<tr>
+<td>空頭</td>
+<td>指數跌破季線且季線下彎</td>
+<td><strong>現金為主</strong>，最多留 2~3 成，不接刀</td>
+</tr>
+</tbody>
+</table>
+<p>2026-11-06 這種單日跌 1600 點、跌停 76 檔的日子，就是「空頭」訊號：那天該做的是<strong>降低部位</strong>，不是找便宜。</p>
+<hr />
+<h2>七、每日 5 分鐘檢核表</h2>
+<ul>
+<li>[ ] 我的持股有沒有跌破停損？</li>
+<li>[ ] 有沒有持股跌破 20 日均線？</li>
+<li>[ ] 大盤今天算多頭、盤整還是空頭？</li>
+<li>[ ] 今天想買的股票，三條件都成立了嗎？（缺一不買）</li>
+<li>[ ] 如果我今天買進，停損價是多少？張數算好了嗎？</li>
+<li>[ ] 有沒有「因為怕錯過」而想買？（有＝不要買）</li>
+</ul>
+<hr />
+<h2>八、三條給自己的鐵律</h2>
+<ol>
+<li><strong>先想會虧多少，再想能賺多少。</strong></li>
+<li><strong>不確定就不做。</strong> 空手也是一種部位。</li>
+<li><strong>紀律只有在你最不想執行的時候，才有價值。</strong></li>
+</ol>
+<hr />
+<h2>九、延伸教條</h2>
+<ul>
+<li>[[股市教條]] — 崩盤後反彈的處理原則（救市＝逃命波、等第二隻腳）</li>
+<li>[[台股退場警示系統]] — 量化退場指標</li>
+</ul>
+</div></details>
 
 <section class="about" id="about">
 <h1>關於我</h1>
