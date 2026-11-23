@@ -9,7 +9,14 @@
 :root{color-scheme:light;
   --sun:#FFC531; --orange:#FF8A00; --coral:#FF6B6B; --sky:#38BDF8;
   --mint:#34D399; --grape:#A78BFA; --ink:#2B2A26; --paper:#FFF9EC; --sub:#6B6659;}
-html,body{background:var(--paper) !important;color:var(--ink) !important}
+html,body{background-color:#FFF9EC !important;color:var(--ink) !important;
+  background-image:
+    radial-gradient(circle at 86% -8%, rgba(255,197,49,.30) 0, rgba(255,197,49,0) 42%),
+    radial-gradient(circle at 4% 2%, rgba(56,189,248,.14) 0, rgba(56,189,248,0) 34%),
+    radial-gradient(rgba(255,138,0,.085) 1.1px, transparent 1.2px);
+  background-size:auto, auto, 20px 20px;
+  background-attachment:fixed, fixed, fixed;
+  background-repeat:no-repeat, no-repeat, repeat}
 *{box-sizing:border-box}
 body{margin:0;background:#fbfaf7;color:#1a1a1a;font-family:-apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;font-size:20px;line-height:1.9;-webkit-font-smoothing:antialiased}
 .wrap{max-width:900px;margin:0 auto;padding:60px 28px 110px}
@@ -100,7 +107,14 @@ footer{color:#6b665b}
 .tabbar button{background:#1f1d16;border-color:#2e2b24;color:#c9c2b4}
 }
 /* ===== 扁平活潑・陽光主題（覆寫原暖棕配色） ===== */
-html,body{background:#FFF9EC !important;color:#2B2A26 !important}
+html,body{background-color:#FFF9EC !important;color:#2B2A26 !important;
+  background-image:
+    radial-gradient(circle at 86% -8%, rgba(255,197,49,.28) 0, rgba(255,197,49,0) 42%),
+    radial-gradient(circle at 4% 2%, rgba(56,189,248,.12) 0, rgba(56,189,248,0) 34%),
+    radial-gradient(rgba(255,138,0,.075) 1.1px, transparent 1.2px);
+  background-size:auto, auto, 20px 20px;
+  background-attachment:fixed, fixed, fixed;
+  background-repeat:no-repeat, no-repeat, repeat}
 h1{color:#2B2A26 !important;font-weight:900}
 h2{border-left:8px solid #FFC531 !important;padding-left:14px;color:#2B2A26 !important}
 h3{color:#C2410C !important}
@@ -117,7 +131,7 @@ a{color:#C2410C !important}
 .navbtns a.alt{background:#FF8A00 !important;color:#fff !important;border-color:#FF8A00 !important}
 hr{border-color:#FFE0B2 !important}
 @media (prefers-color-scheme: dark){
-  html,body{background:#FFF9EC !important;color:#2B2A26 !important}
+  html,body{background-color:#FFF9EC !important;color:#2B2A26 !important}
   h1,h2,h3,p,li,td,th,div,span{color:#2B2A26 !important}
   h3{color:#C2410C !important}
   th{background:#FFE9A8 !important}
@@ -152,7 +166,12 @@ section.about h1{font-size:27px;margin:0 0 6px}
 a{color:#C2410C !important}
 /* 深色模式也維持陽光亮色 */
 @media (prefers-color-scheme: dark){
-  html,body{background:var(--paper) !important;color:var(--ink) !important}
+  html,body{background-color:#FFF9EC !important;color:var(--ink) !important;
+    background-image:
+      radial-gradient(circle at 86% -8%, rgba(255,197,49,.30) 0, rgba(255,197,49,0) 42%),
+      radial-gradient(circle at 4% 2%, rgba(56,189,248,.14) 0, rgba(56,189,248,0) 34%),
+      radial-gradient(rgba(255,138,0,.085) 1.1px, transparent 1.2px);
+    background-size:auto, auto, 20px 20px}
   h1{color:var(--ink) !important}
   .date{color:var(--sub) !important}
   .big{background:var(--orange) !important;color:#fff !important}
@@ -168,6 +187,22 @@ a{color:#C2410C !important}
 <style>
 :root{--sun:#FFC531;--orange:#FF8A00;--coral:#FF6B6B;--sky:#38BDF8;--mint:#34D399;
 --grape:#A78BFA;--ink:#2B2A26;--sub:#5C564C;--paper:#FFF9EC}
+html,body{background-color:#FFF9EC !important;
+  background-image:
+    radial-gradient(circle at 86% -8%, rgba(255,197,49,.30) 0, rgba(255,197,49,0) 42%),
+    radial-gradient(circle at 4% 2%, rgba(56,189,248,.14) 0, rgba(56,189,248,0) 34%),
+    radial-gradient(rgba(255,138,0,.085) 1.1px, transparent 1.2px);
+  background-size:auto, auto, 20px 20px;
+  background-attachment:fixed, fixed, fixed;
+  background-repeat:no-repeat, no-repeat, repeat}
+@media (prefers-color-scheme: dark){
+  html,body{background-color:#FFF9EC !important;
+    background-image:
+      radial-gradient(circle at 86% -8%, rgba(255,197,49,.30) 0, rgba(255,197,49,0) 42%),
+      radial-gradient(circle at 4% 2%, rgba(56,189,248,.14) 0, rgba(56,189,248,0) 34%),
+      radial-gradient(rgba(255,138,0,.085) 1.1px, transparent 1.2px);
+    background-size:auto, auto, 20px 20px}
+}
 .abouttabs{display:flex;gap:8px;margin:6px 0 12px;flex-wrap:wrap}
 .abouttabs button{font:inherit;font-size:21px;font-weight:900;padding:9px 16px;border-radius:12px;line-height:1.2;
 border:3px solid var(--sun);background:#fff;color:var(--ink);cursor:pointer}
