@@ -19,11 +19,18 @@ pre{background:#f1ede5;padding:16px 18px;border-radius:10px;overflow-x:auto;marg
 pre code{background:none;padding:0;font-size:17px}
 table{width:100%;border-collapse:collapse;margin:0 0 24px;font-size:18px;line-height:1.6;table-layout:fixed;word-break:break-word}
 th,td{border:1px solid #ded9d0;padding:12px 10px;text-align:left;vertical-align:top}
+.caltabwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 24px}
+.caltab{min-width:620px}
+.caltab td:first-child,.caltab th:first-child{white-space:nowrap}
+.caltab td:nth-child(4){line-height:1.8}
+.caltab th{font-size:17px}
 th{background:#f4f1ea;font-weight:700;font-size:17px;white-space:normal}
 tbody tr:nth-child(even){background:#faf8f4}
 img{max-width:100%;height:auto;display:block;margin:8px 0 24px;border:1px solid #e6e2da;border-radius:10px}
 @media(prefers-color-scheme:dark){img{border-color:#2e2b24}}
 a{color:#b45309;text-decoration:none}
+.pane p a{white-space:nowrap}
+@media(max-width:600px){.pane p:first-of-type{font-size:19px;line-height:1.9}}
 a:hover{text-decoration:underline}
 strong{font-weight:700}
 hr{border:0;border-top:1px solid #e6e2da;margin:36px 0}
@@ -84,11 +91,57 @@ footer{color:#6b665b}
 #fabPanel a:hover{background:#26231c;color:#f0a25a}
 .tabbar{background:rgba(22,21,15,.96);border-color:#2e2b24}
 .tabbar button{background:#1f1d16;border-color:#2e2b24;color:#c9c2b4}
-}</style>
+}
+/* ===== 扁平活潑・陽光主題（覆寫原暖棕配色） ===== */
+html,body{background-color:#FFF9EC !important;color:#2B2A26 !important;
+  background-image:
+    radial-gradient(circle at 86% -8%, rgba(255,197,49,.28) 0, rgba(255,197,49,0) 42%),
+    radial-gradient(circle at 4% 2%, rgba(56,189,248,.12) 0, rgba(56,189,248,0) 34%),
+    radial-gradient(rgba(255,138,0,.075) 1.1px, transparent 1.2px);
+  background-size:auto, auto, 20px 20px;
+  background-attachment:fixed, fixed, fixed;
+  background-repeat:no-repeat, no-repeat, repeat}
+h1{color:#2B2A26 !important;font-weight:900}
+h2{border-left:8px solid #FFC531 !important;padding-left:14px;color:#2B2A26 !important}
+h3{color:#C2410C !important}
+th{background:#FFE9A8 !important;color:#2B2A26 !important}
+td{border-color:#FFE0B2 !important}
+blockquote{background:#FFF3C4 !important;border-color:#FFC531 !important;color:#2B2A26 !important}
+a{color:#C2410C !important}
+.date{color:#5C564C !important}
+.tabbar{background:rgba(255,249,236,.97) !important;border-color:#FFE0B2 !important}
+.tabbar button,.tabbar a.tablink{background:#fff !important;color:#2B2A26 !important;
+  border:3px solid #FFC531 !important;font-weight:900}
+.tabbar button.active{background:#FF8A00 !important;border-color:#FF8A00 !important;color:#fff !important}
+.navbtns a{background:#fff !important;color:#2B2A26 !important;border:3px solid #FFC531 !important}
+.navbtns a.alt{background:#FF8A00 !important;color:#fff !important;border-color:#FF8A00 !important}
+hr{border-color:#FFE0B2 !important}
+table{background:#fff !important}
+thead tr{background:#FFE9A8 !important}
+tbody tr{background:#fff !important}
+tbody tr:nth-child(even){background:#FFFBF0 !important}
+th{background:#FFE9A8 !important;color:#2B2A26 !important;border-color:#E0C98A !important}
+td{background:transparent !important;color:#2B2A26 !important;border-color:#E6D6AE !important}
+@media (prefers-color-scheme: dark){
+  html,body{background-color:#FFF9EC !important;color:#2B2A26 !important}
+  h1,h2,h3,p,li,td,th,div,span{color:#2B2A26 !important}
+  h3{color:#C2410C !important}
+  th{background:#FFE9A8 !important}
+  blockquote{background:#FFF3C4 !important;color:#2B2A26 !important}
+  .tabbar,.tabbar button,.tabbar a.tablink{background:#fff !important;color:#2B2A26 !important}
+  .tabbar button.active{background:#FF8A00 !important;color:#fff !important}
+  a{color:#C2410C !important}
+  table{background:#fff !important}
+  thead tr,tbody tr{background:#fff !important}
+  tbody tr:nth-child(even){background:#FFFBF0 !important}
+  th{background:#FFE9A8 !important;color:#2B2A26 !important;border-color:#E0C98A !important}
+  td{background:transparent !important;color:#2B2A26 !important;border-color:#E6D6AE !important}
+}
+</style>
 </head><body><div class="wrap">
-<div class="head"><h1>2026-11-13 投資日報<span class="stamp">2026-11-13 07:00</span></h1><div class="freelight" title="檢查時間 2026-11-14 12:30">免費模型｜<i class="led on"></i>運作</div></div>
-<div class="tabbar"><button data-i="0" class="active">晨報</button><button data-i="1" class="">走勢圖</button><button data-i="2" class="">燈號</button><a class="tablink" href="index.html">舊文</a></div>
-<section class="pane active" id="pane0"><nav class="toc"><h2>目錄</h2><ol><li><a href="#p0-sec1">重點提醒｜Emmy（持續中）</a></li><li><a href="#p0-sec2">🚨 警報狀態（你必須知道的事）</a></li><li><a href="#p0-sec3">① 一句話結論</a></li><li><a href="#p0-sec4">② 國際與美股（11/12 美股收盤）</a></li><li><a href="#p0-sec5">③ 台股覆盤（11/12 收盤）</a></li><li><a href="#p0-sec6">④ 頻道影片重點</a></li><li><a href="#p0-sec7">📺 一綺聊股最近一期（2026年11月12日）</a></li><li><a href="#p0-sec8">⑤ 我的持股動態</a></li><li><a href="#p0-sec9">⑥ 觀察清單與法人動向</a></li><li><a href="#p0-sec10">台股觀察清單（12 檔）</a></li><li><a href="#p0-sec11">外資動向（買賣超，單位：張）</a></li><li><a href="#p0-sec12">🧮 ETF 共識持股（AI／記憶體・5 大發行商）</a></li><li><a href="#p0-sec13">⑦ SWOT</a></li><li><a href="#p0-sec14">⑧ 財經行事曆</a></li><li><a href="#p0-sec15">⑨ 紀律提醒（讀 ~/vault/交易紀律.md）</a></li><li><a href="#p0-sec16">⑩ 資料來源與限制</a></li></ol></nav><blockquote>
+<div class="head"><h1>2026-11-13 投資日報<span class="stamp">2026-11-13 07:00</span></h1><div class="freelight" title="檢查時間 2026-11-23 07:00">免費模型｜<i class="led on"></i>運作</div></div>
+<div class="tabbar"><button data-i="0" class="active">晨報</button><button data-i="1" class="">走勢圖</button><button data-i="2" class="">燈號</button><button data-i="3" class="">行事曆</button><a class="tablink" href="index.html">舊文</a></div>
+<section class="pane active" id="pane0"><blockquote>
 <p>今天是<strong>交易日</strong>（週五 09:00 開盤）。本報台股數字為 <strong>11/12（四）收盤</strong>，美股為 <strong>11/12（四）美股收盤</strong>。</p>
 </blockquote>
 <hr />
@@ -1123,7 +1176,7 @@ ETF：SMH、SOXX、XLK、QQQ、VGT　｜　查詢：2026-11-13 07:02</p>
 <blockquote>
 <p>產生時間：2026-11-13 07:00（台北）</p>
 </blockquote>
-<div class="nav"><a href="index.html">← 回舊文列表</a>　｜　<a href="../home.html">首頁</a>　｜　<a href="../home.html#about">關於我</a></div></section><section class="pane" id="pane1"><nav class="toc"><h2>目錄</h2><ol><li><a href="#p1-sec1">紀律</a></li><li><a href="#p1-sec2">走勢</a></li><li><a href="#p1-sec3">重點</a></li><li><a href="#p1-sec4">美股</a></li><li><a href="#p1-sec5">台股</a></li></ol></nav><p><a href="#p1-c1"><strong>紀律</strong></a>　｜　<a href="#p1-c2"><strong>走勢</strong></a>　｜　<a href="#p1-c3"><strong>重點</strong></a>　｜　<a href="#p1-c4"><strong>美股</strong></a>　｜　<a href="#p1-c5"><strong>台股</strong></a></p>
+<div class="nav"><a href="index.html">← 回舊文列表</a>　｜　<a href="../home.html">首頁</a>　｜　<a href="../home.html#about">關於我</a></div></section><section class="pane" id="pane1"><p><a href="#p1-c1"><strong>紀律</strong></a>　｜　<a href="#p1-c2"><strong>走勢</strong></a>　｜　<a href="#p1-c3"><strong>重點</strong></a>　｜　<a href="#p1-c4"><strong>美股</strong></a>　｜　<a href="#p1-c5"><strong>台股</strong></a></p>
 <hr />
 <div id="p1-c1"></div>
 <h2 id="p1-sec1">紀律</h2>
@@ -1179,27 +1232,85 @@ ETF：SMH、SOXX、XLK、QQQ、VGT　｜　查詢：2026-11-13 07:02</p>
 <h2 id="p1-sec5">台股</h2>
 <h3>加權 月／季／年 走勢</h3>
 <p><img src="img/trend-tw-2026-11-14.png" alt="台股加權走勢" /></p>
-<div class="nav"><a href="index.html">← 回舊文列表</a>　｜　<a href="../home.html">首頁</a>　｜　<a href="../home.html#about">關於我</a></div></section><section class="pane" id="pane2"><nav class="toc"><h2>目錄</h2><ol><li><a href="#p2-sec1">一眼看完</a></li><li><a href="#p2-sec2">① 市場溫度（每個成分各自五燈）</a></li><li><a href="#p2-sec3">② 退場訊號（每項獨立五燈）</a></li><li><a href="#p2-sec4">③ 基本面燈</a></li><li><a href="#p2-sec5">④ 名詞解說（文字版）</a></li><li><a href="#p2-sec6">更新規則</a></li></ol></nav><p><img src="img/lights-2026-11-14.png" alt="台股警示燈號" />
-<img src="img/lights-explain-2026-11-14.png" alt="名詞解說" /></p>
+<div class="nav"><a href="index.html">← 回舊文列表</a>　｜　<a href="../home.html">首頁</a>　｜　<a href="../home.html#about">關於我</a></div></section><section class="pane" id="pane2"><h2 id="p2-sec1">⓿ AI 鏈健康分數（季等級，看財報不看新聞）</h2>
+<p><img src="img/aihealth-2026-11-15.png" alt="AI 鏈健康分數" /></p>
+<p><strong>AI 鏈健康分數：40／100（轉弱）</strong>　季等級，從「付錢的人」開始看。</p>
 <blockquote>
-<p>每兩週更新一次，下次更新：2026-11-30。期間每日晨報都沿用本頁。</p>
+<p><strong>積木邏輯</strong>：加權 54 分，但底座最弱環節只有 0 分，總分上限壓到 40 分。</p>
 </blockquote>
-<h2 id="p2-sec1">一眼看完</h2>
+<blockquote>
+<p><strong>錢的源頭</strong>：四大 CSP 近 4 季營運現金流 1.12 倍於資本支出，自由現金流 +707 億美元；<strong>最近一季 -264 億（已開始透支）</strong>；淨現金（現金−負債）-4,423 億美元。</p>
+</blockquote>
 <ul>
-<li><strong>市場溫度 44／100（正常）</strong></li>
+<li><strong>記憶體雙雄</strong>　+372%（YoY）　→ <strong>很健康</strong>（100 分，權重 5%）
+<ul>
+<li>南亞科／華邦電月營收，記憶體循環的溫度計</li>
+</ul>
+</li>
+<li><strong>AI 晶片三雄</strong>　+79%（YoY）　→ <strong>很健康</strong>（100 分，權重 10%）
+<ul>
+<li>輝達／博通／AMD 營收，代表 AI 伺服器與加速器的實際出貨</li>
+</ul>
+</li>
+<li><strong>台積電月營收</strong>　+59.7%（YoY）　→ <strong>很健康</strong>（100 分，權重 10%）
+<ul>
+<li>AI 需求最直接的成績單，每月 10 日公布；由正轉負是第一個警訊</li>
+</ul>
+</li>
+<li><strong>CSP 資本支出</strong>　+114%（YoY）　→ <strong>很健康</strong>（90 分，權重 10%）
+<ul>
+<li>訂單的源頭。年增率高＝硬體需求旺；但要看上面三項，錢是自己出還是借的</li>
+</ul>
+</li>
+<li><strong>AI 服務商現金流</strong>　-129 億美元　→ <strong>警訊</strong>（0 分，權重 10%）
+<ul>
+<li>CoreWeave／Oracle 的自由現金流；負越大代表靠借錢擴張</li>
+</ul>
+</li>
+<li><strong>AI 服務商槓桿</strong>　淨負債 / TTM EBITDA 7.6 倍　→ <strong>警訊</strong>（15 分，權重 15%）
+<ul>
+<li>CoreWeave／Oracle／Nebius 的槓桿是 CSP 的十倍以上（CRWV 12.4x、ORCL 4.3x、NBIS 20.7x）。底座垮了，上面的訂單會一起消失</li>
+</ul>
+</li>
+<li><strong>CSP 債務增速</strong>　+110%（一年）　→ <strong>警訊</strong>（0 分，權重 15%）
+<ul>
+<li>總負債一年內從 279B 增加到 586B。借錢買機器最直接的證據，增速越快風險越高</li>
+</ul>
+</li>
+<li><strong>CSP 現金流支撐</strong>　4 季 OCF / capex 1.12 倍｜最近一季 -264 億　→ <strong>健康</strong>（65 分，權重 15%）
+<ul>
+<li>四大雲端業者自己賺的錢夠不夠付資本支出。近 4 季 OCF 6,670 億、資本支出 5,962 億 → 自由現金流 +707 億美元；低於 1 倍就要靠現金或舉債</li>
+</ul>
+</li>
+<li><strong>CSP 槓桿水位</strong>　淨負債 442B / EBITDA 691B = 0.64 倍　→ <strong>很健康</strong>（85 分，權重 10%）
+<ul>
+<li>資產負債表扛不扛得住。低於 1 倍＝獲利一年就能還清；3 倍以上＝景氣一反轉就吃緊</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="p2-sec2">台股警示燈號（日等級）</h2>
+<p><img src="img/lights-2026-11-15.png" alt="台股警示燈號" />
+<img src="img/lights-explain-2026-11-15.png" alt="名詞解說" /></p>
+<blockquote>
+<p>每兩週更新一次，下次更新：2026-12-15。期間每日晨報都沿用本頁。</p>
+</blockquote>
+<h2 id="p2-sec3">一眼看完</h2>
+<ul>
+<li><strong>市場溫度 37／100（偏冷）</strong></li>
 <li><strong>注意以上 6 項、危險 0 項 → 橙燈　減碼</strong></li>
 <li><strong>動作：減碼到 3 成，只留核心持股</strong></li>
 </ul>
-<h2 id="p2-sec2">① 市場溫度（每個成分各自五燈）</h2>
+<h2 id="p2-sec4">① 市場溫度（每個成分各自五燈）</h2>
 <ul>
 <li><strong>量能</strong>　1.03 倍均量　→ 53 分　<strong>正常</strong>　｜　成交量是最近 20 天平均的幾倍，錢多就熱</li>
 <li><strong>乖離</strong>　-2.9%（距 60 日線）　→ 35 分　<strong>安全</strong>　｜　指數離 60 天平均線多遠，漲太遠就是過熱</li>
 <li><strong>融資</strong>　5,366 億（20 日 -17.6%）　→ 0 分　<strong>很安全</strong>　｜　散戶借錢買股的餘額，增加＝追高、減少＝籌碼變乾淨</li>
-<li><strong>廣度</strong>　上漲 804 / 下跌 229　→ 96 分　<strong>注意</strong>　｜　今天上漲家數對下跌家數，多數股票漲才是健康</li>
+<li><strong>廣度</strong>　上漲 526 / 下跌 491　→ 53 分　<strong>正常</strong>　｜　今天上漲家數對下跌家數，多數股票漲才是健康</li>
 <li><strong>VIX</strong>　19.30　→ 53 分　<strong>正常</strong>　｜　美國恐慌指數，越高越危險（反向計分）</li>
 <li><strong>外資</strong>　-968 億（5 日）　→ 18 分　<strong>很安全</strong>　｜　外資近 5 天買賣超，一直買＝偏熱、一直賣＝偏冷</li>
 </ul>
-<h2 id="p2-sec3">② 退場訊號（每項獨立五燈）</h2>
+<h2 id="p2-sec5">② 退場訊號（每項獨立五燈）</h2>
 <p>藍＝很安全、綠＝安全、黃＝正常、橙＝注意、紅＝危險。</p>
 <table>
 <thead>
@@ -1214,8 +1325,8 @@ ETF：SMH、SOXX、XLK、QQQ、VGT　｜　查詢：2026-11-13 07:02</p>
 <tr>
 <td>溫度計</td>
 <td>80 分以上＝過熱</td>
-<td>44 分</td>
-<td><strong>正常</strong></td>
+<td>37 分</td>
+<td><strong>安全</strong></td>
 </tr>
 <tr>
 <td>融資水位</td>
@@ -1250,7 +1361,7 @@ ETF：SMH、SOXX、XLK、QQQ、VGT　｜　查詢：2026-11-13 07:02</p>
 <tr>
 <td>美 10 年殖利率</td>
 <td>5% 以上＝危險</td>
-<td>5.15%（5 日 +30bp）</td>
+<td>5.15%（5 日 +29bp）</td>
 <td><strong>注意</strong></td>
 </tr>
 <tr>
@@ -1279,7 +1390,7 @@ ETF：SMH、SOXX、XLK、QQQ、VGT　｜　查詢：2026-11-13 07:02</p>
 </tr>
 </tbody>
 </table>
-<h2 id="p2-sec4">③ 基本面燈</h2>
+<h2 id="p2-sec6">③ 基本面燈</h2>
 <ul>
 <li><strong>出口</strong>：2026-10 出口 967.6 億美元（連 36 紅）。出口是<strong>領先指標</strong>，訂單旺→電子股營收後面會好。</li>
 <li><strong>景氣燈號</strong>：2026-09 41 分、紅燈（連 10 紅）。這是<strong>同時指標</strong>，確認現在很熱。</li>
@@ -1287,7 +1398,7 @@ ETF：SMH、SOXX、XLK、QQQ、VGT　｜　查詢：2026-11-13 07:02</p>
 <blockquote>
 <p><strong>基本面是地板，不是天花板。</strong> 基本面最熱的時候，通常是股價最危險的時候。</p>
 </blockquote>
-<h2 id="p2-sec5">④ 名詞解說（文字版）</h2>
+<h2 id="p2-sec7">④ 名詞解說（文字版）</h2>
 <h3>市場溫度的六個成分</h3>
 <ul>
 <li><strong>市場溫度</strong>：六項指標各打 0～100 分再加權平均　→　越高＝市場越熱，追高危險；越低＝越冷，但可能是機會</li>
@@ -1312,16 +1423,34 @@ ETF：SMH、SOXX、XLK、QQQ、VGT　｜　查詢：2026-11-13 07:02</p>
 <li><strong>景氣燈號</strong>：國發會景氣對策信號（9 項指標）　→　紅燈＝景氣最熱，通常是股價高點區（落後訊號）</li>
 <li><strong>出口</strong>：海關出口金額年增率　→　由正轉負＝訂單真的轉弱（領先訊號）</li>
 </ul>
-<h2 id="p2-sec6">更新規則</h2>
+<h2 id="p2-sec8">更新規則</h2>
 <ul>
 <li>每兩週一次：<strong>每月 15 日與月底</strong>自動重算</li>
 <li>出口（每月 8～9 日公布）與景氣燈號（每月底公布）手動更新到 <code>~/.hermes/state/macro.json</code></li>
 <li>期間本頁固定不變，即時變化請看「走勢圖」頁籤</li>
 </ul>
+<div class="nav"><a href="index.html">← 回舊文列表</a>　｜　<a href="../home.html">首頁</a>　｜　<a href="../home.html#about">關於我</a></div></section><section class="pane" id="pane3"><div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:10px 0 6px"><img src="img/cal-2026-11.png" alt="2026 年 11 月 財報與事件行事曆" style="width:1236px;max-width:none;border:1px solid #e6e2da;border-radius:10px"></div><div style="font-size:18px;color:#8a857c;margin:0 0 20px">↑ 圖可左右滑動看完整月份（手機用手指滑）</div>
+<h2 id="p3-sec1">台股（4 項）</h2>
+<div class="caltabwrap"><table class="caltab" style="width:100%;table-layout:fixed;border-collapse:collapse"><colgroup><col style="width:86px"><col style="width:100px"><col style="width:178px"><col></colgroup><thead><tr><th>日期</th><th>類型</th><th>事件</th><th>為什麼重要</th></tr></thead><tbody><tr><td>11/14</td><td>財報</td><td><strong>Q3 財報截止</strong></td><td>上市櫃第三季財報法定公告截止日；沒公布或數字差的個股，下週一容易補跌。</td></tr><tr><td>11/18</td><td>結算</td><td><strong>台指期結算</strong></td><td>11 月台指期契約結算日（每月第三個週三）。結算前後容易出現「拉高結算／壓低結算」，當沖與波段都不要在結算日追價。</td></tr><tr><td>11/24</td><td>觀察</td><td><strong>MSCI 調整前</strong></td><td>MSCI 11 月季度調整於 11/30 收盤後生效，生效前一週（11/24 起）外資會提前換股，權值股尾盤容易異常大量。</td></tr><tr><td>11/30</td><td>調整</td><td><strong>MSCI 台股生效</strong></td><td>MSCI 11 月調整收盤後生效，台股尾盤（13:00-13:30）會出現大量換股單，持股不要在尾盤被掃到才反應。</td></tr></tbody></table></div>
+<h2 id="p3-sec2">美股（11 項）</h2>
+<div class="caltabwrap"><table class="caltab" style="width:100%;table-layout:fixed;border-collapse:collapse"><colgroup><col style="width:86px"><col style="width:100px"><col style="width:178px"><col></colgroup><thead><tr><th>日期</th><th>類型</th><th>事件</th><th>為什麼重要</th></tr></thead><tbody><tr><td>11/16</td><td>觀察</td><td><strong>零售財報週起</strong></td><td>本週進入美國零售財報週（Home Depot、Target、Walmart、Lowe's），是消費力最直接的檢驗。</td></tr><tr><td>11/17</td><td>財報</td><td><strong>HD 財報</strong></td><td>Home Depot Q3，美東 09:00 公布。看美國房市與裝修需求，是內需溫度計。</td></tr><tr><td>11/17</td><td>財報</td><td><strong>輝達 Q3</strong></td><td>NVDA Q3 FY27，美股收盤後（台灣 11/18 清晨 05:00 法說）。本月唯一真正的定價錨：資料中心營收、毛利率、Q4 指引。台股 AI 鏈（2330、散熱、電源、PCB）隔天連動。</td></tr><tr><td>11/18</td><td>財報</td><td><strong>Target 財報</strong></td><td>Target Q3，美東 08:00。平價零售代表，看美國中低收入消費是否轉弱。</td></tr><tr><td>11/18</td><td>IPO</td><td><strong>Anthropic 定價</strong></td><td>Anthropic IPO 定價日（區間 70～78 美元，最多募 643.5 億）。定價落在上緣才算利多兌現，落在下緣或折價是 AI 評價的利空。</td></tr><tr><td>11/18</td><td>觀察</td><td><strong>輝達員工大會</strong></td><td>輝達對內員工大會（美國當地）。若臨時取消或改由代理執行長主持，代表人事還沒落定；若有新任 CEO 現身，是市場最想看的訊號。屬公司行程，時間以官方公告為準。</td></tr><tr><td>11/19</td><td>財報</td><td><strong>Walmart 財報</strong></td><td>Walmart Q3，美東 06:00（開盤前）。它是美國消費的「體溫計」，比任何總經數據更早反映民眾口袋。</td></tr><tr><td>11/19</td><td>IPO</td><td><strong>Anthropic 掛牌</strong></td><td>Anthropic 那斯達克掛牌（代號 ANT）。今年最大 IPO，首日表現會直接影響 AI 族群的市場情緒。</td></tr><tr><td>11/26</td><td>休市</td><td><strong>感恩節休市</strong></td><td>美股全天休市，台股正常交易。美股休市期間台股由內資主導，成交量通常縮小。</td></tr><tr><td>11/27</td><td>休市</td><td><strong>半日交易</strong></td><td>黑色星期五，美股提前於美東 13:00 收盤（台灣 11/28 凌晨 02:00）。流動性差，不要在這天做重大決定。</td></tr><tr><td>11/30</td><td>調整</td><td><strong>MSCI 美股生效</strong></td><td>美股同樣在收盤時生效，被動基金最後一盤集中成交，個股尾盤波動放大。</td></tr></tbody></table></div>
+<h2 id="p3-sec3">下月預告（2026 年 12 月 財報與事件行事曆）</h2>
+<div class="caltabwrap"><table class="caltab" style="width:100%;table-layout:fixed;border-collapse:collapse"><colgroup><col style="width:86px"><col style="width:100px"><col style="width:178px"><col></colgroup><thead><tr><th>日期</th><th>類型</th><th>事件</th><th>為什麼重要</th></tr></thead><tbody><tr><td>12/01</td><td>美股觀察</td><td><strong>眾院約談黃仁勳</strong></td><td>美國眾議院要求黃仁勳閉門受訪（美國當地日期）。這是國會「要求出席」的日期，不是確定行程，依最終安排為準；真的出席代表輝達治理問題進入政治程序，對 AI 監管預期是負面。</td></tr><tr><td>12/02</td><td>美股觀察</td><td><strong>眾院約談法務長</strong></td><td>眾議院要求輝達法務長閉門受訪。法務長被問的通常是出口管制與揭露義務，若傳出文件往來，後續可能有正式聽證。</td></tr><tr><td>12/03</td><td>美股觀察</td><td><strong>參院黃仁勳作證</strong></td><td>參議院要求黃仁勳公開作證（公開場合，殺傷力大於閉門）。公開作證的發言會直接影響 AI 晶片出口政策預期，台股 AI 鏈隔天通常連動。同樣以最終安排為準。</td></tr><tr><td>12/10</td><td>台股總經</td><td><strong>11月營收公布</strong></td><td>上市櫃 11 月營收公告截止。先看 2330、2454、8299 的月增率；營收是檢查基本面有沒有鬆動的第一個數字。</td></tr><tr><td>12/16</td><td>台股結算</td><td><strong>台指期結算</strong></td><td>12 月台指期契約結算日（每月第三個週三）。結算前後容易拉高或壓低，不要追價。</td></tr><tr><td>12/24</td><td>美股休市</td><td><strong>平安夜半日</strong></td><td>美股提前於美東 13:00 收盤（台灣 12/25 凌晨 02:00）。流動性差，不要在這天做重大決定。</td></tr><tr><td>12/25</td><td>美股休市</td><td><strong>聖誕節休市</strong></td><td>美股全天休市，台股正常交易。外資放假，台股由內資主導，量通常縮小。</td></tr></tbody></table></div>
+<h2 id="p3-sec4">每月固定要記的日子</h2>
+<ul>
+<li>每月 10 日前：上市櫃公布上月營收。2330、2454、8299 的月營收是我們檢查基本面有沒有壞掉的第一個數字。</li>
+<li>每月第三個週三：台指期結算日。結算前後三天不要追價。</li>
+<li>每月第一個週五（台灣時間晚上）：美國非農就業報告，公布上個月的就業數字。</li>
+<li>每年 1、4、7、10 月：台股與美股財報季（台股 Q1～Q4 財報法定截止：5/15、8/14、11/14、3/31）。</li>
+<li>每季一次：MSCI 季度調整（2、5、8、11 月），生效日多在月底收盤。</li>
+</ul>
+<blockquote>
+<p>本頁每月月初更新一次，更新後沿用一整個月；資料核對於 2026-11-15。</p>
+</blockquote>
 <div class="nav"><a href="index.html">← 回舊文列表</a>　｜　<a href="../home.html">首頁</a>　｜　<a href="../home.html#about">關於我</a></div></section>
 <footer>由 Hermes Agent 自動產生</footer>
 </div><div id="fab"><button id="fabTop" aria-label="回頂端">↑</button></div><div id="fabPanel"></div><script>
-var TOCS = [[{"id": "p0-sec1", "t": "重點提醒｜Emmy（持續中）"}, {"id": "p0-sec2", "t": "🚨 警報狀態（你必須知道的事）"}, {"id": "p0-sec3", "t": "① 一句話結論"}, {"id": "p0-sec4", "t": "② 國際與美股（11/12 美股收盤）"}, {"id": "p0-sec5", "t": "③ 台股覆盤（11/12 收盤）"}, {"id": "p0-sec6", "t": "④ 頻道影片重點"}, {"id": "p0-sec7", "t": "📺 一綺聊股最近一期（2026年11月12日）"}, {"id": "p0-sec8", "t": "⑤ 我的持股動態"}, {"id": "p0-sec9", "t": "⑥ 觀察清單與法人動向"}, {"id": "p0-sec10", "t": "台股觀察清單（12 檔）"}, {"id": "p0-sec11", "t": "外資動向（買賣超，單位：張）"}, {"id": "p0-sec12", "t": "🧮 ETF 共識持股（AI／記憶體・5 大發行商）"}, {"id": "p0-sec13", "t": "⑦ SWOT"}, {"id": "p0-sec14", "t": "⑧ 財經行事曆"}, {"id": "p0-sec15", "t": "⑨ 紀律提醒（讀 ~/vault/交易紀律.md）"}, {"id": "p0-sec16", "t": "⑩ 資料來源與限制"}], [{"id": "p1-sec1", "t": "紀律"}, {"id": "p1-sec2", "t": "走勢"}, {"id": "p1-sec3", "t": "重點"}, {"id": "p1-sec4", "t": "美股"}, {"id": "p1-sec5", "t": "台股"}], [{"id": "p2-sec1", "t": "一眼看完"}, {"id": "p2-sec2", "t": "① 市場溫度（每個成分各自五燈）"}, {"id": "p2-sec3", "t": "② 退場訊號（每項獨立五燈）"}, {"id": "p2-sec4", "t": "③ 基本面燈"}, {"id": "p2-sec5", "t": "④ 名詞解說（文字版）"}, {"id": "p2-sec6", "t": "更新規則"}]];
+var TOCS = [[{"id": "p0-sec1", "t": "重點提醒｜Emmy（持續中）"}, {"id": "p0-sec2", "t": "🚨 警報狀態（你必須知道的事）"}, {"id": "p0-sec3", "t": "① 一句話結論"}, {"id": "p0-sec4", "t": "② 國際與美股（11/12 美股收盤）"}, {"id": "p0-sec5", "t": "③ 台股覆盤（11/12 收盤）"}, {"id": "p0-sec6", "t": "④ 頻道影片重點"}, {"id": "p0-sec7", "t": "📺 一綺聊股最近一期（2026年11月12日）"}, {"id": "p0-sec8", "t": "⑤ 我的持股動態"}, {"id": "p0-sec9", "t": "⑥ 觀察清單與法人動向"}, {"id": "p0-sec10", "t": "台股觀察清單（12 檔）"}, {"id": "p0-sec11", "t": "外資動向（買賣超，單位：張）"}, {"id": "p0-sec12", "t": "🧮 ETF 共識持股（AI／記憶體・5 大發行商）"}, {"id": "p0-sec13", "t": "⑦ SWOT"}, {"id": "p0-sec14", "t": "⑧ 財經行事曆"}, {"id": "p0-sec15", "t": "⑨ 紀律提醒（讀 ~/vault/交易紀律.md）"}, {"id": "p0-sec16", "t": "⑩ 資料來源與限制"}], [{"id": "p1-sec1", "t": "紀律"}, {"id": "p1-sec2", "t": "走勢"}, {"id": "p1-sec3", "t": "重點"}, {"id": "p1-sec4", "t": "美股"}, {"id": "p1-sec5", "t": "台股"}], [{"id": "p2-sec1", "t": "⓿ AI 鏈健康分數（季等級，看財報不看新聞）"}, {"id": "p2-sec2", "t": "台股警示燈號（日等級）"}, {"id": "p2-sec3", "t": "一眼看完"}, {"id": "p2-sec4", "t": "① 市場溫度（每個成分各自五燈）"}, {"id": "p2-sec5", "t": "② 退場訊號（每項獨立五燈）"}, {"id": "p2-sec6", "t": "③ 基本面燈"}, {"id": "p2-sec7", "t": "④ 名詞解說（文字版）"}, {"id": "p2-sec8", "t": "更新規則"}], [{"id": "p3-sec1", "t": "台股（4 項）"}, {"id": "p3-sec2", "t": "美股（11 項）"}, {"id": "p3-sec3", "t": "下月預告（2026 年 12 月 財報與事件行事曆）"}, {"id": "p3-sec4", "t": "每月固定要記的日子"}]];
 var active = 0;
 function renderPanel(){
   var el = document.getElementById('fabPanel');
