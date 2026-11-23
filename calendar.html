@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
 <script>
-(function(){try{var t=localStorage.getItem('xiaohe_theme');if(t){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();
+(function(){try{var t=localStorage.getItem('xiaohe_theme');if(!t)t='sunny';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
 </script>
 <meta name="theme-color" content="#FFF9EC">
 <title>📅 行事曆</title>
@@ -234,125 +234,198 @@ a{color:#C2410C !important}
 </style>
 
 <style>
-/* ===== 佈景切換：固定工具列 ===== */
-.theme-bar{position:fixed;right:12px;bottom:12px;z-index:999;display:flex;gap:6px;
-  align-items:center;padding:6px 8px;border-radius:12px;background:rgba(255,255,255,.94);
-  border:2px solid #FFC531;box-shadow:0 2px 10px rgba(0,0,0,.12)}
-.theme-bar .theme-lb{font-size:13px;font-weight:800;color:#5C564C}
-.theme-bar button{font:inherit;font-size:14px;font-weight:800;padding:6px 10px;border-radius:8px;
-  border:2px solid #C9C2B4;background:#fff;color:#2B2A26;cursor:pointer}
-.theme-bar .theme-toggle{display:inline-block}
-.theme-bar .theme-lb,.theme-bar button[data-th]{display:none}
-.theme-bar.open .theme-lb,.theme-bar.open button[data-th]{display:inline-block}
-.theme-bar button.on{background:#2B2A26;color:#fff;border-color:#2B2A26}
-body{padding-bottom:86px !important}
+/* ============================================================
+   ① 變數：每個佈景一組，背景色與文字色一定成對
+   ============================================================ */
+html[data-theme="sunny"], html:not([data-theme]){
+  --bg:#FFF9EC; --bg2:#FFF3D6; --fg:#211F1A; --muted:#5E594D;
+  --card:#FFFFFF; --line:#E3C79A; --accent:#B23A00;
+  --btn-bg:#E86A00; --btn-fg:#FFFFFF; --btn-line:#E86A00;
+  --chip-bg:#FFF3D6; --chip-fg:#211F1A; --chip-line:#CDA96E;
+  --stage-bg:#101010; --stage-fg:#9DFF6A;
+  --th-bg:#FFF3D6; --th-fg:#211F1A; --td-line:#E8DCC2;
+}
+html[data-theme="wire"]{
+  --bg:#000000; --bg2:#000000; --fg:#8CFFC0; --muted:#63B98A;
+  --card:#000000; --line:#8CFFC0; --accent:#FFFFFF;
+  --btn-bg:#000000; --btn-fg:#EFFFF4; --btn-line:#8CFFC0;
+  --chip-bg:#000000; --chip-fg:#8CFFC0; --chip-line:#4E8F68;
+  --stage-bg:#000000; --stage-fg:#EFFFF4;
+  --th-bg:#000000; --th-fg:#EFFFF4; --td-line:#4E8F68;
+}
+html[data-theme="dark"]{
+  --bg:#0E1113; --bg2:#1B2226; --fg:#EDF1F3; --muted:#A9B4B9;
+  --card:#171B1E; --line:#465258; --accent:#FFC061;
+  --btn-bg:#2A363C; --btn-fg:#FFD79A; --btn-line:#FFB020;
+  --chip-bg:#1D2529; --chip-fg:#EDF1F3; --chip-line:#5C6B72;
+  --stage-bg:#050708; --stage-fg:#7CF29B;
+  --th-bg:#20282C; --th-fg:#FFD79A; --td-line:#3A454B;
+}
+html[data-theme="mono"]{
+  --bg:#FFFFFF; --bg2:#F1F1F1; --fg:#000000; --muted:#333333;
+  --card:#FFFFFF; --line:#000000; --accent:#000000;
+  --btn-bg:#FFFFFF; --btn-fg:#000000; --btn-line:#000000;
+  --chip-bg:#FFFFFF; --chip-fg:#000000; --chip-line:#000000;
+  --stage-bg:#FFFFFF; --stage-fg:#000000;
+  --th-bg:#ECECEC; --th-fg:#000000; --td-line:#000000;
+}
 
-/* ===== ① 線框主題（給光波導眼鏡：無底色、只有線） ===== */
-html[data-theme="wire"] body,html[data-theme="wire"]{
-  background:#000 !important;background-image:none !important;color:#8CFFC0 !important}
-html[data-theme="wire"] *{background-color:transparent !important;background-image:none !important;
-  box-shadow:none !important;text-shadow:none !important;border-radius:3px !important}
-html[data-theme="wire"] body,html[data-theme="wire"] .wrap,
-html[data-theme="wire"] .card,html[data-theme="wire"] .prog,
-html[data-theme="wire"] .summary,html[data-theme="wire"] .tm-stage,
-html[data-theme="wire"] .about-card,html[data-theme="wire"] .item,
-html[data-theme="wire"] table,html[data-theme="wire"] th,html[data-theme="wire"] td,
-html[data-theme="wire"] blockquote{background:#000 !important}
-html[data-theme="wire"] h1,html[data-theme="wire"] h2,html[data-theme="wire"] h3,
-html[data-theme="wire"] p,html[data-theme="wire"] li,html[data-theme="wire"] td,
-html[data-theme="wire"] th,html[data-theme="wire"] div,html[data-theme="wire"] span,
-html[data-theme="wire"] b,html[data-theme="wire"] strong,html[data-theme="wire"] small{color:#8CFFC0 !important}
-html[data-theme="wire"] a{color:#EFFFF4 !important;text-decoration:underline !important}
-html[data-theme="wire"] h1,html[data-theme="wire"] h2{color:#FFFFFF !important;border:0 !important}
-html[data-theme="wire"] h2,html[data-theme="wire"] .card,html[data-theme="wire"] .prog,
-html[data-theme="wire"] .summary,html[data-theme="wire"] .tm-stage,
-html[data-theme="wire"] .about-card,html[data-theme="wire"] table,
-html[data-theme="wire"] blockquote,html[data-theme="wire"] .big,
-html[data-theme="wire"] .aboutbtn,html[data-theme="wire"] .abouttabs button,
-html[data-theme="wire"] button{border:2px solid #8CFFC0 !important}
-html[data-theme="wire"] th,html[data-theme="wire"] td{border:1px solid #4E8F68 !important}
-html[data-theme="wire"] .big,html[data-theme="wire"] .aboutbtn,
-html[data-theme="wire"] .abouttabs button.on,html[data-theme="wire"] .theme-bar button.on{
-  background:transparent !important;color:#EFFFF4 !important;border-color:#EFFFF4 !important;
-  outline:2px solid #EFFFF4 !important;outline-offset:-6px}
-html[data-theme="wire"] .item{border-bottom:1px dashed #4E8F68 !important}
-html[data-theme="wire"] .card h3{border-left:3px solid #8CFFC0 !important;padding-left:10px !important}
-html[data-theme="wire"] .abouttabs button:not(.on){color:#8CFFC0 !important;border-color:#4E8F68 !important}
-html[data-theme="wire"] .prog-t,html[data-theme="wire"] .summary-note{color:#EFFFF4 !important}
-html[data-theme="wire"] .tabbar{background:#000 !important;border-color:#4E8F68 !important}
-html[data-theme="wire"] .tabbar button,html[data-theme="wire"] .tabbar a.tablink{
-  background:transparent !important;color:#8CFFC0 !important;border:2px solid #4E8F68 !important}
-html[data-theme="wire"] .tabbar button.active{
-  background:transparent !important;color:#FFFFFF !important;border:2px solid #FFFFFF !important;
-  outline:1px solid #FFFFFF !important;outline-offset:-5px}
-html[data-theme="wire"] .navbtns a,html[data-theme="wire"] .navbtns a.alt{
-  background:transparent !important;color:#8CFFC0 !important;border:2px solid #8CFFC0 !important}
-html[data-theme="wire"] .fab,html[data-theme="wire"] .gotop{background:transparent !important;
-  color:#8CFFC0 !important;border:2px solid #8CFFC0 !important}
-html[data-theme="wire"] hr,html[data-theme="wire"] section.about{border-color:#8CFFC0 !important}
-html[data-theme="wire"] .theme-bar{background:#000 !important;border-color:#8CFFC0 !important}
-html[data-theme="wire"] .theme-bar .theme-lb{color:#8CFFC0 !important}
-html[data-theme="wire"] .theme-bar button{background:#000 !important;color:#8CFFC0 !important;
-  border-color:#8CFFC0 !important}
-html[data-theme="wire"] .tm-big{color:#EFFFF4 !important;font-size:clamp(64px,19vw,220px) !important}
-html[data-theme="wire"] img{opacity:.9}
+/* ============================================================
+   ② 版面底色與文字（同時指定 → 不會淺底白字）
+   ============================================================ */
+html[data-theme] body, html[data-theme] .wrap{
+  background-color:var(--bg) !important; background-image:none !important;
+  color:var(--fg) !important;
+}
+html[data-theme] h1, html[data-theme] h2, html[data-theme] h3, html[data-theme] h4,
+html[data-theme] p, html[data-theme] li, html[data-theme] b, html[data-theme] strong,
+html[data-theme] label, html[data-theme] summary, html[data-theme] figcaption{
+  color:var(--fg) !important;
+}
+html[data-theme] .date, html[data-theme] .muted, html[data-theme] .tm-sub{
+  color:var(--muted) !important;
+}
+html[data-theme] a{ color:var(--accent) !important; }
 
-/* ===== ② 深色高對比 ===== */
-html[data-theme="dark"] body,html[data-theme="dark"]{
-  background:#0E1113 !important;background-image:none !important;color:#EDF1F3 !important}
-html[data-theme="dark"] .card,html[data-theme="dark"] .prog,html[data-theme="dark"] .summary,
-html[data-theme="dark"] .about-card,html[data-theme="dark"] .tm-stage,
-html[data-theme="dark"] table,html[data-theme="dark"] blockquote{background:#171B1E !important}
-html[data-theme="dark"] h1,html[data-theme="dark"] h2,html[data-theme="dark"] h3,
-html[data-theme="dark"] p,html[data-theme="dark"] li,html[data-theme="dark"] td,
-html[data-theme="dark"] th,html[data-theme="dark"] div,html[data-theme="dark"] span,
-html[data-theme="dark"] b,html[data-theme="dark"] strong,html[data-theme="dark"] small{color:#EDF1F3 !important}
-html[data-theme="dark"] h3,html[data-theme="dark"] a{color:#FFB020 !important}
-html[data-theme="dark"] th{background:#20262A !important;color:#FFD580 !important}
-html[data-theme="dark"] td{border-color:#333C41 !important}
-html[data-theme="dark"] .big,html[data-theme="dark"] .aboutbtn{border:2px solid #FFB020 !important}
-html[data-theme="dark"] .theme-bar{background:#171B1E !important;border-color:#FFB020 !important}
-html[data-theme="dark"] .theme-bar .theme-lb{color:#EDF1F3 !important}
-html[data-theme="dark"] .theme-bar button{background:#171B1E !important;color:#EDF1F3 !important;
-  border-color:#5A686E !important}
-html[data-theme="dark"] .theme-bar button.on{background:#FFB020 !important;color:#101315 !important}
+/* ============================================================
+   ③ 卡片／表格／區塊：底色＋文字＋框線一起給
+   ============================================================ */
+html[data-theme] .card, html[data-theme] .prog, html[data-theme] .summary,
+html[data-theme] .about-card, html[data-theme] details.sec, html[data-theme] blockquote,
+html[data-theme] .secbody, html[data-theme] .quicknav a{
+  background-color:var(--card) !important; color:var(--fg) !important;
+}
+html[data-theme] .card, html[data-theme] .prog, html[data-theme] .about-card,
+html[data-theme] details.sec, html[data-theme] blockquote{
+  border:2px solid var(--line) !important;
+}
+html[data-theme] .card h3, html[data-theme] .about-card h3{
+  color:var(--accent) !important; background-color:var(--bg2) !important;
+  border-left:6px solid var(--btn-line) !important;
+}
+html[data-theme] .secbody h2{
+  color:var(--accent) !important; background-color:var(--bg2) !important;
+  border-left:6px solid var(--btn-line) !important;
+}
+html[data-theme] .secbody h3{ color:var(--accent) !important; background-color:transparent !important; }
+html[data-theme] .item{ color:var(--fg) !important; border-color:var(--td-line) !important; }
 
-/* ===== ③ 黑白高對比（最省力閱讀） ===== */
-html[data-theme="mono"] body,html[data-theme="mono"]{
-  background:#fff !important;background-image:none !important;color:#000 !important}
-html[data-theme="mono"] .card,html[data-theme="mono"] .prog,html[data-theme="mono"] .summary,
-html[data-theme="mono"] .about-card,html[data-theme="mono"] table,
-html[data-theme="mono"] blockquote{background:#fff !important;border:2px solid #000 !important}
-html[data-theme="mono"] h1,html[data-theme="mono"] h2,html[data-theme="mono"] h3,
-html[data-theme="mono"] p,html[data-theme="mono"] li,html[data-theme="mono"] td,
-html[data-theme="mono"] th,html[data-theme="mono"] div,html[data-theme="mono"] span,
-html[data-theme="mono"] a,html[data-theme="mono"] small{color:#000 !important}
-html[data-theme="mono"] th{background:#eee !important;border:2px solid #000 !important}
-html[data-theme="mono"] td{border:1px solid #000 !important}
-html[data-theme="mono"] .big,html[data-theme="mono"] .aboutbtn,
-html[data-theme="mono"] .abouttabs button{background:#fff !important;color:#000 !important;
-  border:3px solid #000 !important}
-html[data-theme="mono"] .theme-bar{border-color:#000 !important}
-html[data-theme="mono"] .theme-bar button{background:#fff !important;color:#000 !important;border-color:#000 !important}
-html[data-theme="mono"] .theme-bar button.on{background:#000 !important;color:#fff !important}
+html[data-theme] table{ background-color:var(--card) !important; }
+html[data-theme] th{
+  background-color:var(--th-bg) !important; color:var(--th-fg) !important;
+  border:1px solid var(--line) !important;
+}
+html[data-theme] td{ color:var(--fg) !important; border:1px solid var(--td-line) !important; }
+html[data-theme] hr, html[data-theme] section.about{ border-color:var(--line) !important; }
 
-/* ===== 佈景切換列：固定樣式（細框、白底黑字）＝不受任何佈景影響 ===== */
+/* ============================================================
+   ④ 按鈕：實心底＋對比文字（首頁大按鈕、關於我、頁籤、導覽）
+   ============================================================ */
+html[data-theme] .big, html[data-theme] .aboutbtn,
+html[data-theme] .big.blue, html[data-theme] .big.mint,
+html[data-theme] .big.sun, html[data-theme] .big.grape,
+html[data-theme] .aboutbtn.b1, html[data-theme] .aboutbtn.b2,
+html[data-theme] .aboutbtn.b3, html[data-theme] .aboutbtn.b4{
+  background-color:var(--btn-bg) !important; background-image:none !important;
+  color:var(--btn-fg) !important; border:2px solid var(--btn-line) !important;
+}
+html[data-theme] .big small, html[data-theme] .aboutbtn .d, html[data-theme] .aboutbtn b{
+  color:var(--btn-fg) !important; opacity:.95;
+}
+html[data-theme] .abouttabs button, html[data-theme] .tabbar button,
+html[data-theme] .tabbar a, html[data-theme] .navbtns a, html[data-theme] .navbtns a.alt,
+html[data-theme] .quicknav a, html[data-theme] .abouttabs a{
+  background-color:var(--chip-bg) !important; color:var(--chip-fg) !important;
+  border:2px solid var(--chip-line) !important; box-shadow:none !important;
+}
+html[data-theme] .abouttabs button.on, html[data-theme] .tabbar button.active,
+html[data-theme] .tabbar a.active, html[data-theme] .fab, html[data-theme] .gotop{
+  background-color:var(--btn-bg) !important; color:var(--btn-fg) !important;
+  border:2px solid var(--btn-line) !important;
+}
+
+/* ============================================================
+   ⑤ 倒數計時器（程式庫）：狀態列／輸入框／按鈕／大數字
+   ============================================================ */
+html[data-theme] .tm-now{
+  background-color:var(--chip-bg) !important; color:var(--chip-fg) !important;
+  border:2px solid var(--chip-line) !important;
+}
+html[data-theme] .tm-in{
+  background-color:var(--card) !important; color:var(--fg) !important;
+  border:2px solid var(--line) !important;
+}
+html[data-theme] .tm-stage{
+  background-color:var(--stage-bg) !important; border:2px solid var(--line) !important;
+}
+html[data-theme] .tm-big{
+  color:var(--stage-fg) !important; background-color:transparent !important;
+  text-shadow:none !important;
+}
+html[data-theme] .tm-btn{
+  background-color:var(--btn-bg) !important; color:var(--btn-fg) !important;
+  border:2px solid var(--btn-line) !important;
+}
+html[data-theme] .tm-chip{
+  background-color:var(--chip-bg) !important; color:var(--chip-fg) !important;
+  border:2px solid var(--chip-line) !important;
+}
+html[data-theme] .tm-chip.on{
+  background-color:var(--btn-bg) !important; color:var(--btn-fg) !important;
+  border-color:var(--btn-line) !important;
+}
+html[data-theme] .tm-lb{ color:var(--fg) !important; }
+
+/* ============================================================
+   ⑥ 線框專屬：無填色感（純黑底＋亮線）
+   ============================================================ */
+html[data-theme="wire"] .card, html[data-theme="wire"] .prog,
+html[data-theme="wire"] .summary, html[data-theme="wire"] .about-card,
+html[data-theme="wire"] details.sec, html[data-theme="wire"] table,
+html[data-theme="wire"] th, html[data-theme="wire"] td,
+html[data-theme="wire"] .big, html[data-theme="wire"] .aboutbtn,
+html[data-theme="wire"] .abouttabs button, html[data-theme="wire"] .tm-btn,
+html[data-theme="wire"] .tm-chip, html[data-theme="wire"] .tm-in,
+html[data-theme="wire"] .tm-now, html[data-theme="wire"] .secbody h2{
+  background-color:#000 !important;
+}
+html[data-theme="wire"] .card h3, html[data-theme="wire"] .about-card h3{ background-color:#000 !important; }
+html[data-theme="wire"] .big, html[data-theme="wire"] .aboutbtn,
+html[data-theme="wire"] .abouttabs button.on{
+  outline:1px solid #8CFFC0 !important; outline-offset:-6px;
+}
+html[data-theme="wire"] img{ opacity:.92; }
+
+/* ============================================================
+   ⑦ 佈景切換列：固定細框白底黑字（不受佈景影響）
+   ============================================================ */
 html[data-theme] .theme-bar, .theme-bar{
-  background:#FFFFFF !important;background-image:none !important;
-  border:1px solid #9A9A9A !important;border-radius:10px !important;
-  box-shadow:0 2px 8px rgba(0,0,0,.10) !important;padding:5px 7px !important}
+  background:#FFFFFF !important; background-image:none !important;
+  border:1px solid #9A9A9A !important; border-radius:10px !important;
+  box-shadow:0 2px 8px rgba(0,0,0,.10) !important; padding:5px 7px !important;
+  position:fixed; right:12px; bottom:12px; z-index:9999;
+  display:flex; gap:6px; align-items:center;
+}
 html[data-theme] .theme-bar .theme-lb, .theme-bar .theme-lb{
-  color:#000000 !important;font-size:13px !important}
+  color:#000 !important; font-size:13px !important; font-weight:800;
+}
 html[data-theme] .theme-bar button, .theme-bar button{
-  background:#FFFFFF !important;background-image:none !important;
-  color:#000000 !important;border:1px solid #9A9A9A !important;border-radius:7px !important;
-  box-shadow:none !important;text-shadow:none !important;outline:0 !important;
-  font-size:14px !important;font-weight:800 !important;padding:5px 9px !important}
+  background:#FFFFFF !important; background-image:none !important; color:#000000 !important;
+  border:1px solid #9A9A9A !important; border-radius:7px !important; box-shadow:none !important;
+  text-shadow:none !important; outline:0 !important;
+  font:inherit; font-size:14px !important; font-weight:800 !important; padding:5px 9px !important;
+  cursor:pointer;
+}
+html[data-theme] .theme-bar .theme-toggle, .theme-bar .theme-toggle{ display:inline-block; }
+html[data-theme] .theme-bar .theme-lb, html[data-theme] .theme-bar button[data-th],
+.theme-bar .theme-lb, .theme-bar button[data-th]{ display:none; }
+html[data-theme] .theme-bar.open .theme-lb, html[data-theme] .theme-bar.open button[data-th],
+.theme-bar.open .theme-lb, .theme-bar.open button[data-th]{ display:inline-block; }
 html[data-theme] .theme-bar button.on, .theme-bar button.on{
-  background:#FFFFFF !important;color:#000000 !important;
-  border:2px solid #000000 !important;font-weight:900 !important}
-html[data-theme] .theme-bar button:hover, .theme-bar button:hover{border-color:#000000 !important}
-/* ===== 佈景列固定樣式結束 ===== */
+  background:#FFFFFF !important; color:#000000 !important; border:2px solid #000000 !important;
+  font-weight:900 !important;
+}
+body{padding-bottom:86px !important}
 </style>
 </head><body><div class="wrap">
 <h1>📅 行事曆</h1><div class="date">財報／結算／休市</div><div class="secbody"><div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:10px 0 6px"><img src="img/cal-2026-11.png" alt="2026 年 11 月 財報與事件行事曆" style="width:1236px;max-width:none;border:1px solid #e6e2da;border-radius:10px"></div><div style="font-size:18px;color:#8a857c;margin:0 0 20px">↑ 圖可左右滑動看完整月份（手機用手指滑）</div>
@@ -383,9 +456,7 @@ html[data-theme] .theme-bar button:hover, .theme-bar button:hover{border-color:#
   <button data-th="mono" onclick="setTheme('mono')">黑白</button>
 </div>
 <script>
-function toggleThemeBar(){
-  document.getElementById('themeBar').classList.toggle('open');
-}
+function toggleThemeBar(){document.getElementById('themeBar').classList.toggle('open');}
 function setTheme(t){
   document.documentElement.setAttribute('data-theme',t);
   try{localStorage.setItem('xiaohe_theme',t);}catch(e){}
