@@ -93,7 +93,14 @@ footer{color:#6b665b}
 .tabbar button{background:#1f1d16;border-color:#2e2b24;color:#c9c2b4}
 }
 /* ===== 扁平活潑・陽光主題（覆寫原暖棕配色） ===== */
-html,body{background:#FFF9EC !important;color:#2B2A26 !important}
+html,body{background-color:#FFF9EC !important;color:#2B2A26 !important;
+  background-image:
+    radial-gradient(circle at 86% -8%, rgba(255,197,49,.28) 0, rgba(255,197,49,0) 42%),
+    radial-gradient(circle at 4% 2%, rgba(56,189,248,.12) 0, rgba(56,189,248,0) 34%),
+    radial-gradient(rgba(255,138,0,.075) 1.1px, transparent 1.2px);
+  background-size:auto, auto, 20px 20px;
+  background-attachment:fixed, fixed, fixed;
+  background-repeat:no-repeat, no-repeat, repeat}
 h1{color:#2B2A26 !important;font-weight:900}
 h2{border-left:8px solid #FFC531 !important;padding-left:14px;color:#2B2A26 !important}
 h3{color:#C2410C !important}
@@ -110,7 +117,7 @@ a{color:#C2410C !important}
 .navbtns a.alt{background:#FF8A00 !important;color:#fff !important;border-color:#FF8A00 !important}
 hr{border-color:#FFE0B2 !important}
 @media (prefers-color-scheme: dark){
-  html,body{background:#FFF9EC !important;color:#2B2A26 !important}
+  html,body{background-color:#FFF9EC !important;color:#2B2A26 !important}
   h1,h2,h3,p,li,td,th,div,span{color:#2B2A26 !important}
   h3{color:#C2410C !important}
   th{background:#FFE9A8 !important}
@@ -121,7 +128,7 @@ hr{border-color:#FFE0B2 !important}
 }
 </style>
 </head><body><div class="wrap">
-<div class="head"><h1>2026-11-23 投資日報<span class="stamp">2026-11-23 09:39</span></h1><div class="freelight" title="檢查時間 2026-11-23 07:00">免費模型｜<i class="led on"></i>運作</div></div>
+<div class="head"><h1>2026-11-23 投資日報<span class="stamp">2026-11-23 10:14</span></h1><div class="freelight" title="檢查時間 2026-11-23 07:00">免費模型｜<i class="led on"></i>運作</div></div>
 <div class="tabbar"><button data-i="0" class="active">晨報</button><button data-i="1" class="">走勢圖</button><button data-i="2" class="">燈號</button><button data-i="3" class="">行事曆</button><button data-i="4" class="">消息面</button><a class="tablink" href="index.html">舊文</a></div>
 <section class="pane active" id="pane0"><blockquote>
 <p>今天是<strong>交易日</strong>（週一）。台股與美股最後交易日都是 <strong>11/20（五）</strong>；今天開盤要補的是「美股 11/20 的重挫 + 台指期夜盤 -5.25%」，<strong>不是新消息</strong>。
