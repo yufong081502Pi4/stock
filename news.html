@@ -242,7 +242,7 @@ html[data-theme="sunny"], html:not([data-theme]){
   --card:#FFFFFF; --line:#E3C79A; --accent:#B23A00;
   --btn-bg:#E86A00; --btn-fg:#FFFFFF; --btn-line:#E86A00;
   --chip-bg:#FFF3D6; --chip-fg:#211F1A; --chip-line:#CDA96E;
-  --stage-bg:#101010; --stage-fg:#9DFF6A;
+  --stage-bg:#101010; --stage-fg:#9DFF6A; --stage-muted:#D6CEBC;
   --th-bg:#FFF3D6; --th-fg:#211F1A; --td-line:#E8DCC2;
 }
 html[data-theme="wire"]{
@@ -250,7 +250,7 @@ html[data-theme="wire"]{
   --card:#000000; --line:#8CFFC0; --accent:#FFFFFF;
   --btn-bg:#000000; --btn-fg:#EFFFF4; --btn-line:#8CFFC0;
   --chip-bg:#000000; --chip-fg:#8CFFC0; --chip-line:#4E8F68;
-  --stage-bg:#000000; --stage-fg:#EFFFF4;
+  --stage-bg:#000000; --stage-fg:#EFFFF4; --stage-muted:#A8E6C4;
   --th-bg:#000000; --th-fg:#EFFFF4; --td-line:#4E8F68;
 }
 html[data-theme="dark"]{
@@ -258,7 +258,7 @@ html[data-theme="dark"]{
   --card:#171B1E; --line:#465258; --accent:#FFC061;
   --btn-bg:#2A363C; --btn-fg:#FFD79A; --btn-line:#FFB020;
   --chip-bg:#1D2529; --chip-fg:#EDF1F3; --chip-line:#5C6B72;
-  --stage-bg:#050708; --stage-fg:#7CF29B;
+  --stage-bg:#050708; --stage-fg:#7CF29B; --stage-muted:#A7B8AD;
   --th-bg:#20282C; --th-fg:#FFD79A; --td-line:#3A454B;
 }
 html[data-theme="mono"]{
@@ -266,7 +266,7 @@ html[data-theme="mono"]{
   --card:#FFFFFF; --line:#000000; --accent:#000000;
   --btn-bg:#FFFFFF; --btn-fg:#000000; --btn-line:#000000;
   --chip-bg:#FFFFFF; --chip-fg:#000000; --chip-line:#000000;
-  --stage-bg:#FFFFFF; --stage-fg:#000000;
+  --stage-bg:#FFFFFF; --stage-fg:#000000; --stage-muted:#333333;
   --th-bg:#ECECEC; --th-fg:#000000; --td-line:#000000;
 }
 
@@ -282,7 +282,7 @@ html[data-theme] p, html[data-theme] li, html[data-theme] b, html[data-theme] st
 html[data-theme] label, html[data-theme] summary, html[data-theme] figcaption{
   color:var(--fg) !important;
 }
-html[data-theme] .date, html[data-theme] .muted, html[data-theme] .tm-sub{
+html[data-theme] .date, html[data-theme] .muted{
   color:var(--muted) !important;
 }
 html[data-theme] a{ color:var(--accent) !important; }
@@ -316,6 +316,9 @@ html[data-theme] th{
   border:1px solid var(--line) !important;
 }
 html[data-theme] td{ color:var(--fg) !important; border:1px solid var(--td-line) !important; }
+html[data-theme] tr{ background-color:var(--card) !important; }
+html[data-theme] tbody tr:nth-child(even){ background-color:var(--bg2) !important; }
+html[data-theme] tbody tr:nth-child(even) td{ color:var(--fg) !important; }
 html[data-theme] hr, html[data-theme] section.about{ border-color:var(--line) !important; }
 
 /* ============================================================
