@@ -335,6 +335,24 @@ html[data-theme="mono"] .abouttabs button{background:#fff !important;color:#000 
 html[data-theme="mono"] .theme-bar{border-color:#000 !important}
 html[data-theme="mono"] .theme-bar button{background:#fff !important;color:#000 !important;border-color:#000 !important}
 html[data-theme="mono"] .theme-bar button.on{background:#000 !important;color:#fff !important}
+
+/* ===== 佈景切換列：固定樣式（細框、白底黑字）＝不受任何佈景影響 ===== */
+html[data-theme] .theme-bar, .theme-bar{
+  background:#FFFFFF !important;background-image:none !important;
+  border:1px solid #9A9A9A !important;border-radius:10px !important;
+  box-shadow:0 2px 8px rgba(0,0,0,.10) !important;padding:5px 7px !important}
+html[data-theme] .theme-bar .theme-lb, .theme-bar .theme-lb{
+  color:#000000 !important;font-size:13px !important}
+html[data-theme] .theme-bar button, .theme-bar button{
+  background:#FFFFFF !important;background-image:none !important;
+  color:#000000 !important;border:1px solid #9A9A9A !important;border-radius:7px !important;
+  box-shadow:none !important;text-shadow:none !important;outline:0 !important;
+  font-size:14px !important;font-weight:800 !important;padding:5px 9px !important}
+html[data-theme] .theme-bar button.on, .theme-bar button.on{
+  background:#FFFFFF !important;color:#000000 !important;
+  border:2px solid #000000 !important;font-weight:900 !important}
+html[data-theme] .theme-bar button:hover, .theme-bar button:hover{border-color:#000000 !important}
+/* ===== 佈景列固定樣式結束 ===== */
 </style>
 </head><body><div class="wrap">
 <h1>關於我</h1>
@@ -442,6 +460,16 @@ html[data-theme="wire"] .item{border-bottom:1px dashed #4E8F68 !important}
 html[data-theme="wire"] .card h3{border-left:3px solid #8CFFC0 !important;padding-left:10px !important}
 html[data-theme="wire"] .abouttabs button:not(.on){color:#8CFFC0 !important;border-color:#4E8F68 !important}
 html[data-theme="wire"] .prog-t,html[data-theme="wire"] .summary-note{color:#EFFFF4 !important}
+html[data-theme="wire"] .tabbar{background:#000 !important;border-color:#4E8F68 !important}
+html[data-theme="wire"] .tabbar button,html[data-theme="wire"] .tabbar a.tablink{
+  background:transparent !important;color:#8CFFC0 !important;border:2px solid #4E8F68 !important}
+html[data-theme="wire"] .tabbar button.active{
+  background:transparent !important;color:#FFFFFF !important;border:2px solid #FFFFFF !important;
+  outline:1px solid #FFFFFF !important;outline-offset:-5px}
+html[data-theme="wire"] .navbtns a,html[data-theme="wire"] .navbtns a.alt{
+  background:transparent !important;color:#8CFFC0 !important;border:2px solid #8CFFC0 !important}
+html[data-theme="wire"] .fab,html[data-theme="wire"] .gotop{background:transparent !important;
+  color:#8CFFC0 !important;border:2px solid #8CFFC0 !important}
 html[data-theme="wire"] hr,html[data-theme="wire"] section.about{border-color:#8CFFC0 !important}
 html[data-theme="wire"] .theme-bar{background:#000 !important;border-color:#8CFFC0 !important}
 html[data-theme="wire"] .theme-bar .theme-lb{color:#8CFFC0 !important}
@@ -488,6 +516,24 @@ html[data-theme="mono"] .abouttabs button{background:#fff !important;color:#000 
 html[data-theme="mono"] .theme-bar{border-color:#000 !important}
 html[data-theme="mono"] .theme-bar button{background:#fff !important;color:#000 !important;border-color:#000 !important}
 html[data-theme="mono"] .theme-bar button.on{background:#000 !important;color:#fff !important}
+
+/* ===== 佈景切換列：固定樣式（細框、白底黑字）＝不受任何佈景影響 ===== */
+html[data-theme] .theme-bar, .theme-bar{
+  background:#FFFFFF !important;background-image:none !important;
+  border:1px solid #9A9A9A !important;border-radius:10px !important;
+  box-shadow:0 2px 8px rgba(0,0,0,.10) !important;padding:5px 7px !important}
+html[data-theme] .theme-bar .theme-lb, .theme-bar .theme-lb{
+  color:#000000 !important;font-size:13px !important}
+html[data-theme] .theme-bar button, .theme-bar button{
+  background:#FFFFFF !important;background-image:none !important;
+  color:#000000 !important;border:1px solid #9A9A9A !important;border-radius:7px !important;
+  box-shadow:none !important;text-shadow:none !important;outline:0 !important;
+  font-size:14px !important;font-weight:800 !important;padding:5px 9px !important}
+html[data-theme] .theme-bar button.on, .theme-bar button.on{
+  background:#FFFFFF !important;color:#000000 !important;
+  border:2px solid #000000 !important;font-weight:900 !important}
+html[data-theme] .theme-bar button:hover, .theme-bar button:hover{border-color:#000000 !important}
+/* ===== 佈景列固定樣式結束 ===== */
 </style><div class="abouttabs"><button class="on" onclick="showTab(0)">比價</button><button onclick="showTab(1)">行事曆</button><button onclick="showTab(2)">程式庫</button><button onclick="showTab(3)">待辦</button></div><div class="panel on"><div class="summary"><b class="summary-h">今日結論</b><br>Even G2：一般通路與社群都沒有符合的報價<br>JNA-202 PRO：沒有符合 1,200～1,500 的報價<br><span class="summary-note">沒有符合的會在下面標「沒有」，並列出查過的網站。</span></div><div class="card">
 <h2>Even G2 智慧眼鏡</h2>
 <div class="target">目標 <b>12,000</b> 左右　｜　最多不超過 <b>15,000</b></div>
