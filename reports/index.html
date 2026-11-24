@@ -31,17 +31,19 @@ footer{border-color:#2e2b24;color:#6b665b}
    ① 變數：每個佈景一組，背景色與文字色一定成對
    ============================================================ */
 html[data-theme="sunny"], html:not([data-theme]){
-  --bg:#FFF9EC; --bg2:#FFF3D6; --fg:#211F1A; --muted:#5E594D;
-  --card:#FFFFFF; --line:#E3C79A; --accent:#B23A00;
-  --btn-bg:#E86A00; --btn-fg:#FFFFFF; --btn-line:#E86A00;
-  --chip-bg:#FFF3D6; --chip-fg:#211F1A; --chip-line:#CDA96E;
+  --bg:#FFFFFF; --bg2:#F5F5F7; --fg:#000000; --muted:#5B5B63;
+  --card:#FFFFFF; --line:#E2E2E6; --accent:#6D28D9;
+  --btn-bg:#E11D48; --btn-fg:#FFFFFF; --btn-line:#E11D48;
+  --btn2:#0EA5E9; --btn3:#10B981; --btn4:#8B5CF6;
+  --chip-bg:#F5F5F7; --chip-fg:#000000; --chip-line:#D5D5DA;
   --stage-bg:#101010; --stage-fg:#9DFF6A; --stage-muted:#D6CEBC;
-  --th-bg:#FFF3D6; --th-fg:#211F1A; --td-line:#E8DCC2;
+  --th-bg:#F5F5F7; --th-fg:#000000; --td-line:#E6E6EA;
 }
 html[data-theme="wire"]{
   --bg:#000000; --bg2:#000000; --fg:#8CFFC0; --muted:#63B98A;
   --card:#000000; --line:#8CFFC0; --accent:#FFFFFF;
   --btn-bg:#000000; --btn-fg:#EFFFF4; --btn-line:#8CFFC0;
+  --btn2:#000000; --btn3:#000000; --btn4:#000000;
   --chip-bg:#000000; --chip-fg:#8CFFC0; --chip-line:#4E8F68;
   --stage-bg:#000000; --stage-fg:#EFFFF4; --stage-muted:#A8E6C4;
   --th-bg:#000000; --th-fg:#EFFFF4; --td-line:#4E8F68;
@@ -50,6 +52,7 @@ html[data-theme="dark"]{
   --bg:#0E1113; --bg2:#1B2226; --fg:#EDF1F3; --muted:#A9B4B9;
   --card:#171B1E; --line:#465258; --accent:#FFC061;
   --btn-bg:#2A363C; --btn-fg:#FFD79A; --btn-line:#FFB020;
+  --btn2:#22303A; --btn3:#22322C; --btn4:#2C2438;
   --chip-bg:#1D2529; --chip-fg:#EDF1F3; --chip-line:#5C6B72;
   --stage-bg:#050708; --stage-fg:#7CF29B; --stage-muted:#A7B8AD;
   --th-bg:#20282C; --th-fg:#FFD79A; --td-line:#3A454B;
@@ -58,6 +61,7 @@ html[data-theme="mono"]{
   --bg:#FFFFFF; --bg2:#F1F1F1; --fg:#000000; --muted:#333333;
   --card:#FFFFFF; --line:#000000; --accent:#000000;
   --btn-bg:#FFFFFF; --btn-fg:#000000; --btn-line:#000000;
+  --btn2:#FFFFFF; --btn3:#FFFFFF; --btn4:#FFFFFF;
   --chip-bg:#FFFFFF; --chip-fg:#000000; --chip-line:#000000;
   --stage-bg:#FFFFFF; --stage-fg:#000000; --stage-muted:#333333;
   --th-bg:#ECECEC; --th-fg:#000000; --td-line:#000000;
@@ -141,6 +145,13 @@ html[data-theme] .tabbar a.active, html[data-theme] .fab, html[data-theme] .goto
   border:2px solid var(--btn-line) !important;
 }
 
+html[data-theme] .big.blue{ background-color:var(--btn2) !important; }
+html[data-theme] .big.mint{ background-color:var(--btn3) !important; }
+html[data-theme] .big.grape{ background-color:var(--btn4) !important; }
+html[data-theme] .aboutbtn.b2{ background-color:var(--btn2) !important; }
+html[data-theme] .aboutbtn.b3{ background-color:var(--btn3) !important; }
+html[data-theme] .aboutbtn.b4{ background-color:var(--btn4) !important; }
+
 /* ============================================================
    ⑤ 倒數計時器（程式庫）：狀態列／輸入框／按鈕／大數字
    ============================================================ */
@@ -200,6 +211,23 @@ html[data-theme="wire"] .abouttabs button.on{
 html[data-theme="wire"] img{ opacity:.92; }
 
 /* ============================================================
+   ⑥-2 陽光主題的彩虹點綴（純白底＋黑字，只加一點顏色）
+   ============================================================ */
+html[data-theme="sunny"] body::before, html:not([data-theme]) body::before{
+  content:""; position:fixed; top:0; left:0; right:0; height:6px; z-index:9997;
+  background:linear-gradient(90deg,#E11D48,#F97316,#FACC15,#22C55E,#0EA5E9,#8B5CF6);
+}
+html[data-theme="sunny"] h1, html:not([data-theme]) h1{
+  background-image:linear-gradient(90deg,#E11D48,#F97316,#FACC15,#22C55E,#0EA5E9,#8B5CF6);
+  background-repeat:no-repeat; background-size:100% 6px; background-position:0 100%;
+  padding-bottom:10px !important; border:0 !important;
+}
+html[data-theme="sunny"] .card, html:not([data-theme]) .card{
+  border-top:4px solid transparent;
+  border-image:linear-gradient(90deg,#E11D48,#F97316,#22C55E,#0EA5E9,#8B5CF6) 1;
+}
+
+/* ============================================================
    ⑦ 佈景切換列：固定細框白底黑字（不受佈景影響）
    ============================================================ */
 html[data-theme] .theme-bar, .theme-bar{
@@ -220,10 +248,12 @@ html[data-theme] .theme-bar button, .theme-bar button{
   cursor:pointer;
 }
 html[data-theme] .theme-bar .theme-toggle, .theme-bar .theme-toggle{ display:inline-block; }
-html[data-theme] .theme-bar .theme-lb, html[data-theme] .theme-bar button[data-th],
-.theme-bar .theme-lb, .theme-bar button[data-th]{ display:none; }
-html[data-theme] .theme-bar.open .theme-lb, html[data-theme] .theme-bar.open button[data-th],
-.theme-bar.open .theme-lb, .theme-bar.open button[data-th]{ display:inline-block; }
+html[data-theme] .theme-bar .dot, .theme-bar .dot{
+  display:none; width:22px; height:22px; padding:0 !important; border-radius:50% !important;
+  box-shadow:none !important; }
+html[data-theme] .theme-bar.open .dot, .theme-bar.open .dot{ display:inline-block; }
+html[data-theme] .theme-bar .dot.on, .theme-bar .dot.on{
+  outline:2px solid #000 !important; outline-offset:2px; }
 html[data-theme] .theme-bar button.on, .theme-bar button.on{
   background:#FFFFFF !important; color:#000000 !important; border:2px solid #000000 !important;
   font-weight:900 !important;
@@ -234,6 +264,7 @@ body{padding-bottom:86px !important}
 <h1>投資日報</h1>
 <p class="sub">由 Hermes Agent 每天自動產生</p>
 <ul>
+  <li><a href="2026-11-25-投資日報.html">2026-11-25　投資日報</a><span class="d">2026-11-25-投資日報.html</span></li>
   <li><a href="2026-11-24-投資日報.html">2026-11-24　投資日報</a><span class="d">2026-11-24-投資日報.html</span></li>
   <li><a href="2026-11-23-投資日報.html">2026-11-23　投資日報</a><span class="d">2026-11-23-投資日報.html</span></li>
   <li><a href="2026-11-22-投資日報.html">2026-11-22　投資日報</a><span class="d">2026-11-22-投資日報.html</span></li>
@@ -256,57 +287,22 @@ body{padding-bottom:86px !important}
 <footer>© 陳裕豐</footer>
 </div>
 <div class="theme-bar" id="themeBar">
-  <button class="theme-toggle" onclick="toggleThemeBar()" title="切換佈景">🎨 佈景</button>
-  <button data-th="sunny" onclick="setTheme('sunny')">陽光</button>
-  <button data-th="wire" onclick="setTheme('wire')">線框</button>
-  <button data-th="dark" onclick="setTheme('dark')">深色</button>
-  <button data-th="mono" onclick="setTheme('mono')">黑白</button>
+  <button class="theme-toggle" onclick="toggleThemeBar()" aria-label="theme" title="theme">🎨</button>
+  <button class="dot" data-th="sunny" onclick="setTheme('sunny')" aria-label="sunny" title="sunny"
+          style="background:linear-gradient(135deg,#FFC531,#FF8A00)"></button>
+  <button class="dot" data-th="wire" onclick="setTheme('wire')" aria-label="wire" title="wire"
+          style="background:#000;border:2px solid #8CFFC0"></button>
+  <button class="dot" data-th="dark" onclick="setTheme('dark')" aria-label="dark" title="dark"
+          style="background:#141A1F;border:2px solid #FFB020"></button>
+  <button class="dot" data-th="mono" onclick="setTheme('mono')" aria-label="mono" title="mono"
+          style="background:#fff;border:2px solid #000"></button>
 </div>
 <script>
-function __lum(c){const f=v=>{v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4)};return 0.2126*f(c.r)+0.7152*f(c.g)+0.0722*f(c.b);}
-function __rgb(str){const m=str.match(/rgba?\(([^)]+)\)/);if(!m)return null;const p=m[1].split(',').map(Number);return {r:p[0],g:p[1],b:p[2],a:p.length>3?p[3]:1};}
-function __bgOf(el){
-  let e=el;
-  while(e&&e!==document.documentElement){
-    const b=__rgb(getComputedStyle(e).backgroundColor);
-    if(b&&b.a>0.5) return b;
-    e=e.parentElement;
-  }
-  return __rgb(getComputedStyle(document.body).backgroundColor)||{r:255,g:255,b:255,a:1};
-}
-function __ratio(fg,bg){
-  const L1=__lum(fg),L2=__lum(bg),hi=Math.max(L1,L2),lo=Math.min(L1,L2);
-  return (hi+0.05)/(lo+0.05);
-}
-/* 保險機制：不管底色是行內寫的還是 CSS 給的，
-   只要「文字 / 底色」對比不足就自動改正，避免字消失。 */
-function fixInlineContrast(){
-  document.querySelectorAll('[data-fixcolor]').forEach(function(el){
-    el.style.removeProperty('color'); delete el.dataset.fixcolor;
-  });
-  const sel='div,span,p,td,th,li,section,blockquote,a,h1,h2,h3,h4,small,strong,b';
-  document.querySelectorAll(sel).forEach(function(el){
-    if(el.closest('.theme-bar')) return;
-    const st=getComputedStyle(el);
-    if(st.display==='none'||st.visibility==='hidden') return;
-    const fg=__rgb(st.color);
-    if(!fg) return;
-    const bg=__bgOf(el);
-    if(__ratio(fg,bg)>=4.2) return;
-    const want = __lum(bg)>0.5 ? '#111111' : '#FFFFFF';
-    el.style.setProperty('color',want,'important');
-    el.dataset.fixcolor='1';
-    el.querySelectorAll('a,span,b,strong,td,h1,h2,h3,h4,p,li,small').forEach(function(k){
-      k.style.setProperty('color',want,'important'); k.dataset.fixcolor='1';
-    });
-  });
-}
-
 function toggleThemeBar(){document.getElementById('themeBar').classList.toggle('open');}
 function setTheme(t){
   document.documentElement.setAttribute('data-theme',t);
   try{localStorage.setItem('xiaohe_theme',t);}catch(e){}
-  document.querySelectorAll('.theme-bar button[data-th]').forEach(function(b){
+  document.querySelectorAll('.theme-bar .dot').forEach(function(b){
     b.classList.toggle('on', b.dataset.th===t);
   });
   document.getElementById('themeBar').classList.remove('open');
@@ -317,7 +313,7 @@ function setTheme(t){
   try{ t=localStorage.getItem('xiaohe_theme')||'sunny'; }catch(e){}
   document.documentElement.setAttribute('data-theme',t);
   document.addEventListener('DOMContentLoaded',function(){
-    document.querySelectorAll('.theme-bar button[data-th]').forEach(function(b){
+    document.querySelectorAll('.theme-bar .dot').forEach(function(b){
       b.classList.toggle('on', b.dataset.th===t);
     });
     if(window.fixInlineContrast) fixInlineContrast();
