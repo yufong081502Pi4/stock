@@ -6,15 +6,14 @@
 <script>
 (function(){try{var t=localStorage.getItem('xiaohe_theme');if(!t)t='sunny';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
 </script>
-<meta name="theme-color" content="#FAFAF8">
+<meta name="theme-color" content="#FFFFFF">
 <title>交易紀律</title>
 <style>
 :root{color-scheme:light;
   --sun:#FFC531; --orange:#FF8A00; --coral:#FF6B6B; --sky:#38BDF8;
-  --mint:#34D399; --grape:#A78BFA; --ink:#1C1C1A; --paper:#FAFAF8; --sub:#5A5A54;}
-html,body{background-color:#FAFAF8 !important;color:var(--ink) !important;
-  background-image:radial-gradient(rgba(0,0,0,.05) 1px, transparent 1.1px);
-  background-size:22px 22px;
+  --mint:#34D399; --grape:#A78BFA; --ink:#000000; --paper:#FFFFFF; --sub:#5B5B63;}
+html,body{background-color:#FFFFFF !important;color:var(--ink) !important;
+  background-image:none;
   background-attachment:fixed, fixed, fixed;
   background-repeat:no-repeat, no-repeat, repeat}
 *{box-sizing:border-box}
@@ -235,13 +234,13 @@ a{color:#C2410C !important}
    ① 變數：每個佈景一組，背景色與文字色一定成對
    ============================================================ */
 html[data-theme="sunny"], html:not([data-theme]){
-  --bg:#FAFAF8; --bg2:#F1F1EE; --fg:#1C1C1A; --muted:#5A5A54;
-  --card:#FFFFFF; --line:#D8D8D2; --accent:#B23A00;
-  --btn-bg:#E86A00; --btn-fg:#FFFFFF; --btn-line:#E86A00;
-  --btn2:#0E7490; --btn3:#0F766E; --btn4:#6D28D9;
-  --chip-bg:#F4F4F1; --chip-fg:#1C1C1A; --chip-line:#C9C9C2;
+  --bg:#FFFFFF; --bg2:#F5F5F7; --fg:#000000; --muted:#5B5B63;
+  --card:#FFFFFF; --line:#E2E2E6; --accent:#6D28D9;
+  --btn-bg:#E11D48; --btn-fg:#FFFFFF; --btn-line:#E11D48;
+  --btn2:#0EA5E9; --btn3:#10B981; --btn4:#8B5CF6;
+  --chip-bg:#F5F5F7; --chip-fg:#000000; --chip-line:#D5D5DA;
   --stage-bg:#101010; --stage-fg:#9DFF6A; --stage-muted:#D6CEBC;
-  --th-bg:#EFEFEC; --th-fg:#1C1C1A; --td-line:#E2E2DC;
+  --th-bg:#F5F5F7; --th-fg:#000000; --td-line:#E6E6EA;
 }
 html[data-theme="wire"]{
   --bg:#000000; --bg2:#000000; --fg:#8CFFC0; --muted:#63B98A;
@@ -413,6 +412,23 @@ html[data-theme="wire"] .abouttabs button.on{
   outline:1px solid #8CFFC0 !important; outline-offset:-6px;
 }
 html[data-theme="wire"] img{ opacity:.92; }
+
+/* ============================================================
+   ⑥-2 陽光主題的彩虹點綴（純白底＋黑字，只加一點顏色）
+   ============================================================ */
+html[data-theme="sunny"] body::before, html:not([data-theme]) body::before{
+  content:""; position:fixed; top:0; left:0; right:0; height:6px; z-index:9997;
+  background:linear-gradient(90deg,#E11D48,#F97316,#FACC15,#22C55E,#0EA5E9,#8B5CF6);
+}
+html[data-theme="sunny"] h1, html:not([data-theme]) h1{
+  background-image:linear-gradient(90deg,#E11D48,#F97316,#FACC15,#22C55E,#0EA5E9,#8B5CF6);
+  background-repeat:no-repeat; background-size:100% 6px; background-position:0 100%;
+  padding-bottom:10px !important; border:0 !important;
+}
+html[data-theme="sunny"] .card, html:not([data-theme]) .card{
+  border-top:4px solid transparent;
+  border-image:linear-gradient(90deg,#E11D48,#F97316,#22C55E,#0EA5E9,#8B5CF6) 1;
+}
 
 /* ============================================================
    ⑦ 佈景切換列：固定細框白底黑字（不受佈景影響）
